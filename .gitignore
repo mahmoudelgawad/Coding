@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/DB_PlayGround/DB_PlayGround_log.ldf
+/DB_PlayGround/DB_PlayGround.mdf

@@ -1,0 +1,16 @@
+C:\Adrive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ConsoleApp_PlayGround.exe
+C:\Adrive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ConsoleApp_PlayGround.deps.json
+C:\Adrive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ConsoleApp_PlayGround.runtimeconfig.json
+C:\Adrive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ConsoleApp_PlayGround.runtimeconfig.dev.json
+C:\Adrive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ConsoleApp_PlayGround.dll
+C:\Adrive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ref\ConsoleApp_PlayGround.dll
+C:\Adrive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ConsoleApp_PlayGround.pdb
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.csproj.AssemblyReference.cache
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.AssemblyInfoInputs.cache
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.AssemblyInfo.cs
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.csproj.CoreCompileInputs.cache
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.dll
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ref\ConsoleApp_PlayGround.dll
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.pdb
+C:\Adrive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.genruntimeconfig.cache
