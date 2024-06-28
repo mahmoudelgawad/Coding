@@ -12,10 +12,20 @@ namespace ConsoleApp_PlayGround
 
             //Console.WriteLine(customer.GetName());
 
-            dynamic x = "c#";
-            Console.WriteLine(x.Length);
-            x = 1 + 5;
-            Console.WriteLine(++x);
+            //dynamic x = "c#";
+            //var y = 10;
+            //Console.WriteLine(x.Length);
+            //Console.WriteLine(y);
+            //x = 1 + 5;
+            //y = "sdsdsd";
+            //Console.WriteLine(++x);
+            //Console.WriteLine(y+"  GOGO");
+
+            int? num1 = null;
+            int? num2 = null;
+
+            int? result = num1 ?? num2;
+            Console.WriteLine(result == null);
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
 

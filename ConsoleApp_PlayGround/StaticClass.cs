@@ -9,10 +9,11 @@ namespace ConsoleApp_PlayGround
    static class StaticClass
     {
        readonly static string name = "mahmoud";
-        //static class constructor not allow access modifier
+
+        //static class constructor not allow access modifier as "public constructor"
         static StaticClass()
         {
-            // this keyword not valid for static method or static member
+            // "this" keyword not valid for static method or static member
             //var obj = this.
         }
 
@@ -21,9 +22,10 @@ namespace ConsoleApp_PlayGround
             return "Static Class";
         }
 
+        // extension method must be static
         public static string EnxtesnionOnString(this string argu) 
         {
-            // this keyword not valid for static method or static member
+            // "this" keyword not valid for static method or static member
             //var obj = this.
             return argu;
         }
