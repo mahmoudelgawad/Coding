@@ -35,6 +35,7 @@ namespace ASPCOREMVC_PlayGround.Controllers
         {
             return View("Index");
         }
+
         public IActionResult Privacy()
         {
             return View();
