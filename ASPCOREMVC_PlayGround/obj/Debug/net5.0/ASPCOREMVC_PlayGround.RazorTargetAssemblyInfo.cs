@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyProductAttribute("ASPCOREMVC_PlayGround")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d875ada9315362803cecd7aa4253a96baf06b5ff")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ASPCOREMVC_PlayGround.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

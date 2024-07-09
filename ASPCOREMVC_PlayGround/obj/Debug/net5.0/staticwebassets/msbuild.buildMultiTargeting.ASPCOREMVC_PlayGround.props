@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ASPCOREMVC_PlayGround.props" />
+</Project>

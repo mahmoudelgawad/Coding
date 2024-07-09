@@ -21,8 +21,8 @@ namespace ASPCOREMVC_PlayGround.Controllers
         public IActionResult Index()
         {
             TempData["td"] = "Hello";
-            //return View();
-            return RedirectToAction("Index1");
+            return View();
+            //return RedirectToAction("Index1");
         }
 
         public IActionResult Index1()
