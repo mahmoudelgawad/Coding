@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebAPI_ASPCOREMVC_PlayGround")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d875ada9315362803cecd7aa4253a96baf06b5ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e248bb2334b8b04158039120ba03952e7052ef92")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebAPI_ASPCOREMVC_PlayGround")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebAPI_ASPCOREMVC_PlayGround")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
