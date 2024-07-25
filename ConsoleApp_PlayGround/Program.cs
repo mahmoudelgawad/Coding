@@ -6,6 +6,7 @@ namespace ConsoleApp_PlayGround
     {
         static void Main(string[] args)
         {
+
             //Customer customer = new Customer();
             //customer.FirstName = "mahmoud";
             //customer.LastName = "ahmed";
@@ -21,11 +22,8 @@ namespace ConsoleApp_PlayGround
             //Console.WriteLine(++x);
             //Console.WriteLine(y+"  GOGO");
 
-            int? num1 = null;
-            int? num2 = null;
+            Console.WriteLine(ReadonlyClass.constVar2);
 
-            int? result = num1 ?? num2;
-            Console.WriteLine(result == null);
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
 

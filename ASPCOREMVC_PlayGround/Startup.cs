@@ -24,11 +24,17 @@ namespace ASPCOREMVC_PlayGround
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddSession(options => {
+            //    options.Cookie.Name = "COOKIEAPPNAME";
+            //    options.IdleTimeout = TimeSpan.FromSeconds(10);
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //app.UseSession();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
