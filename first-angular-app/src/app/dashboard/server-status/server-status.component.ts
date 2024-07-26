@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, DestroyRef, effect, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 
 @Component({
@@ -10,12 +10,18 @@ import { TimeInterval } from 'rxjs/internal/operators/timeInterval';
 })
 // implement interfaces to force components with specific hooks methods
 export class ServerStatusComponent implements OnInit {
-  currentStatus : "online" | "offline" | "unknown" = "offline";
+  // currentStatus : "online" | "offline" | "unknown" = "offline";
+  currentStatus = signal<"online" | "offline" | "unknown">("offline");
   private destroyRef = inject(DestroyRef);
   
   //private interval?: ReturnType<typeof setInterval>;
 
- constructor(){} 
+ constructor(){
+  effect(() =>{
+      console.log(this.currentStatus());
+  });
+  
+ } 
 
  // use ngOnInit better after all component input initalized
   ngOnInit(){
@@ -24,11 +30,11 @@ export class ServerStatusComponent implements OnInit {
       const rnd= Math.random(); //0 ~ 0.99999999
 
       if(rnd < 0.5){
-        this.currentStatus = "online";
+        this.currentStatus.set("online");
       } else if(rnd < 0.9){
-        this.currentStatus = "offline";
-      }else {
-        this.currentStatus = "unknown";
+        this.currentStatus.set("offline");
+      } else {
+        this.currentStatus.set("unknown");
       }
     },5000);
 

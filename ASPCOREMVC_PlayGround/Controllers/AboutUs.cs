@@ -6,8 +6,8 @@ namespace ASPCOREMVC_PlayGround.Controllers
     {
         public IActionResult Index()
         {
-           // TempData["td"] = "cocowawa";
-            //TempData.Keep();
+            //var val = TempData.Peek("td");
+            //ViewData["val"] = val;
             return View();
         }
 
