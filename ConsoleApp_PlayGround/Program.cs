@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ConsoleApp_PlayGround
 {
@@ -21,6 +22,10 @@ namespace ConsoleApp_PlayGround
             //y = "sdsdsd";
             //Console.WriteLine(++x);
             //Console.WriteLine(y+"  GOGO");
+
+            ArrayList lst = new ArrayList();
+            lst.Add("sdsd");
+            lst.Add(new Customer());
 
             Console.WriteLine(ReadonlyClass.constVar2);
 

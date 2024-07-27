@@ -20,7 +20,6 @@ export class ServerStatusComponent implements OnInit {
   effect(() =>{
       console.log(this.currentStatus());
   });
-  
  } 
 
  // use ngOnInit better after all component input initalized

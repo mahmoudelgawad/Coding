@@ -9,7 +9,7 @@ import { Component, input, Input } from '@angular/core';
 })
 export class DashboardItemComponent {
 
-// @Input({required:true}) image!:;
+// @Input({required:true}) image!;
 // @Input({required:true}) title!:string;
 
 image = input.required<{src:string,alt:string}>();
