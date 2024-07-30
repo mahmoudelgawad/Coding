@@ -5,3 +5,5 @@
 .vs/
 /DB_PlayGround/DB_PlayGround_log.ldf
 /DB_PlayGround/DB_PlayGround.mdf
+ASPCOREMVC_PlayGround/bin*
+

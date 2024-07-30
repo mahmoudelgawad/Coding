@@ -1,5 +1,5 @@
 
-const users=[
+export const users=[
     {
       id:1,
       name:"jack",
@@ -19,3 +19,4 @@ const users=[
         age:30
     }
 ];
+

@@ -26,3 +26,11 @@ console.log(result);
 console.log(words);
 // Expected output: Array ["exuberant", "destruction", "present"]
 
+//named function
+function funTestOne(){
+    console.log("funTestOne()");
+    document.writeln("funTestOne()");
+}
+// call named function
+funTestOne();
+
