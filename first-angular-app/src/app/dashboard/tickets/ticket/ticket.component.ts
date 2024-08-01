@@ -18,7 +18,7 @@ close = output();
 
 onToggleDetails(){
  //this.isDetailsVisible.set(!this.isDetailsVisible());
- // you can use 'update' instead 'set' with signal object
+ // you can use 'update' instead 'set' with signal object to assign new value
  this.isDetailsVisible.update( (val) => !val);
 }
 
