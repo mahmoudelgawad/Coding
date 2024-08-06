@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsoleApp_PlayGround")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b48794433e342a11e492bd4941b0ab299c6db88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+163464843642dee7f07a27f94d3e405246183f3f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsoleApp_PlayGround")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsoleApp_PlayGround")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

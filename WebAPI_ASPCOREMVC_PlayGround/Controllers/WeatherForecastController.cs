@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,15 @@ namespace WebAPI_ASPCOREMVC_PlayGround.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet("message")]
+        public ObjectResult TestMessage() 
+        {
+            string message = "Hello Wather !";
+            message = "محمود أحمد";
+            return StatusCode(StatusCodes.Status200OK, message);
+        
         }
     }
 }

@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
-import { RectComponent } from './rect/rect.component';
-import { FormsModule } from '@angular/forms';
+import { Component, computed, inject } from '@angular/core';
+import { NgIf } from '@angular/common'; // or use CommonModule for all directives
+
+import { AuthComponent } from './auth/auth.component';
+import { LearningResourcesComponent } from './learning-resources/learning-resources.component';
+import { AuthService } from './auth/auth.service';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  imports: [RectComponent, FormsModule],
+  styleUrl: './app.component.css',
+  imports: [AuthComponent, LearningResourcesComponent, NgIf],
 })
 export class AppComponent {
-  rectSize = {
-    width: '100',
-    height: '100',
-  };
+private authService = inject(AuthService)
+
+isAdmin = computed( () => this.authService.activePermission() === 'admin' );
+
 }

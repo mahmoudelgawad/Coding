@@ -1,11 +1,15 @@
-<div id="inputs">
-  <p>
-    <label>Width</label>
-    <input type="number" step="1.0" [(ngModel)]="rectSize.width" />
-  </p>
-  <p>
-    <label>Height</label>
-    <input type="number" step="1.0" [(ngModel)]="rectSize.height" />
-  </p>
-</div>
-<app-rect [(size)]="rectSize"/>
+<main>
+  <app-learning-resources />
+
+  <hr />
+
+  <app-auth />
+
+  @if(isAdmin()){
+    <p>for Admin only can see this !</p>
+  }
+
+  <!-- <p *ngIf="isAdmin()">for Admin only can see this !</p> -->
+
+ 
+</main>

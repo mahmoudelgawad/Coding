@@ -13,7 +13,7 @@ namespace ConsoleApp_PlayGround
         public readonly int readonlyVar2; //different in initalization
 
         private const int _constVar = 15;
-        public const int constVar2 = 20; // implicitly can call const vairable as static field
+        public const int constVar2 = 20; // implicitly static - can call const vairable as static field
         public ReadonlyClass(int var1) 
         {
             //_readonlyVar = var1;

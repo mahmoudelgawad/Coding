@@ -1,11 +1,13 @@
-﻿using System;
+﻿using ConsoleApp_PlayGround.Challenges.CoderByte;
+using System;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace ConsoleApp_PlayGround
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
 
             //Customer customer = new Customer();
@@ -23,14 +25,17 @@ namespace ConsoleApp_PlayGround
             //Console.WriteLine(++x);
             //Console.WriteLine(y+"  GOGO");
 
-            ArrayList lst = new ArrayList();
-            lst.Add("sdsd");
-            lst.Add(new Customer());
+            //ArrayList lst = new ArrayList();
+            //lst.Add("sdsd");
+            //lst.Add(new Customer());
 
-            Console.WriteLine(ReadonlyClass.constVar2);
+            //Console.WriteLine(ReadonlyClass.constVar2);
 
+            KeyAgeFinder objKeyAge = new KeyAgeFinder();
+            await objKeyAge.FindKeyAge();
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
+
 
         }
     }
