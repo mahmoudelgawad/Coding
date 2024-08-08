@@ -1,7 +1,31 @@
+const users=[
+    {
+      id:1,
+      name:"jack",
+      isActive:true,
+      age:20
+    },
+    {
+        id:2,
+        name:"sami",
+        isActive:true,
+        age:18
+    },
+    {
+        id:3,
+        name:"waleed",
+        isActive:false,
+        age:30
+    }
+];
 
 // users.sort((a,b) => b.age - a.age);
 // let names= users.map(user => user.age);
 // console.log("names = ", names);
+
+
+let searchResult = users.filter(u => u.id === 3);
+console.log({"searchResult":searchResult,"users":users});
 
 // let names=["a","b","c","a"];
 // let numbers=[10,1,6,35,15];
@@ -33,4 +57,6 @@ function funTestOne(){
 }
 // call named function
 funTestOne();
+
+
 
