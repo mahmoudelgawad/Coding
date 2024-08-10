@@ -11,7 +11,22 @@
 
   <!-- <p *ngIf="isAdmin()">for Admin only can see this !</p> -->
 
-  <p appAuth="admin">for Admin only can see this !</p>
+  <!-- attribute directive  -->
+  <!-- <p appAuth="admin">for Admin only can see this !</p> -->
+
+  <!-- structural directive  -->
+  <!-- <ng-template appAuth="admin">
+    <p>for Admin only can see this !</p>
+    <button>Click Me</button>
+  </ng-template> -->
+
+    <!-- syntatic sugar structural directive  -->
+  <div *appAuth="'admin'">
+    <p  class="protected-content admin">for Admin only can see this !</p>
+    <button>Click Me</button>
+  </div>
+  <p *appAuth="'user'" class="protected-content authenticated">for user only can see this !</p>
+  <p *appAuth="'guest'" class="protected-content unauthenticated">for guest only can see this !</p>
 
  
 </main>

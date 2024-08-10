@@ -38,7 +38,7 @@ namespace WebAPI_ASPCOREMVC_PlayGround
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //small middlewear testing
+            //small middlewear testing Run , Map , Next
             app.Run(async (httpContext) => { 
                 await httpContext.Response.WriteAsync("Allah akbar"); 
             });
