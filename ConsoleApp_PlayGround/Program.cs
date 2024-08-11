@@ -35,8 +35,6 @@ namespace ConsoleApp_PlayGround
             //KeyAgeFinder objKeyAge = new KeyAgeFinder();
             //await objKeyAge.FindKeyAge();
 
-         
-
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
 
 
