@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_PlayGround
 {
+    //reference:
     //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly
     public class ReadonlyClass
     {
@@ -16,15 +17,25 @@ namespace ConsoleApp_PlayGround
         public const int constVar2 = 20; // implicitly static - can call const vairable as static field
         public ReadonlyClass(int var1) 
         {
-            //_readonlyVar = var1;
+            _readonlyVar = var1;
           //  _constVar = var1; // error
         }
 
         public int Method1() 
         {
-            //_readonlyVar = +1; //error
+            //_readonlyVar = +1; //error, must assing in constructor or when initialize only
             //_constVar = +2; // error
             return _readonlyVar;
         }
     }
+
+    public class ReadonlyClassImplementation 
+    {
+        public static void Implement() 
+        {
+            ReadonlyClass readonlyClass = new ReadonlyClass(2);
+            Console.WriteLine(readonlyClass.Method1());
+        }
+    }
+
 }

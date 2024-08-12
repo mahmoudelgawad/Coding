@@ -17,14 +17,8 @@ namespace ConsoleApp_PlayGround
 
             //Console.WriteLine(customer.GetName());
 
-            //dynamic x = "c#";
-            //var y = 10;
-            //Console.WriteLine(x.Length);
-            //Console.WriteLine(y);
-            //x = 1 + 5;
-            //y = "sdsdsd";
-            //Console.WriteLine(++x);
-            //Console.WriteLine(y+"  GOGO");
+            VarDynamicClass.Implement();
+            ReadonlyClassImplementation.Implement();
 
             //ArrayList lst = new ArrayList();
             //lst.Add("sdsd");
