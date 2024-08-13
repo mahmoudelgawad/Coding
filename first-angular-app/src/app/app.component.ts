@@ -1,26 +1,28 @@
-import { Component, computed, inject } from '@angular/core';
-import { NgIf } from '@angular/common'; // or use CommonModule for all directives
-
-import { AuthComponent } from './auth/auth.component';
-import { LearningResourcesComponent } from './learning-resources/learning-resources.component';
-import { AuthService } from './auth/auth.service';
-import { AuthDirective } from './auth/auth.directive';
-import { LogDirective } from './log.directive';
-
+import { DatePipe, DecimalPipe } from '@angular/common';
+import { Component } from '@angular/core';
+import { TempraturePipe } from './Temprature.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [AuthComponent, LearningResourcesComponent, NgIf, AuthDirective, LogDirective],
-  //use host directive on app component, mean add directive on current host component 'app'
-  //and will log any click with that component
-  // hostDirectives:[LogDirective]
+  imports:[DatePipe, DecimalPipe, TempraturePipe]
 })
 export class AppComponent {
-private authService = inject(AuthService)
+  currentDate = new Date();
+  currentTemperaturs = {
+    berlin: 4.2749812,
+    newYork: 18.1214,
+    paris: 72.1209001,
+    chicago: 65.0775238,
+    gaza:60.2486345
+  };
 
-isAdmin = computed( () => this.authService.activePermission() === 'admin' );
+  historicTemperatures = [
+    25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5,
+  ];
 
+  onReset(index: number) {
+    this.historicTemperatures[index] = 18;
+  }
 }

@@ -1,32 +1,31 @@
 <main>
-  <app-learning-resources />
+  <article class="temperatures">
+    <header>
+      <img src="temp-icon.png" alt="Thermometer icon" />
+      <div>
+        <h2>Current Temperatures</h2>
+        <p>{{ currentDate | date:'short' }}</p>
+      </div>
+    </header>
+    <p>Gaza: {{ currentTemperaturs.gaza | temp }}</p>
+    <p>New York: {{ currentTemperaturs.newYork | number :'1.1-2' }}</p>
+    <p>Berlin: {{ currentTemperaturs.berlin | number :'1.1-2' }}</p>
+    <p>Paris: {{ currentTemperaturs.paris | number :'1.1-2' }}</p>
+    <p>Chicago: {{ currentTemperaturs.chicago | number :'1.1-2' }}</p>
+  </article>
 
-  <hr />
-
-  <app-auth />
-
-  <!-- @if(isAdmin()){
-    <p>for Admin only can see this !</p>
-  } -->
-
-  <!-- <p *ngIf="isAdmin()">for Admin only can see this !</p> -->
-
-  <!-- attribute directive  -->
-  <!-- <p appAuth="admin">for Admin only can see this !</p> -->
-
-  <!-- structural directive  -->
-  <!-- <ng-template appAuth="admin">
-    <p>for Admin only can see this !</p>
-    <button>Click Me</button>
-  </ng-template> -->
-
-    <!-- syntatic sugar structural directive  -->
-  <div *appAuth="'admin'" appLog>
-    <p  class="protected-content admin">for Admin only can see this !</p>
-    <button>Click Me</button>
-  </div>
-  <p *appAuth="'user'" class="protected-content authenticated">for user only can see this !</p>
-  <p *appAuth="'guest'" class="protected-content unauthenticated">for guest only can see this !</p>
-
- 
+  <article class="temperatures">
+    <header>
+      <img src="temp-icon.png" alt="Thermometer icon" />
+      <div>
+        <h2>Historic Temperatures</h2>
+        <p>Berlin</p>
+      </div>
+    </header>
+    <ul>
+      @for (temperature of historicTemperatures; track temperature) {
+      <li (click)="onReset($index)">{{ temperature }}</li>
+      }
+    </ul>
+  </article>
 </main>
