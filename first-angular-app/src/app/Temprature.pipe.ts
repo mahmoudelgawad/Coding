@@ -6,7 +6,7 @@ import { pipe } from "rxjs";
     standalone:true
 })
 export class TempraturePipe implements PipeTransform{ // custom pipe
-    transform(value: string | number| null, inputType:'c'|'f', outputType:'f'|'c') { //act with union types string or number
+    transform(value: string | number| null, inputType:'c'|'f', outputType?:'f'|'c') { //act with union types string or number
         if(!value){ // check the act value is null, return as it is
             return value;
         }
