@@ -7,11 +7,13 @@
         <p>{{ currentDate | date:'short' }}</p>
       </div>
     </header>
-    <p>Gaza: {{ currentTemperaturs.gaza | temp }}</p>
-    <p>New York: {{ currentTemperaturs.newYork | number :'1.1-2' }}</p>
-    <p>Berlin: {{ currentTemperaturs.berlin | number :'1.1-2' }}</p>
-    <p>Paris: {{ currentTemperaturs.paris | number :'1.1-2' }}</p>
-    <p>Chicago: {{ currentTemperaturs.chicago | number :'1.1-2' }}</p>
+    <!--we not need DecimalPipe pipe any more , the temp custom pipe will handle the decimal toFixed(2) -->
+    <!-- <p>Gaza: {{ currentTemperaturs.gaza   |number :'1.1-2'  |  temp :'f' :'c' }}</p> -->
+    <p>Gaza: {{ currentTemperaturs.gaza  | temp :'f' :'c' }}</p>
+    <p>New York: {{ currentTemperaturs.newYork | temp :'f' :'c' }}</p>
+    <p>Berlin: {{ currentTemperaturs.berlin | temp :'f' :'c'  }}</p>
+    <p>Paris: {{ currentTemperaturs.paris | temp :'f' :'c' }}</p>
+    <p>Chicago: {{ currentTemperaturs.chicago | temp :'f' :'c'  }}</p>
   </article>
 
   <article class="temperatures">

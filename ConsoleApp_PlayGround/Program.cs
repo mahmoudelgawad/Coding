@@ -1,4 +1,5 @@
 ﻿using ConsoleApp_PlayGround.Challenges.CoderByte;
+using ConsoleApp_PlayGround.compare;
 using ConsoleApp_PlayGround.Delegate;
 using System;
 using System.Collections;
@@ -11,23 +12,11 @@ namespace ConsoleApp_PlayGround
         static async Task Main(string[] args)
         {
 
-            //Customer customer = new Customer();
-            //customer.FirstName = "mahmoud";
-            //customer.LastName = "ahmed";
+            //VarDynamicClass.Implement();
+            //ReadonlyClassImplementation.Implement();
 
-            //Console.WriteLine(customer.GetName());
+            ComparableImplementation.Implement();
 
-            VarDynamicClass.Implement();
-            ReadonlyClassImplementation.Implement();
-
-            //ArrayList lst = new ArrayList();
-            //lst.Add("sdsd");
-            //lst.Add(new Customer());
-
-            //Console.WriteLine(ReadonlyClass.constVar2);
-
-            //KeyAgeFinder objKeyAge = new KeyAgeFinder();
-            //await objKeyAge.FindKeyAge();
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
 
