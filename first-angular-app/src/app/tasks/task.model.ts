@@ -1,3 +1,4 @@
+//union types
 export type TaskStatus = 'OPEN' | 'IN_PROGRESS' | 'DONE';
 
 export interface Task {
