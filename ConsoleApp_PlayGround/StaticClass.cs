@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_PlayGround
 {
-   static class StaticClass
+   static class StaticClass // can't Create instance
     {
        readonly static string name = "mahmoud";
 
@@ -29,7 +29,5 @@ namespace ConsoleApp_PlayGround
             //var obj = this.
             return argu;
         }
-
-
     }
 }

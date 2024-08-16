@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_PlayGround.compare
 {
-    public interface IPersonBase : IComparable<IPersonBase>
+    public interface IPerson : IComparable<IPerson>
     {
         String Name { get; set; }
         int Age { get; set; }
@@ -28,7 +28,7 @@ namespace ConsoleApp_PlayGround.compare
             set { _age = value; }
         }        
     }
-    public class Person :IPersonBase
+    public class Person :IPerson
     {
         private string _name;
         private int _age;
@@ -46,7 +46,7 @@ namespace ConsoleApp_PlayGround.compare
         }
 
         //private int CompareTo(Person other) // ERROR: can not implement because its private
-        public int CompareTo(IPersonBase other)
+        public int CompareTo(IPerson other)
         {
             if (other == null)
             {
@@ -68,29 +68,35 @@ namespace ConsoleApp_PlayGround.compare
     }
     public class ComparableImplementation
     {
-        public static void Implement()
+        public static void Implement(bool showError = false)
         {
-            //var personsNotComparable = new List<IPersonBase>
-            //{
-            //    new PersonNotComparable{ Name= "Mahmoud",Age=41 },
-            //    new PersonNotComparable{ Name= "Rohagi",Age=40 },
-            //    new PersonNotComparable{ Name= "Jolaji",Age=25 },
-            //    new PersonNotComparable{ Name= "Sonwarson",Age=31 },
-            //    new PersonNotComparable{ Name= "Oakka",Age=10 }
-            //};
+            var personsNotComparable = new List<PersonNotComparable>
+            {
+                new PersonNotComparable{ Name= "mahmoud",Age=41 },
+                new PersonNotComparable{ Name= "rohagi",Age=40 },
+                new PersonNotComparable{ Name= "jolaji",Age=25 },
+                new PersonNotComparable{ Name= "sonwarson",Age=31 },
+                new PersonNotComparable{ Name= "oakka",Age=10 }
+            };
 
+            //*Note
             //DisplayPersons(personsNotComparable);
-            //personsNotComparable.Sort(); // ERROR: sort will confused, Invalid operation exception
+            if (showError) 
+            {
+             personsNotComparable.Sort(); // ERROR: sort will confused, Invalid operation exception
+            }
+            
 
 
 
-            var persons = new List<IPersonBase>
+            var persons = new List<IPerson>
             {
                 new Person{ Name= "Mahmoud",Age=41 },
+                new Person{ Name= "Oakka",Age=10 },
                 new Person{ Name= "Rohagi",Age=40 },
                 new Person{ Name= "Jolaji",Age=25 },
                 new Person{ Name= "Sonwarson",Age=31 },
-                new Person{ Name= "Oakka",Age=10 }
+ 
             };
 
 
@@ -104,7 +110,7 @@ namespace ConsoleApp_PlayGround.compare
 
         }
 
-        public static void DisplayPersons(List<IPersonBase> persons) 
+        public static void DisplayPersons(List<IPerson> persons) 
         {
             foreach (var p in persons) 
             {

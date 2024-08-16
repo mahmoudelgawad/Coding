@@ -14,8 +14,12 @@ namespace ConsoleApp_PlayGround
 
             //VarDynamicClass.Implement();
             //ReadonlyClassImplementation.Implement();
+            //AbstractClassImplementation.Implement();
 
-            ComparableImplementation.Implement();
+            //ComparableBaseClassImplementation.Implement();
+            //ComparableImplementation.Implement(true);
+
+            ComparerImplementation.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
