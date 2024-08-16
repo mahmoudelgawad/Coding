@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp_PlayGround.compare
+namespace ConsoleApp_PlayGround.Compare
 {
     public interface IPerson : IComparable<IPerson>
     {

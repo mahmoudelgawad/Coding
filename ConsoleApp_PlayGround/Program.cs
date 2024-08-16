@@ -1,5 +1,6 @@
-﻿using ConsoleApp_PlayGround.Challenges.CoderByte;
-using ConsoleApp_PlayGround.compare;
+﻿using ConsoleApp_PlayGround.Challenges;
+using ConsoleApp_PlayGround.Challenges.CoderByte;
+using ConsoleApp_PlayGround.Compare;
 using ConsoleApp_PlayGround.Delegate;
 using System;
 using System.Collections;
@@ -19,7 +20,9 @@ namespace ConsoleApp_PlayGround
             //ComparableBaseClassImplementation.Implement();
             //ComparableImplementation.Implement(true);
 
-            ComparerImplementation.Implement();
+            //ComparerImplementation.Implement();
+
+            ArrayDoublicateItems.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
