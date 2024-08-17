@@ -5,16 +5,17 @@ import { TasksListComponent } from "./tasks-list/tasks-list.component";
 @Injectable({providedIn:"root"})
 export class TaskService{
 
-    tasks = signal<Task[]>([]);
-    addTask(taskData:{title:string, description:string}){
+    private tasks = signal<Task[]>([]);
 
+    allTasks = this.tasks.asReadonly();
+
+    addTask(taskData:{title:string, description:string}){
         let newTask:Task= {
             ...taskData,
             id:Math.random().toString(),
             status:"OPEN"
         }
         this.tasks.update((old) => [...old,newTask]);
-
     }
 
 }
