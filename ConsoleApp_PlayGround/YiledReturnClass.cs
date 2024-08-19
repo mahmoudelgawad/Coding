@@ -9,7 +9,11 @@ namespace ConsoleApp_PlayGround
 {
     internal class YieldReturnClass
     {
-       private List<string> strList = new List<string> { "mahmoud", "ahmed", "mohamed", "yazeed" };
+        //yield return help for
+        //1- return custome iteration collection instead use tempdata
+        //2- statful iteration
+
+        private List<string> strList = new List<string> { "mahmoud", "ahmed", "mohamed", "yazeed" };
         private List<int> numList = new List<int> {1,2,3,4,5};
         public IEnumerable<string> getStringValues() 
         {
@@ -37,7 +41,7 @@ namespace ConsoleApp_PlayGround
             {
                 total += i;
                 // just it's send data to the caller and return for the next
-                // not wait to fill and return new collecion
+                // not wait until to fill and return new collecion
                 Console.WriteLine($"ready for next value: {i}");
                 yield return total;
             }
@@ -48,6 +52,7 @@ namespace ConsoleApp_PlayGround
     {
         public static void Implement() 
         {
+            
             var yieldRetrunObj = new YieldReturnClass();
             var values = yieldRetrunObj.getStringValues();
             Console.WriteLine(string.Join(",",values.ToArray()));
