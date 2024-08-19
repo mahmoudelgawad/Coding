@@ -22,7 +22,9 @@ namespace ConsoleApp_PlayGround
 
             //ComparerImplementation.Implement();
 
-            ArrayDoublicateItems.Implement();
+            //ArrayDoublicateItems.Implement();
+
+            YiledReturnImplementation.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
