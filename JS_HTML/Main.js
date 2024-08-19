@@ -23,9 +23,16 @@ const users=[
 // let names= users.map(user => user.age);
 // console.log("names = ", names);
 
+function MapOnUsers(){
+    //Map return new Array , not reference affect on orignal array
+    let newUsers = users.map(u => u.id === 3 ? {...u,name:"GAZA! Live"} : u);
+    console.log({old:users, new: newUsers});
+}
 
-let searchResult = users.filter(u => u.id === 3);
-console.log({"searchResult":searchResult,"users":users});
+
+
+// let searchResult = users.filter(u => u.id === 3);
+// console.log({"searchResult":searchResult,"users":users});
 
 // let names=["a","b","c","a"];
 // let numbers=[10,1,6,35,15];
@@ -42,21 +49,29 @@ console.log({"searchResult":searchResult,"users":users});
 
 
 ////###############  filter   ##################
-const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-
-const result = words.filter((word) => word.length > 6);
-result[0]="mahmoud";
-console.log(result);
-console.log(words);
+function FilterOnArray(){
+    const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+    const result = words.filter((word) => word.length > 6);
+    result[0]="mahmoud";
+    console.log(result);
+    console.log(words);
 // Expected output: Array ["exuberant", "destruction", "present"]
+}
+
 
 //named function
 function funTestOne(){
     console.log("funTestOne()");
     document.writeln("funTestOne()");
 }
+
+
+
+////###############  Implementation   ##################
 // call named function
-funTestOne();
+//funTestOne();
+
+MapOnUsers();
 
 
 

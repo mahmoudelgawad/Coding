@@ -1,5 +1,5 @@
 import { Injectable, signal } from "@angular/core";
-import { Task } from "./task.model";
+import { Task, TaskStatus } from "./task.model";
 import { TasksListComponent } from "./tasks-list/tasks-list.component";
 
 @Injectable({providedIn:"root"})
@@ -16,6 +16,12 @@ export class TaskService{
             status:"OPEN"
         }
         this.tasks.update((old) => [...old,newTask]);
+    }
+
+    updateTasksStatus(taskId:string,taskStatus:TaskStatus)
+    {
+        this.tasks.update((old) => old.map((task) => 
+            (task.id === taskId) ? {...task,status:taskStatus} : task  ));     
     }
 
 }
