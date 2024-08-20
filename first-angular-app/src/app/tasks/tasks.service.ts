@@ -2,8 +2,13 @@ import { Injectable, signal } from "@angular/core";
 import { Task, TaskStatus } from "./task.model";
 import { TasksListComponent } from "./tasks-list/tasks-list.component";
 
+//comment if you using another way to ject
+//1- appboostrab configruation providers
+//2- element @component decorator providers
+
+//will create single instance for entire app root
 @Injectable({providedIn:"root"})
-export class TaskService{
+export class TasksService{
 
     private tasks = signal<Task[]>([]);
 
