@@ -34,6 +34,7 @@ namespace ConsoleApp_PlayGround
             }
         }
 
+        //implement statful iteration with yield return
         public IEnumerable<int> getTotal() 
         {
             int total = 0;

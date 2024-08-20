@@ -1,4 +1,5 @@
-﻿using ConsoleApp_PlayGround.Challenges;
+﻿using ConsoleApp_PlayGround.AttributeInfo;
+using ConsoleApp_PlayGround.Challenges;
 using ConsoleApp_PlayGround.Challenges.CoderByte;
 using ConsoleApp_PlayGround.Compare;
 using ConsoleApp_PlayGround.Delegate;
@@ -24,7 +25,9 @@ namespace ConsoleApp_PlayGround
 
             //ArrayDoublicateItems.Implement();
 
-            YiledReturnImplementation.Implement();
+            //YiledReturnImplementation.Implement();
+
+            AttributeClassImplementation.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
