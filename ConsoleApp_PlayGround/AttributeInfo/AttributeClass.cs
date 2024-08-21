@@ -48,9 +48,6 @@ namespace ConsoleApp_PlayGround.AttributeInfo
             CustomerObj.Method();
             //CustomerObj.MethodCairo(); //ERROR: obsolete true
             CustomerObj.MethodAlex();
-
-        
         }
-    
     }
 }

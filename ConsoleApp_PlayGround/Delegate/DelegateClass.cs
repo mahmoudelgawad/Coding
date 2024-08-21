@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,8 @@ namespace ConsoleApp_PlayGround.Delegate
         //event use delegate internally, it encapsulate the delegeates and make them safe, 
         //prevent from assign '=' direct to 'null' value specially outside the class at compile time
         //outside definition class use += or -=
-        public  PrintMessageDelgate printMsgDelgObj = null;
+        public   PrintMessageDelgate printMsgDelgObj = null;
+        public event PrintMessageDelgate printMsgDelgEventObj = null;
 
 
         public void PrintCustomMessage(string str) 
@@ -32,14 +34,28 @@ namespace ConsoleApp_PlayGround.Delegate
             Console.WriteLine($"Hello: {str}");
         }
 
-        public void DoImplement() 
+        public void Implement() 
         {
             //printMsgDelgObj = null;
-            printMsgDelgObj("dd");
+             printMsgDelgObj("dd");
 
             //DelegateClass ob = new DelegateClass();
             //ob.printMsgDelgObj += null;
             //ob.DoImplement();
+
+        }
+    }
+
+    public class DelegateClassImplemntation 
+    {
+        public static void Implement() 
+        {
+            DelegateClass delegateClassObj = new DelegateClass();
+            delegateClassObj.printMsgDelgObj = null; //no error
+           // delegateClassObj.printMsgDelgEventObj = null; //error
+
+
+
 
         }
     }

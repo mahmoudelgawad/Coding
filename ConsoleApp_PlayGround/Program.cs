@@ -27,7 +27,8 @@ namespace ConsoleApp_PlayGround
 
             //YiledReturnImplementation.Implement();
 
-            AttributeClassImplementation.Implement();
+            // AttributeClassImplementation.Implement();
+            DelegateClassImplemntation.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
