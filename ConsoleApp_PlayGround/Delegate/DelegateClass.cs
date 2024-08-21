@@ -34,15 +34,10 @@ namespace ConsoleApp_PlayGround.Delegate
             Console.WriteLine($"Hello: {str}");
         }
 
-        public void Implement() 
+        public void Implement(string msg = null) 
         {
-            //printMsgDelgObj = null;
-             printMsgDelgObj("dd");
-
-            //DelegateClass ob = new DelegateClass();
-            //ob.printMsgDelgObj += null;
-            //ob.DoImplement();
-
+            printMsgDelgObj("I am normal delgate");
+            printMsgDelgEventObj(msg);
         }
     }
 
@@ -52,10 +47,11 @@ namespace ConsoleApp_PlayGround.Delegate
         {
             DelegateClass delegateClassObj = new DelegateClass();
             delegateClassObj.printMsgDelgObj = null; //no error
-           // delegateClassObj.printMsgDelgEventObj = null; //error
+           // delegateClassObj.printMsgDelgEventObj = null; //error need '+=' or '-='
 
-
-
+            delegateClassObj.printMsgDelgObj = delegateClassObj.PrintCustomMessage;
+            delegateClassObj.printMsgDelgEventObj += delegateClassObj.PrintHelloMessage;
+            delegateClassObj.Implement("called event from outside own class");
 
         }
     }
