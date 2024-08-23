@@ -3,9 +3,12 @@ import { Task, TaskStatus } from "./task.model";
 import { TasksListComponent } from "./tasks-list/tasks-list.component";
 import { LoggingService } from "../logging.service";
 
-//comment if you using another way to ject
-//1- appboostrab configruation providers
-//2- element @component decorator providers
+//for using another way to inject services
+//1- @Injectable({}) decorator
+//2- appboostrab configruation providers
+//3- element @component decorator providers
+     //but will raise error if there services nested in another service
+//4- by create instance of custom DI token, 'new InjectionToken()', with bootstrapApp configuration provider
 
 //will create single instance for entire app root
 @Injectable({providedIn:"root"})

@@ -10,19 +10,24 @@ namespace ConsoleApp_PlayGround
     //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly
     public class ReadonlyClass
     {
-        private readonly int _readonlyVar; //different in initalization
-        public readonly int readonlyVar2; //different in initalization
+        //different in initalization
+        //initalize in constructor or definition only
+        private readonly int _readonlyVar; 
+        public readonly int readonlyVar2;
 
-        private const int _constVar = 15;
-        public const int constVar2 = 20; // implicitly static - can call const vairable as static field
+        // must initalize
+        // implicitly static - can call const vairable as static field
+        private const int _constVar = 15; 
+        public const int constVar2 = 20; 
         public ReadonlyClass(int var1) 
         {
-            _readonlyVar = var1;
+           // _readonlyVar = var1; // OK initialize in the constructor
           //  _constVar = var1; // error
         }
 
         public int Method1() 
         {
+            //_readonlyVar = 12; // ERROR, initalize in constructor or definition only
             //_readonlyVar = +1; //error, must assing in constructor or when initialize only
             //_constVar = +2; // error
             return _readonlyVar;
