@@ -1,10 +1,7 @@
-import { InjectionToken } from "@angular/core";
+import { InjectionToken, Provider } from "@angular/core";
 
 //union types
 export type TaskStatus = 'OPEN' | 'IN_PROGRESS' | 'DONE';
-
-//to inject non class for 'task-item' component
-export const TASK_STATUS_OPTIONS = new InjectionToken<TaskStatusOptions>("TASK_STATUS_OPTIONS");
 
 type TaskStatusOptions = 
 {
@@ -12,6 +9,9 @@ type TaskStatusOptions =
  status:TaskStatus;
  text:string;
 }[];
+
+//to inject non class for 'task-item' component
+export const TASK_STATUS_OPTIONS = new InjectionToken<TaskStatusOptions>("TASK_STATUS_OPTIONS");
 
 export const taskStatusOptions : TaskStatusOptions = [
   {
@@ -30,6 +30,9 @@ export const taskStatusOptions : TaskStatusOptions = [
     text:'Completed'
   }
 ];
+
+//provide the InjectionToken Instance, and value of variable for type that we target
+export const taskStatusOptionsProvider :Provider = {provide:TASK_STATUS_OPTIONS,useValue:taskStatusOptions};
 
 export interface Task {
   id: string;
