@@ -1,8 +1,9 @@
 ﻿using ConsoleApp_PlayGround.AttributeInfo;
-using ConsoleApp_PlayGround.Challenges;
 using ConsoleApp_PlayGround.Challenges.CoderByte;
 using ConsoleApp_PlayGround.Compare;
 using ConsoleApp_PlayGround.Delegate;
+using ConsoleApp_PlayGround.Serialization;
+using ConsoleApp_PlayGround.Strings;
 using System;
 using System.Collections;
 using System.Threading.Tasks;
@@ -29,7 +30,9 @@ namespace ConsoleApp_PlayGround
 
             // AttributeClassImplementation.Implement();
             //DelegateClassImplemntation.Implement();
-            SubstringClass.Implement();
+            //SubstringClass.Implement();
+
+            SerializationImeplement.Implement();
 
 
 

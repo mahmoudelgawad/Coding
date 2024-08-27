@@ -8,7 +8,7 @@ namespace ConsoleApp_PlayGround.Challenges
 {
     internal class ArrayDoublicateItems
     {
-
+        //get dublictae items in Array
         public static void Implement() 
         {
             //var ar = new int[9] {5,4,66,4,7,8,6,1,4};
