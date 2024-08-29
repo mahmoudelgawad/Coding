@@ -50,7 +50,7 @@ namespace ConsoleApp_PlayGround.Serialization
          
         }
 
-        // explicit interface implemntation
+        // explicit interface implemntation, with no any access modifier
         void Iimplementation.Implement() 
         {
             SerializationImeplement.Implement();

@@ -11,6 +11,10 @@ export class InfoMessageComponent {
   get debugOutput() {
     console.log('[InfoMessages] "debugOutput" binding re-evaluated.');
     return 'InfoMessage Component Debug Output';
+    //that will cause error because , Develeopment mode detect changes twice 
+    // and the second time will return different value than the first one
+    //Angualr Dev mode : detect unwanted changes 
+    //return Math.random();
   }
 
   onLog() {
