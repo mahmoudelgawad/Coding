@@ -32,7 +32,9 @@ namespace ConsoleApp_PlayGround
             //DelegateClassImplemntation.Implement();
             //SubstringClass.Implement();
 
-            SerializationImeplement.Implement();
+            //SerializationImeplement.Implement();
+
+
 
 
 
