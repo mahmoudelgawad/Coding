@@ -20,3 +20,5 @@ ASPCOREMVC_PlayGround/bin*
 /ConsoleApp_PlayGround/obj/Debug/net5.0/ConsoleApp_PlayGround.AssemblyInfo.cs
 /ConsoleApp_PlayGround/obj/Debug/net5.0/ConsoleApp_PlayGround.dll
 /ConsoleApp_PlayGround/obj/Debug/net5.0/ConsoleApp_PlayGround.sourcelink.json
+/WebAPI_ASPCOREMVC_PlayGround/obj/Debug/net5.0/WebAPI_ASPCOREMVC_PlayGround.AssemblyInfo.cs
+/WebAPI_ASPCOREMVC_PlayGround/obj/Debug/net5.0/WebAPI_ASPCOREMVC_PlayGround.AssemblyInfoInputs.cache

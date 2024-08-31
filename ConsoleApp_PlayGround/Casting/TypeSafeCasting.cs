@@ -18,5 +18,11 @@ namespace ConsoleApp_PlayGround.Casting
             var res = num + str; // OK , will make res as string by default
             Console.WriteLine(res);
         }
+
+        private void DoubleToInt() 
+        {
+            double d = 100.35;
+            int i = (int)d; // explicit casting/conversion
+        }
     }
 }

@@ -34,12 +34,14 @@ namespace WebAPI_ASPCOREMVC_PlayGround.Controllers
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("MahmoudAhmed@d15647c"));
             var credentials = new SigningCredentials(securityKey, algo);
 
-            var token = new JwtSecurityToken("MahmoudIssuerApp", // issuer
+            var token = new JwtSecurityToken(
+                "MahmoudIssuerApp", // issuer
                 "ForClientsAudience", //audience
-                claims,
+                claims, //IEnumerable<Claim>
                 null,   //not before datetime
                 null,   //expire
-                credentials);
+                credentials //SigningCredentials instance
+                );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
