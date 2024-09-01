@@ -11,7 +11,7 @@ import { NewMessageComponent } from './new-message/new-message.component';
   imports: [MessagesListComponent, NewMessageComponent],
   // it's less aware of events listeners outside compoment
   // or less evaluate changes on current compoennt, with unnessary detect changes
-  //but not restrict events send changes to other components
+  // but not restrict events send changes to other components
   // enhance performance effecincy , if your project big
   // and your component have no inputs
   changeDetection:ChangeDetectionStrategy.OnPush

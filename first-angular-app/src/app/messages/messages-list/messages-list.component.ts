@@ -1,13 +1,18 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import { MessagesService } from '../messages.service';
 
 @Component({
   selector: 'app-messages-list',
   standalone: true,
   templateUrl: './messages-list.component.html',
   styleUrl: './messages-list.component.css',
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class MessagesListComponent {
-  messages = input.required<string[]>();
+  // messages = input.required<string[]>();
+  // private to not allow access service instance from the view template
+ private messagesService = inject(MessagesService);
+ messages = this.messagesService.allMessages;
 
   get debugOutput() {
     console.log('[MessagesList] "debugOutput" binding re-evaluated.');
