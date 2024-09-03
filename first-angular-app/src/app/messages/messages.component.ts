@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './messages.component.html',
   styleUrl: './messages.component.css',
   imports: [MessagesListComponent, NewMessageComponent],
-  // it's less aware of events listeners outside compoment
+  // its less aware of events listeners outside compoment
   // or less evaluate changes on current compoennt, with unnessary detect changes comming from outside
   // but not restrict local events, it send changes to other components
   // if input changes , or locla manually changes, send event detect changes for the root components

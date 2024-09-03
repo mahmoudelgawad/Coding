@@ -9,7 +9,7 @@ export class MessagesService {
 // private messages = signal<string[]>([]);
 // allMessages = this.messages.asReadonly();
 
-//using rxjs observable object
+//using normal private object with rxjs observable object to handle emit changes/updates
 private messages : string[]=[];
 messages$ = new BehaviorSubject<string[]>([]);
 
