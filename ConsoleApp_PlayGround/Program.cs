@@ -2,6 +2,7 @@
 using ConsoleApp_PlayGround.Challenges.CoderByte;
 using ConsoleApp_PlayGround.Compare;
 using ConsoleApp_PlayGround.Delegate;
+using ConsoleApp_PlayGround.ParallelThread;
 using ConsoleApp_PlayGround.Serialization;
 using ConsoleApp_PlayGround.Strings;
 using System;
@@ -35,7 +36,7 @@ namespace ConsoleApp_PlayGround
             //SerializationImeplement.Implement();
 
 
-
+            ParallelThreadClassImplementation.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
