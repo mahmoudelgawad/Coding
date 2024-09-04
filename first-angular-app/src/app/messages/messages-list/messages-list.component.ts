@@ -27,7 +27,7 @@ messages$ = this.messagesService.messages$;
  messages: string[] = [];
  */
  ngOnInit(): void {
-  // AsyncPipe used instead, ignored the following block
+  // if AsyncPipe used instead, ignored the following block
   /*
     let messagesSubscribtion = this.messagesService.messages$.subscribe((result) =>{
     this.messages = result;
