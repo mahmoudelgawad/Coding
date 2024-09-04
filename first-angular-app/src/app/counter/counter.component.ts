@@ -11,6 +11,10 @@ import { InfoMessageComponent } from '../info-message/info-message.component';
 })
 export class CounterComponent implements OnInit {
   count = signal(0);
+  //Zone.js help Angular components to dectec
+  //detect changes 
+  //user events
+  //expire timer
   zone = inject(NgZone);
   ngOnInit(): void {
     setTimeout(() => {

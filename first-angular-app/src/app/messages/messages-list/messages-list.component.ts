@@ -20,7 +20,7 @@ messages$ = this.messagesService.messages$;
 
 //  messages = this.messagesService.allMessages;
 
- //to check changes manually, when not use signal object
+ //to check detect changes manually, when not use signal object
  /*
  cdr = inject(ChangeDetectorRef);
  destroyRef = inject(DestroyRef);
