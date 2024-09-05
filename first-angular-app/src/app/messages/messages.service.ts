@@ -11,6 +11,7 @@ export class MessagesService {
 
 //using normal private object with rxjs observable object to handle emit changes/updates
 private messages : string[]=[];
+//BehaviorSubject is one way observable to emit events 
 messages$ = new BehaviorSubject<string[]>([]);
 
 //using signal
