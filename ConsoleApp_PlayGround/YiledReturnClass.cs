@@ -19,10 +19,11 @@ namespace ConsoleApp_PlayGround
         {
             foreach (var str in strList) 
             {
-                yield return str;               
+                yield return str+ " -Edited";               
             }
         }
 
+        // just reurn new collection instead use tempdata
         public IEnumerable<string> FilterStringsValues() 
         {
             foreach (var str in strList) 
