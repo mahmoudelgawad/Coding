@@ -1,10 +1,10 @@
 import { Component, computed, DestroyRef, effect, inject, OnInit, signal } from '@angular/core';
 import { toObservable } from '@angular/core/rxjs-interop';
-import { interval,map } from 'rxjs';
+import { interval, map } from 'rxjs';
 
 //Observables
 //has no initial values
-//Observables is 'values over the time" pipe line emits values
+//Observables is 'values over the time" pipe line emits values from stream data
 //greate in management events and stream data
 
 
@@ -28,18 +28,32 @@ signalDoubleValue = computed(() => this.signalValue() * 2 );
 
 //countClick:number = 0;
 signalCountClick = signal(0);
-observableCountClick = toObservable(this.signalCountClick);
+observableCountClick$ = toObservable(this.signalCountClick);
 
 constructor(){
   // effect run with each signal object updates
-  effect(() =>{
+/*  effect(() =>{
     console.log(`signalValue = ${this.signalValue()}`);
     console.log(`signalDoubleValue = ${this.signalDoubleValue()}`);    
-
+  
     //console.log(`clicked on button ${this.countClick} times.`);
     console.log(`clicked on button ${this.signalCountClick()} times.`);
 
   });
+  */
+ let observableObj = this.observableCountClick$.subscribe({
+  next:(value) =>{
+    //log every change set or update on signalCountClick object 
+    //instead log with effect method on constructor
+         console.log(`observableCountClick value is ${value}`);},
+  error:undefined,
+  complete:undefined
+});
+
+ this.destroy.onDestroy(() =>{
+  observableObj.unsubscribe();
+ });
+ 
 }
 
   ngOnInit(){
