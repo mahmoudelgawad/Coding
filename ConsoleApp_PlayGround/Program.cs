@@ -35,7 +35,6 @@ namespace ConsoleApp_PlayGround
 
             //SerializationImeplement.Implement();
 
-
             ParallelThreadClassImplementation.Implement();
 
 
