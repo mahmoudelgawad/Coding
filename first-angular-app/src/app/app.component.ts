@@ -16,9 +16,11 @@ import { interval, map, Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   standalone: true,
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrl:'./app.component.css'
 })
 export class AppComponent implements OnInit {
+  isBlue:boolean = true;
 
 destroy= inject(DestroyRef);
 

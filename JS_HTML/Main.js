@@ -88,10 +88,8 @@ function arraySplice(){
      console.log(`spliceResult: 'yellow' to 'green'`,spliceResult);
      // output:['julia','green','blue','lio']
     
-
-    console.log("arraySlice()",{source:dogsNames,result:spliceResult});
+    console.log("arraySplice()",{source:dogsNames,result:spliceResult});
 }
-
 
 
 //named function
@@ -101,6 +99,76 @@ function funTestOne(){
 }
 
 
+function spreadOperator(){
+    const obj1 ={prop1:1};
+    const obj2 = obj1; //point to same reference
+    const obj3={...obj1};
+    obj2.prop1=2; //change affect on obj1 reference value
+    console.log({obj1:obj1, obj2:obj2, obj3:obj3});
+}
+
+function HoistingVar(){
+    function fun(){
+        console.log({'Top HoistingVar().fun() -> I value':i});
+        var arr = [];
+        for(var i = 0;i<10;i++){
+            arr[i]=function(){return i;}
+        }
+        console.log({'HoistingVar().fun() -> I value':i});
+        return arr;
+    }
+    // var i not defined here
+    // console.log({'HoistingVar() -> I value':i});
+    var arr2 = fun();
+    console.log({arr2Elm5:arr2[5]()});  
+}
+
+
+function thisKeyWordWithObject(){
+
+    let JSONObj = {
+        name:'ebcell',
+        func : function(){
+            let self = this;
+            console.log(this.name);
+            console.log(self.name);
+    
+            /*()() this point to new object*/
+            (function(){
+                console.log(this.name === "");
+                console.log(self.name);
+            })();
+
+            /*this point to new object*/
+            // let fun = function(){
+            //     console.log(this.name);
+            //     console.log(self.name);
+            // };
+            // fun();
+        
+
+        /*this point to exist JSONObj object*/
+        //    let fun = () =>{
+        //          console.log(this.name);
+        //         console.log(self.name);
+        //     }
+        //     fun();
+
+        },
+    };
+
+    JSONObj.func();
+}
+
+function setTimeOutConsoleOrderCalls(){
+    console.log(1);
+    setTimeout(() =>{console.log(2)},1000);
+    setTimeout(()=>{console.log(3)},0);
+    console.log(4);
+}
+
+
+
 
 ////###############  Implementation   ##################
 // call named function
@@ -108,7 +176,10 @@ function funTestOne(){
 //arrayMap();
 //arrayFilter();
 //arraySlice();
-arraySplice();
-
+//arraySplice();
+//spreadOperator();
+//HoistingVar();
+//thisKeyWordWithObject();
+setTimeOutConsoleOrderCalls();
 
 
