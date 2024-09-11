@@ -1,6 +1,6 @@
 import { Component, computed, DestroyRef, effect, inject, OnInit, signal } from '@angular/core';
-import { toObservable } from '@angular/core/rxjs-interop';
-import { interval, map } from 'rxjs';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { interval, map, Observable } from 'rxjs';
 
 //Observables
 //has no initial values
@@ -30,6 +30,22 @@ signalDoubleValue = computed(() => this.signalValue() * 2 );
 signalCountClick = signal(0);
 observableCountClick$ = toObservable(this.signalCountClick);
 
+//every 1 second emit value
+observableInterval$ = interval(1000);
+//first item is undefined because observable not have initial value
+signalInterval = toSignal(this.observableInterval$,{initialValue:undefined});
+
+
+//custom observable from scratch
+customObservable$ = new Observable((subscriber) =>{
+  setInterval(() =>{
+    console.log("Emitt Value");
+    //emitt next value every 2 sec
+    subscriber.next({message:'new value'});
+  },2000);
+});
+
+
 constructor(){
   // effect run with each signal object updates
 /*  effect(() =>{
@@ -41,7 +57,7 @@ constructor(){
 
   });
   */
- let observableObj = this.observableCountClick$.subscribe({
+ let observableSubsObj = this.observableCountClick$.subscribe({
   next:(value) =>{
     //log every change set or update on signalCountClick object 
     //instead log with effect method on constructor
@@ -50,8 +66,11 @@ constructor(){
   complete:undefined
 });
 
+let customObservableSubsObj = this.customObservable$.subscribe((val) =>{console.log(val)});
+
  this.destroy.onDestroy(() =>{
-  observableObj.unsubscribe();
+  observableSubsObj.unsubscribe();
+  customObservableSubsObj.unsubscribe();
  });
  
 }
