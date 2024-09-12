@@ -40,10 +40,19 @@ signalInterval = toSignal(this.observableInterval$,{initialValue:undefined});
 
 //custom observable from scratch
 customObservable$ = new Observable((subscriber) =>{
-  setInterval(() =>{
+  let counter = 0;
+  const intervalObj = setInterval(() =>{
+    if(counter > 3){
+      clearInterval(intervalObj);
+      subscriber.complete();
+      return;
+    }
+
     console.log("Emitt Value");
     //emitt next value every 2 sec
     subscriber.next({message:'new value'});
+    //subscriber.error("ERROR Message");
+    ++counter;
   },2000);
 });
 
@@ -68,7 +77,11 @@ constructor(){
   complete:undefined
 });
 
-let customObservableSubsObj = this.customObservable$.subscribe((val) =>{console.log(val)});
+let customObservableSubsObj = this.customObservable$.subscribe({
+  next:(val) =>{console.log(val)},
+  error:undefined, //for handling error message
+  complete:() =>{console.log("COMPLETED!")}
+});
 
  this.destroy.onDestroy(() =>{
   observableSubsObj.unsubscribe();
