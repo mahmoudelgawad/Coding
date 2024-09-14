@@ -23,7 +23,7 @@ namespace ConsoleApp_PlayGround
             }
         }
 
-        // just reurn new collection instead use tempdata
+        // just return filtered new collection instead use tempdata
         public IEnumerable<string> FilterStringsValues() 
         {
             foreach (var str in strList) 
@@ -53,8 +53,7 @@ namespace ConsoleApp_PlayGround
    public class YiledReturnImplementation 
     {
         public static void Implement() 
-        {
-            
+        {            
             var yieldRetrunObj = new YieldReturnClass();
             var values = yieldRetrunObj.getStringValues();
             Console.WriteLine(string.Join(",",values.ToArray()));

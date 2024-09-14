@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,8 +47,14 @@ namespace ConsoleApp_PlayGround.Compare
         }
 
         //private int CompareTo(Person other) // ERROR: can not implement because its private
+        // return -1 for other
+        // return 0 current instance same position as other
+        // return 1 for other
+        // this.Age.CompareTo(other.Age);
         public int CompareTo(IPerson other)
         {
+            //you can use single Line 
+            // return this.Name.CompareTo(other.Name);
             if (other == null)
             {
                 return 0;
