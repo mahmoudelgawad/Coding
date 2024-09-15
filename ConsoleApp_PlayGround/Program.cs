@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using ConsoleApp_PlayGround.DTO;
 
 namespace ConsoleApp_PlayGround
 {
@@ -38,9 +39,6 @@ namespace ConsoleApp_PlayGround
             //SerializationImeplement.Implement();
 
             ParallelThreadClassImplementation.Implement();
-
-            var list = new List<int> { 1, 5, 6, 10, 9, 16, 20 };
-            list.Where(n => n > 10).ToList();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");

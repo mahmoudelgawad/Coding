@@ -17,7 +17,6 @@ namespace ConsoleApp_PlayGround.LINQ
                 new Employee{ FirstName= "Rohagi",LastName="janti" },
                 new Employee{ FirstName= "Jolaji",LastName="bogo" },
                 new Employee{ FirstName= "Sonwarson",LastName="goodsfi" },
-
             };
 
         //OrderBy

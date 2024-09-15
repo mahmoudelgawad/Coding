@@ -4,6 +4,7 @@ import { Place } from '../place.model';
 import { PlacesComponent } from '../places.component';
 import { PlacesContainerComponent } from '../places-container/places-container.component';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-available-places',
@@ -19,12 +20,32 @@ export class AvailablePlacesComponent implements OnInit {
   private http = inject(HttpClient);
   private destroyRef = inject(DestroyRef);
   // constructor(private client: HttpClient){}
+
 ngOnInit(): void {
-  let httpSubsObj = this.http.get<{places:Place[]}>("http://localhost:3000/places",{}).subscribe((data) =>{
-    console.log(data)
+  let httpSubsObj = this.http.get<{places:Place[]}>("http://localhost:3000/places",{
+    //headers:{'acceptMyCustom':'sdsd'},
+    //observe:"events"
+  })
+  .pipe(
+    map((data) => data.places)
+  )
+  .subscribe({
+    next: (data) =>{     
+      //observe:"response"
+      //console.log(data.body?.places);
+
+      //observe:"events"
+      //console.log(data);
+
+     this.places.set(data);
+    },
+   /*error:undefined,*/
+   /*complete:undefined*/
   });
+
   this.destroyRef.onDestroy(()=>{
     httpSubsObj.unsubscribe();
   });
-}
+
+ }
 }
