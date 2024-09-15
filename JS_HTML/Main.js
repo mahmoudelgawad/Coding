@@ -167,6 +167,33 @@ function setTimeOutConsoleOrderCalls(){
     console.log(4);
 }
 
+function generatorFunction(){
+
+    function* geneFuncName(i){
+        yield i;
+        yield i+10;
+        yield i+20
+    }
+
+    function* geneFuncNameWithReturn(i){
+        yield i;
+        return i+10;
+        yield i+20; // unreachable Code
+    }
+
+    const gen = geneFuncName(5);
+    console.log({yield1:gen.next().value,
+                yield2:gen.next().value,
+                yield3:gen.next().value});
+
+    const genReturn = geneFuncNameWithReturn(5)
+    console.log({yield1:genReturn.next(),
+        return:genReturn.next(),
+        yield2Unreachable:genReturn.next()});
+
+
+}
+
 
 
 
@@ -180,6 +207,7 @@ function setTimeOutConsoleOrderCalls(){
 //spreadOperator();
 //HoistingVar();
 //thisKeyWordWithObject();
-setTimeOutConsoleOrderCalls();
+//setTimeOutConsoleOrderCalls();
+generatorFunction();
 
 
