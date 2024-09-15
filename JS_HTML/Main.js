@@ -195,6 +195,31 @@ function generatorFunction(){
 }
 
 
+function generatorFunctionWithLoop(){
+
+    function* geneFuncName(i){
+        yield i;
+        yield i+10;
+        yield i+20
+    }
+
+    const arr=[];
+    const arr2=[];
+
+    const gen = geneFuncName(5);
+    for(const nextValue of gen){
+        arr.push(nextValue);
+    }
+
+    for(const nextValue of gen){
+        arr2.push(nextValue);//empty value each time because next() iterator is done
+    }
+
+    console.log(arr);
+    console.log(arr2); // empty array
+}
+
+
 
 
 ////###############  Implementation   ##################
@@ -208,6 +233,7 @@ function generatorFunction(){
 //HoistingVar();
 //thisKeyWordWithObject();
 //setTimeOutConsoleOrderCalls();
-generatorFunction();
+//generatorFunction();
+generatorFunctionWithLoop();
 
 
