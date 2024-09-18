@@ -220,7 +220,16 @@ function generatorFunctionWithLoop(){
 }
 
 
-
+function test(){
+    const obj ={
+        name:"mahmoud",
+        printff(i){console.log(i);},
+        age:12
+    }
+obj.printff(5);
+  throw new Error(asasa);
+  Object.freeze
+}
 
 ////###############  Implementation   ##################
 // call named function
@@ -234,6 +243,7 @@ function generatorFunctionWithLoop(){
 //thisKeyWordWithObject();
 //setTimeOutConsoleOrderCalls();
 //generatorFunction();
-generatorFunctionWithLoop();
+//generatorFunctionWithLoop();
+test();
 
 

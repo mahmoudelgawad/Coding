@@ -39,6 +39,7 @@ namespace ConsoleApp_PlayGround
             //SerializationImeplement.Implement();
 
             ParallelThreadClassImplementation.Implement();
+            OverLoadingClassImplementation.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");

@@ -17,6 +17,7 @@ import { map } from 'rxjs';
 })
 export class AvailablePlacesComponent implements OnInit {
   places = signal<Place[] | undefined>(undefined);
+  isLoading = signal(true);
   private http = inject(HttpClient);
   private destroyRef = inject(DestroyRef);
   // constructor(private client: HttpClient){}
@@ -40,7 +41,9 @@ ngOnInit(): void {
      this.places.set(data);
     },
    /*error:undefined,*/
-   /*complete:undefined*/
+   complete:() => {
+    this.isLoading.set(false);
+   }
   });
 
   this.destroyRef.onDestroy(()=>{
