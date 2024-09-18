@@ -18,6 +18,7 @@ import { map } from 'rxjs';
 export class AvailablePlacesComponent implements OnInit {
   places = signal<Place[] | undefined>(undefined);
   isLoading = signal(true);
+  errorDetails = signal(undefined);
   private http = inject(HttpClient);
   private destroyRef = inject(DestroyRef);
   // constructor(private client: HttpClient){}
@@ -25,7 +26,8 @@ export class AvailablePlacesComponent implements OnInit {
 ngOnInit(): void {
   let httpSubsObj = this.http.get<{places:Place[]}>("http://localhost:3000/places",{
     //headers:{'acceptMyCustom':'sdsd'},
-    //observe:"events"
+    //observe:"events",
+    //observe:"response"
   })
   .pipe(
     map((data) => data.places)
@@ -37,10 +39,12 @@ ngOnInit(): void {
 
       //observe:"events"
       //console.log(data);
-
      this.places.set(data);
     },
-   /*error:undefined,*/
+   error:(error) =>{
+      this.errorDetails.set(error);
+      console.log(error);
+   },
    complete:() => {
     this.isLoading.set(false);
    }
