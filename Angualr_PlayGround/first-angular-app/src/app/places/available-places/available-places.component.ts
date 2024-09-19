@@ -4,7 +4,7 @@ import { Place } from '../place.model';
 import { PlacesComponent } from '../places.component';
 import { PlacesContainerComponent } from '../places-container/places-container.component';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { map } from 'rxjs';
+import { catchError, map } from 'rxjs';
 
 @Component({
   selector: 'app-available-places',
@@ -30,7 +30,12 @@ ngOnInit(): void {
     //observe:"response"
   })
   .pipe(
-    map((data) => data.places)
+    map((data) => data.places),
+    catchError((error) =>{
+      console.log("PipeCatchErrorOperator: Hello Error !");
+      console.log("catchError",error);
+      throw new Error(`${error.error} ::PipeCatchErrorOperator::`)
+    })
   )
   .subscribe({
     next: (data) =>{     
@@ -54,5 +59,13 @@ ngOnInit(): void {
     httpSubsObj.unsubscribe();
   });
 
+ }
+
+ onSelectPlace(selectedPlace:Place){
+  // to update userplaces json file in backend
+  this.http.put("http://localhost:3000/user-places",{placeId:selectedPlace.id})
+  .subscribe({
+    next:(data) => console.log(data),
+  })
  }
 }
