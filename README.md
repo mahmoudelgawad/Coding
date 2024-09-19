@@ -1,2 +1,2 @@
 # Coding
-Practical codes for self study courses  
+Practical codes for my self study courses  
