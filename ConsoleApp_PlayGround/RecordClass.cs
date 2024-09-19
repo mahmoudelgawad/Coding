@@ -13,6 +13,7 @@ namespace ConsoleApp_PlayGround
     //using with primary constructor, on onlys record make public properties from primary constructor parameters
     public record PersonPrim(string FirstName, string LastName);
 
+    //PersonRequiredInit = PersonPrim
     public record PersonRequiredInit
     {
         public required string FirstName { get; init; }
@@ -54,6 +55,9 @@ namespace ConsoleApp_PlayGround
         {
             var personPrim = new PersonPrim("firstname","lastname");
             var personRequiredInit = new PersonRequiredInit { FirstName="",LastName="" };
+            var person = new Person();
+            string personFirstName =  person.FirstName + "";
+            Console.WriteLine($"personFirstName = {personFirstName}");
             
             // Error
             //personRequiredInit.FirstName = "sdsds"; 

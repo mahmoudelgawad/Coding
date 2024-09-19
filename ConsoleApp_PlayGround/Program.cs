@@ -3,7 +3,7 @@ using ConsoleApp_PlayGround.Challenges.CoderByte;
 using ConsoleApp_PlayGround.Compare;
 using ConsoleApp_PlayGround.Delegate;
 using ConsoleApp_PlayGround.ParallelThread;
-using ConsoleApp_PlayGround.Serialization;
+
 using ConsoleApp_PlayGround.Strings;
 using System;
 using System.Collections;
@@ -38,8 +38,10 @@ namespace ConsoleApp_PlayGround
 
             //SerializationImeplement.Implement();
 
-            ParallelThreadClassImplementation.Implement();
-            OverLoadingClassImplementation.Implement();
+            // ParallelThreadClassImplementation.Implement();
+            //OverLoadingClassImplementation.Implement();
+
+            RecordClassImplementation.Implement();
 
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");

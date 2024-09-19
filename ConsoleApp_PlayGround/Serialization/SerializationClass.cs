@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
+
+/*
+ use this instead BinaryFormatter 
+specially with class .NET 8
+https://learn.microsoft.com/en-us/dotnet/standard/serialization/binaryformatter-security-guide#preferred-alternatives
+ */
+
 namespace ConsoleApp_PlayGround.Serialization
 {
     internal class SerializationClass
@@ -19,7 +26,8 @@ namespace ConsoleApp_PlayGround.Serialization
             employeeObj.FirstName = "Mahmoud";
             employeeObj.LastName = "Ahmed";
 
-            var binaryFormatter = new BinaryFormatter();
+            //var binaryFormatter = new BinaryFormatter();
+            var binaryFormatter = new BinaryReader();
             var stream = new FileStream("data.txt", FileMode.Create, FileAccess.Write, FileShare.None);
             binaryFormatter.Serialize(stream,employeeObj);
             stream.Close();

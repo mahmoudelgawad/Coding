@@ -15,10 +15,11 @@ namespace ConsoleApp_PlayGround
         }
 
         // not accept overloading with only different in return type
-        public string ReturnValue(int v) 
+        /*public string ReturnValue(int v) //ERROR
         {
             return v.ToString();
-        }
+        }*/
+
         public string ReturnValue(string v)
         {
             return v.ToString();
