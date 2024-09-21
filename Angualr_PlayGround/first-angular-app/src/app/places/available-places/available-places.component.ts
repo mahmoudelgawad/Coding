@@ -16,6 +16,7 @@ import { catchError, map } from 'rxjs';
   //providers:[provideHttpClient()]
 })
 export class AvailablePlacesComponent implements OnInit {
+  
   places = signal<Place[] | undefined>(undefined);
   isLoading = signal(true);
   errorDetails = signal(undefined);
@@ -68,4 +69,6 @@ ngOnInit(): void {
     next:(data) => console.log(data),
   })
  }
+
+ 
 }

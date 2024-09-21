@@ -1,3 +1,10 @@
 <app-places-container title="Your Favorite Places">
-  <p>Todo...</p>
+  @if(errorDetails()){
+    <p class="fallback-text"> there error when loading places , sorry for that happening , our team working on it</p>
+  }
+  @if (places()) {
+  <app-places [places]="places()!"/>
+  } @else if (places()?.length === 0) {
+  <p class="fallback-text">Unfortunately, no places could be found.</p>
+  }
 </app-places-container>
