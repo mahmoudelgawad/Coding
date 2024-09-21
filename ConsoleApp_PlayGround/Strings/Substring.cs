@@ -13,6 +13,8 @@ namespace ConsoleApp_PlayGround.Strings
         {
             //get first name
             Console.WriteLine(name.Substring(0, name.IndexOf(',')));
+            
         }
     }
+
 }
