@@ -20,7 +20,7 @@ namespace ConsoleApp_PlayGround
         {
 
             //VarDynamicClass.Implement();
-            //ReadonlyClassImplementation.Implement();
+            ReadonlyClassImplementation.Implement();
             //AbstractClassImplementation.Implement();
 
             //ComparableBaseClassImplementation.Implement();
@@ -41,8 +41,7 @@ namespace ConsoleApp_PlayGround
             // ParallelThreadClassImplementation.Implement();
             //OverLoadingClassImplementation.Implement();
 
-            RecordClassImplementation.Implement();
-
+          //RecordClassImplementation.Implement();
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
 

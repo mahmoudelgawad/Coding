@@ -34,12 +34,39 @@ namespace ConsoleApp_PlayGround
         }
     }
 
-    public class ReadonlyClassImplementation 
+    class ConstReadOnlyTestClass 
     {
+      public string FirstName { get; set; }
+      public string LastName { get; set; }
+    }
+
+    //Immutable Properties with {get; init;}
+    record class RecordTestClass(string FirstName = "Ezzeldin",string LastName="Ahmed");
+
+    public class ReadonlyClassImplementation
+    {
+        // const ConstReadOnlyTestClass constObj = new ConstReadOnlyTestClass();//ERROR
+
+        static readonly ConstReadOnlyTestClass readonlyObj = new ConstReadOnlyTestClass
+            {FirstName = "Mahmoud", LastName="Ahmed" };
+
+        static RecordTestClass recordObj = new RecordTestClass
+        { FirstName = "EzzEldin", LastName = "Ahmed" };
+
         public static void Implement() 
         {
             ReadonlyClass readonlyClass = new ReadonlyClass(2);
             Console.WriteLine(readonlyClass.Method1());
+
+            readonlyObj.FirstName = "soso";
+            readonlyObj.LastName = "Boso";
+            Console.WriteLine($"constObj as readonly :\r\n FirstName={readonlyObj.FirstName}, LastName={readonlyObj.LastName}");
+            
+            /* Error
+            recordObj.FirstName = "alan";
+            recordObj.LastName = "walan";
+            Console.WriteLine($"recordObj :\r\n FirstName={recordObj.FirstName}, LastName={recordObj.LastName}");
+            */
         }
     }
 
