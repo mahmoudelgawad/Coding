@@ -2,9 +2,7 @@ import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { Place } from '../place.model';
 import { PlacesContainerComponent } from '../places-container/places-container.component';
 import { PlacesComponent } from '../places.component';
-
-import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { catchError, map } from 'rxjs';
+import { PlacesService } from '../places.service';
 
 @Component({
   selector: 'app-user-places',
@@ -18,30 +16,14 @@ export class UserPlacesComponent {
   places = signal<Place[] | undefined>(undefined);
   isLoading = signal(true);
   errorDetails = signal(undefined);
-  private http = inject(HttpClient);
+  private placesService = inject(PlacesService);
   private destroyRef = inject(DestroyRef);
   // constructor(private client: HttpClient){}
 
 ngOnInit(): void {
-  let httpSubsObj = this.http.get<{places:Place[]}>("http://localhost:3000/user-places",{
-    //headers:{'acceptMyCustom':'sdsd'},
-    //observe:"events",
-    //observe:"response"
-  })
-  .pipe(
-    map((data) => data.places),
-    catchError((error) =>{
-
-      throw new Error(`${error.error} ::PipeCatchErrorOperator::`)
-    })
-  )
+  const httpSubsObj = this.placesService.loadUserPlaces()
   .subscribe({
     next: (data) =>{     
-      //observe:"response"
-      //console.log(data.body?.places);
-
-      //observe:"events"
-      //console.log(data);
      this.places.set(data);
     },
    error:(error) =>{

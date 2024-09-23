@@ -1,4 +1,5 @@
 <app-places-container title="Available Places">
+
   @if(isLoading() && !errorDetails()){
     <p class="fallback-text">Loading Available Places ...</p>
   }
@@ -6,9 +7,10 @@
   @if(errorDetails()){
     <p class="fallback-text"> there error when loading places , sorry for that happening , our team working on it</p>
   }
-  @if (places()) {
+  @if (places()){
   <app-places [places]="places()!" (selectPlace)="onSelectPlace($event)"/>
   } @else if (places()?.length === 0) {
   <p class="fallback-text">Unfortunately, no places could be found.</p>
   }
+
 </app-places-container>

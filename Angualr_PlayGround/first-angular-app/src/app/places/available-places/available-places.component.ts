@@ -5,6 +5,7 @@ import { PlacesComponent } from '../places.component';
 import { PlacesContainerComponent } from '../places-container/places-container.component';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs';
+import { PlacesService } from '../places.service';
 
 @Component({
   selector: 'app-available-places',
@@ -21,11 +22,14 @@ export class AvailablePlacesComponent implements OnInit {
   isLoading = signal(true);
   errorDetails = signal(undefined);
   private http = inject(HttpClient);
+  private placesService = inject(PlacesService);
   private destroyRef = inject(DestroyRef);
   // constructor(private client: HttpClient){}
 
 ngOnInit(): void {
-  let httpSubsObj = this.http.get<{places:Place[]}>("http://localhost:3000/places",{
+
+  /* will refactor and share in PlacesService class
+  const httpSubsObj = this.http.get<{places:Place[]}>("http://localhost:3000/places",{
     //headers:{'acceptMyCustom':'sdsd'},
     //observe:"events",
     //observe:"response"
@@ -38,6 +42,8 @@ ngOnInit(): void {
       throw new Error(`${error.error} ::PipeCatchErrorOperator::`)
     })
   )
+    */
+  const httpSubsObj = this.placesService.loadAvailablePlaces()
   .subscribe({
     next: (data) =>{     
       //observe:"response"
@@ -60,14 +66,18 @@ ngOnInit(): void {
     httpSubsObj.unsubscribe();
   });
 
+
  }
 
  onSelectPlace(selectedPlace:Place){
   // to update userplaces json file in backend
-  this.http.put("http://localhost:3000/user-places",{placeId:selectedPlace.id})
+  const subsObj = this.placesService.addPlaceToUserPlaces(selectedPlace.id)
   .subscribe({
     next:(data) => console.log(data),
-  })
+  });
+
+  this.destroyRef.onDestroy(() => subsObj.unsubscribe());
+  
  }
 
  
