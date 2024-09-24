@@ -13,19 +13,21 @@ import { PlacesService } from '../places.service';
 })
 export class UserPlacesComponent {
 
-  places = signal<Place[] | undefined>(undefined);
+
   isLoading = signal(true);
   errorDetails = signal(undefined);
   private placesService = inject(PlacesService);
+  places = this.placesService.loadedUserPlaces;
   private destroyRef = inject(DestroyRef);
   // constructor(private client: HttpClient){}
 
 ngOnInit(): void {
   const httpSubsObj = this.placesService.loadUserPlaces()
   .subscribe({
-    next: (data) =>{     
+    // will use the services readonly signal variable "loadedUserPlaces" directly instead
+    /*next: (data) =>{     
      this.places.set(data);
-    },
+    },*/
    error:(error) =>{
       this.errorDetails.set(error);
       console.log(error);

@@ -26,6 +26,23 @@ namespace ConsoleApp_PlayGround
         public string LastName { get; init; }
     };
 
+    public record PersonPrivate
+    {
+        public string FirstName { get; private set; }
+        public string LastName { get; set; }
+
+        public PersonPrivate() 
+        {
+            FirstName = "mahmoud";
+            LastName = "ahmed";
+        }
+        public void ChangeValues() 
+        {
+            FirstName = "Changed";
+
+        }
+    };
+
     /// <summary>
     /// value type
     /// </summary>
@@ -54,9 +71,9 @@ namespace ConsoleApp_PlayGround
         public static void Implement() 
         {
             var personPrim = new PersonPrim("firstname","lastname");
-            var personRequiredInit = new PersonRequiredInit { FirstName="",LastName="" };
+            var personRequiredInit = new PersonRequiredInit { FirstName="Sami",LastName="" };
             var person = new Person();
-            string personFirstName =  person.FirstName + "";
+            string personFirstName =  person.FirstName + " is First Name";
             Console.WriteLine($"personFirstName = {personFirstName}");
             
             // Error
@@ -65,6 +82,11 @@ namespace ConsoleApp_PlayGround
             var pointPrim = new PointPrim();
             //Error
             //pointPrim.X=12;
+
+
+            var personPrivateObj = new PersonPrivate();
+            personPrivateObj.ChangeValues();
+            Console.WriteLine($"personPrivateObj= {personPrivateObj}");
         }
 
     }

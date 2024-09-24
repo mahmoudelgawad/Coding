@@ -1,6 +1,6 @@
 import { Injectable, signal,inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import{map,catchError, throwError} from 'rxjs'
+import{map,catchError, throwError, tap} from 'rxjs'
 import { Place } from './place.model';
 
 @Injectable({
@@ -22,6 +22,10 @@ export class PlacesService {
   loadUserPlaces() {
     return this.fetchPlaces("http://localhost:3000/user-places",
       "::PipeCatchErrorOperator::"
+    ).pipe( // call pipe second time after fetch method return Observable object
+      tap({ // tap operator do like subscribe, looks deprecated! in next rxjs version 8.0
+        next:(palces) => this.userPlaces.set(palces)
+      }),
     );
   }
 
@@ -35,7 +39,7 @@ export class PlacesService {
   private fetchPlaces(url:string,errorMessage:string){
    return  this.http.get<{places:Place[]}>(url)
     .pipe(
-      map((data) => data.places),
+      map((data) => data.places), // return only Place[]
       catchError((error) =>{
         console.log("catchError",error);
         return throwError(() =>  new Error(`${error.error} ${errorMessage}`));     
