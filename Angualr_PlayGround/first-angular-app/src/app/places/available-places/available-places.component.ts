@@ -71,7 +71,7 @@ ngOnInit(): void {
 
  onSelectPlace(selectedPlace:Place){
   // to update userplaces json file in backend
-  const subsObj = this.placesService.addPlaceToUserPlaces(selectedPlace.id)
+  const subsObj = this.placesService.addPlaceToUserPlaces(selectedPlace)
   .subscribe({
     next:(data) => console.log(data),
   });

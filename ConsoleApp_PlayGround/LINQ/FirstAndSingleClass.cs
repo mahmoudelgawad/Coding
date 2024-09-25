@@ -25,6 +25,13 @@ namespace ConsoleApp_PlayGround.LINQ
             fruit = MyFruits.SingleOrDefault(f => f.ToLower().StartsWith("a"));
         }
 
+        public void GetLastFruit()
+        {
+            string fruit;
+            fruit = MyFruits.Last(f => f.ToLower().StartsWith("a"));
+            fruit = MyFruits.LastOrDefault(f => f.ToLower().StartsWith("a"));
+        }
+
 
     }
 }

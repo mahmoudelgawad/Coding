@@ -8,7 +8,7 @@ import { Place } from './place.model';
 })
 export class PlacesService {
   
-  private http = inject(HttpClient);
+  private httpClient = inject(HttpClient);
   private userPlaces = signal<Place[]>([]);
 
   loadedUserPlaces = this.userPlaces.asReadonly();
@@ -29,15 +29,23 @@ export class PlacesService {
     );
   }
 
-  addPlaceToUserPlaces(placeId: string) {
+  addPlaceToUserPlaces(place: Place) {
+    const prevUserPlaces = this.userPlaces();
+    this.userPlaces.update((prev) => [...prev, place]);
   // to update userplaces json file in backend
-  return this.http.put("http://localhost:3000/user-places", {placeId});
+  return this.httpClient.put("http://localhost:3000/user-places", {placeId:place.id})
+  .pipe(
+    catchError((error) =>{
+      this.userPlaces.set(prevUserPlaces);
+      return throwError(() => { new Error("Failed to load users places")})
+    }),
+  );
   }
 
   removeUserPlace(place: Place) {}
 
   private fetchPlaces(url:string,errorMessage:string){
-   return  this.http.get<{places:Place[]}>(url)
+   return  this.httpClient.get<{places:Place[]}>(url)
     .pipe(
       map((data) => data.places), // return only Place[]
       catchError((error) =>{
