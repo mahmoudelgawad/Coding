@@ -31,7 +31,10 @@ export class PlacesService {
 
   addPlaceToUserPlaces(place: Place) {
     const prevUserPlaces = this.userPlaces();
-    this.userPlaces.update((prev) => [...prev, place]);
+    if(!prevUserPlaces.some((e) => e.id === place.id)){
+       this.userPlaces.update((prev) => [...prev, place]);
+    }
+   
   // to update userplaces json file in backend
   return this.httpClient.put("http://localhost:3000/user-places", {placeId:place.id})
   .pipe(
@@ -39,7 +42,7 @@ export class PlacesService {
       this.userPlaces.set(prevUserPlaces);
       return throwError(() => { new Error("Failed to load users places")})
     }),
-  );
+   );
   }
 
   removeUserPlace(place: Place) {}
@@ -53,6 +56,7 @@ export class PlacesService {
         return throwError(() =>  new Error(`${error.error} ${errorMessage}`));     
       })
     )
-
   }
+
+
 }
