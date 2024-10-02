@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using ConsoleApp_PlayGround.DTO;
+using ConsoleApp_PlayGround.LINQ;
 
 namespace ConsoleApp_PlayGround
 {
@@ -41,7 +42,9 @@ namespace ConsoleApp_PlayGround
             // ParallelThreadClassImplementation.Implement();
             //OverLoadingClassImplementation.Implement();
 
-          RecordClassImplementation.Implement();
+            //RecordClassImplementation.Implement();
+
+            GroupByLinqImplemntation.Implement();
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
 

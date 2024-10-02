@@ -13,6 +13,7 @@ namespace ConsoleApp_PlayGround
         {
             _employees = new Lazy<List<Employee>>(() => LoadEmployees());
         }
+
         public List<Employee> Employees
         {
             get

@@ -24,6 +24,7 @@ namespace ConsoleApp_PlayGround.LINQ
         //Reverse
         //ThenBy
         //ThenByDescending
+
         void UseOrderBy() 
         {
             employess.OrderBy(e => e.FirstName);
