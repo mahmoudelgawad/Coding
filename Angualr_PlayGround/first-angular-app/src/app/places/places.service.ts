@@ -2,6 +2,7 @@ import { Injectable, signal,inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import{map,catchError, throwError, tap} from 'rxjs'
 import { Place } from './place.model';
+import { ErrorService } from '../shared/error-service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +10,7 @@ import { Place } from './place.model';
 export class PlacesService {
   
   private httpClient = inject(HttpClient);
+  private errorService = inject(ErrorService);
   private userPlaces = signal<Place[]>([]);
 
   loadedUserPlaces = this.userPlaces.asReadonly();
@@ -40,6 +42,7 @@ export class PlacesService {
   .pipe(
     catchError((error) =>{
       this.userPlaces.set(prevUserPlaces);
+      this.errorService.showError("Failed to load users places");
       return throwError(() => { new Error("Failed to load users places")})
     }),
    );
@@ -53,6 +56,7 @@ export class PlacesService {
       map((data) => data.places), // return only Place[]
       catchError((error) =>{
         console.log("catchError",error);
+        this.errorService.showError(errorMessage);
         return throwError(() =>  new Error(`${error.error} ${errorMessage}`));     
       })
     )
