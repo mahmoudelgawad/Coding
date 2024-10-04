@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using ConsoleApp_PlayGround.DTO;
 using ConsoleApp_PlayGround.LINQ;
+using ConsoleApp_PlayGround.Challenges.LeetCode;
 
 namespace ConsoleApp_PlayGround
 {
@@ -44,7 +45,9 @@ namespace ConsoleApp_PlayGround
 
             //RecordClassImplementation.Implement();
 
-            GroupByLinqImplemntation.Implement();
+            //GroupByLinqImplemntation.Implement();
+
+            TwoSumImplementation.Implement();
 
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
 
