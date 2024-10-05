@@ -231,6 +231,23 @@ obj.printff(5);
   Object.freeze
 }
 
+function hashTable(){
+const obj = {key:"a",value:2}
+console.log("owned property key:",obj.hasOwnProperty("key"));
+
+const dic = new Map(); //has table in js
+dic.set("a",20);
+dic.set("b",30);
+dic.set("c",40);
+console.log("size:",dic.size);
+console.log("values:",dic.values());
+console.log("keys:",dic.keys());
+console.log("get b:",dic.get("b"));
+console.log("has key a :",dic.has('a'));
+dic.delete('c');
+console.log('get deleted c:',dic.get('c')); //undefined
+}
+
 ////###############  Implementation   ##################
 // call named function
 //funTestOne();
@@ -244,6 +261,7 @@ obj.printff(5);
 //setTimeOutConsoleOrderCalls();
 //generatorFunction();
 //generatorFunctionWithLoop();
-test();
+//test();
+hashTable();
 
 
