@@ -43,5 +43,10 @@ ngOnInit(): void {
 
  }
 
+ onRemoveplace(place:Place){
+  const subsObj = this.placesService.removeUserPlace(place).subscribe();
+  this.destroyRef.onDestroy(() => {subsObj.unsubscribe()});
+ }
+
 
 }

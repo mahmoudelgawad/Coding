@@ -1,6 +1,6 @@
 import { Injectable, signal,inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import{map,catchError, throwError, tap} from 'rxjs'
+import {map,catchError, throwError, tap} from 'rxjs'
 import { Place } from './place.model';
 import { ErrorService } from '../shared/error-service';
 
@@ -41,14 +41,28 @@ export class PlacesService {
   return this.httpClient.put("http://localhost:3000/user-places", {placeId:place.id})
   .pipe(
     catchError((error) =>{
-      this.userPlaces.set(prevUserPlaces);
+      this.userPlaces.set(prevUserPlaces); //rollback data
       this.errorService.showError("Failed to load users places");
       return throwError(() => { new Error("Failed to load users places")})
     }),
    );
   }
 
-  removeUserPlace(place: Place) {}
+  removeUserPlace(place: Place) {
+    const prevUserPlaces = this.userPlaces();
+    if(prevUserPlaces.some(p => p.id === place.id)){
+      this.userPlaces.set(prevUserPlaces.filter(p => p.id !== place.id));
+    }
+
+    return this.httpClient.delete("http://localhost:3000/user-places/:id")
+    .pipe(
+      catchError((error) =>{
+        this.userPlaces.set(prevUserPlaces); //rollback
+        this.errorService.showError("Failed to delete user place")
+        return throwError(() =>{new Error("Failed to delete user place")})
+      })
+    );
+  }
 
   private fetchPlaces(url:string,errorMessage:string){
    return  this.httpClient.get<{places:Place[]}>(url)
