@@ -16,3 +16,5 @@ ASPCOREMVC_PlayGround/bin*
 /EF_CORE_PlayGround/obj*
 
 /WebAPI_ASPCOREMVC_PlayGround/obj*
+/WebAPI_ASPCOREMVC_PlayGround/obj/Release/net5.0/WebAPI_ASPCOREMVC_PlayGround.AssemblyInfoInputs.cache
+/WebAPI_ASPCOREMVC_PlayGround/obj/Release/net5.0/WebAPI_ASPCOREMVC_PlayGround.assets.cache
