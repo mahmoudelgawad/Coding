@@ -1,15 +1,29 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 
 import { AppComponent } from './app/app.component';
-import { HttpHandlerFn, HttpRequest, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { HttpEventType, HttpHandlerFn, HttpRequest, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { tap } from 'rxjs';
 
 function LoggingInterCeptor(request:HttpRequest<unknown>, next:HttpHandlerFn){
     console.log('LoggingInterCeptor:OutgoingRequest');
     console.log(request);
     const reqClone = request.clone({
-        headers: request.headers.set("F-DEBUG",'valueTestFofo')
+        //will raise error
+       // headers: request.headers.set("F-DEBUG",'valueTestFofo')
     });
- return next(reqClone);
+
+    // next() return Observable with type 'HttpEvent'
+ return next(reqClone).pipe(
+    tap({
+        next:(event) =>{
+            if(event.type === HttpEventType.Response){
+                console.log("[There Incomming Data] -->>");
+                console.log(`Event Status:${event.status}`);
+                console.log(`Event Response:`,event.body);
+            }
+        },
+    }),
+ );
 }
 
 bootstrapApplication(AppComponent,{
