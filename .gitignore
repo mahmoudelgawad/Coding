@@ -11,9 +11,8 @@ ASPCOREMVC_PlayGround/bin*
 /ConsoleApp_PlayGround/bin*
 /ConsoleApp_PlayGround/obj*
 
-/WebAPI_ASPCOREMVC_PlayGround/obj*
-
 /.vs/slnx.sqlite
 
 /EF_CORE_PlayGround/obj*
-/WebAPI_ASPCOREMVC_PlayGround/obj/Release/net5.0/WebAPI_ASPCOREMVC_PlayGround.AssemblyInfo.cs
+
+/WebAPI_ASPCOREMVC_PlayGround/obj*
