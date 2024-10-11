@@ -5,8 +5,8 @@ namespace EF_CORE_PlayGround
 {
     public class BloggingContext :DbContext
     {
-        DbSet<Blog> Blogs { get; set; }
-        DbSet<Post> Posts { get; set; }
+       public DbSet<Blog> Blogs { get; set; }
+       public DbSet<Post> Posts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
