@@ -21,6 +21,7 @@ namespace ConsoleApp_PlayGround.LINQ
         public void GetSingleFruit()
         {
             string fruit;
+            //both throw exception when there more than one element retrieved, pass the condition
             fruit = MyFruits.Single(f => f.ToLower().StartsWith("a"));
             fruit = MyFruits.SingleOrDefault(f => f.ToLower().StartsWith("a"));
         }
