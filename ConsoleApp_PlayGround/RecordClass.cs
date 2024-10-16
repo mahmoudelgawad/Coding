@@ -10,7 +10,7 @@ namespace ConsoleApp_PlayGround
     //Reference
     //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#positional-syntax-for-property-definition
 
-    //using with primary constructor, on onlys record make public properties from primary constructor parameters
+    //using with primary constructor, on only record make public properties from primary constructor parameters
     public record PersonPrim(string FirstName, string LastName);
 
     //PersonRequiredInit = PersonPrim
