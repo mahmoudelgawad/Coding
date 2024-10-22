@@ -47,7 +47,7 @@ namespace ConsoleApp_PlayGround.Compare
         }
 
         //private int CompareTo(Person other) // ERROR: can not implement because its private
-        // return -1 for other
+        // return -1 current instance item
         // return 0 current instance same position as other
         // return 1 for other
         // this.Age.CompareTo(other.Age);

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { ListNames } from './list-names/ListNames';
+import {UserInfoForm} from './forms/UserInfoForm';
 
 function App() {
   const names=["mahmoud","Sonwar","Sami","jacop"];
@@ -22,6 +23,9 @@ function App() {
       </header>
       <p>my new code</p>
       {ListNames(names)}
+
+      <p>Form for user</p>
+      {UserInfoForm()}
     </div>
   );
 }
