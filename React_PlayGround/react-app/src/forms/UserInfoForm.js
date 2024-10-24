@@ -1,30 +1,42 @@
-export  function UserInfoForm(){
+import {useState} from 'react';
 
-    function displayName(formData){
-        console.log('test manually');
-        alert(formData.get('name'));
+//https://www.freecodecamp.org/news/how-to-build-forms-in-react/
+export  function UserInfoForm(){
+    const [formData, setFormData] = useState({name:'',age:0,address:''});
+
+    function handleChange(event){
+        const {name, value} = event.target;
+        setFormData((prevData) => ({...prevData,[name]:value}));
     }
 
+    function handleSubmit(event){
+        event.preventDefault();
+        console.log(formData);
+    }
+
+   
+
     return(
-        <form action={displayName}>
+        <form onSubmit={handleSubmit}>
 
         <p>
         <label>Name</label>
-        <input type="text" name="name"/>
+        <input type="text" name="name" value={formData.name} onChange={handleChange}/>
         </p>
 
         <p>
         <label>Age</label>
-        <input type="number" name="age"/>
+        <input type="number" name="age" onChange={handleChange}/>
         </p>
 
         <p>
         <label>Address</label>
-        <input type="text" name="address"/>
+        <input type="text" name="address" onChange={handleChange}/>
         </p>
-
+        
         <p>
-           <button type="submit">Show</button>
+           {/* <button type="submit">Show</button> */}
+           <input type="submit" value="Submit"/>
         </p>
 
         </form>
