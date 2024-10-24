@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,9 @@ namespace ConsoleApp_PlayGround
 
             list.Add(5);
             llist.AddAfter(llist.Find(5), 6); // effecient in adding items in the middle or first , last
+
+            ArrayList arList = new ArrayList();
+            arList.TrimToSize();
         }
     }
 }
