@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UnitTest_PlayGround.UnitTest\**" />
+    <EmbeddedResource Remove="UnitTest_PlayGround.UnitTest\**" />
+    <None Remove="UnitTest_PlayGround.UnitTest\**" />
+  </ItemGroup>
+
+</Project>

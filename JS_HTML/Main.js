@@ -1,3 +1,4 @@
+
 const users=[
     {
       id:1,
@@ -262,6 +263,7 @@ console.log('get deleted c:',dic.get('c')); //undefined
 //generatorFunction();
 //generatorFunctionWithLoop();
 //test();
-hashTable();
+//hashTable();
+
 
 

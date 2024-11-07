@@ -117,7 +117,7 @@ namespace ConsoleApp_PlayGround.Compare
 
         }
 
-        public static void DisplayPersons(List<IPerson> persons) 
+        private static void DisplayPersons(List<IPerson> persons) 
         {
             foreach (var p in persons) 
             {

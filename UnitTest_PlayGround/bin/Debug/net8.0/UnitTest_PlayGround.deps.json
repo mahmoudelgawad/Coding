@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "UnitTest_PlayGround/1.0.0": {
+        "runtime": {
+          "UnitTest_PlayGround.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UnitTest_PlayGround/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

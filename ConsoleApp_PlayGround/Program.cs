@@ -47,7 +47,9 @@ namespace ConsoleApp_PlayGround
 
             //GroupByLinqImplemntation.Implement();
 
-            TwoSumImplementation.Implement();
+            // TwoSumImplementation.Implement();
+
+            ShortCircuitImplementation.Implement();
 
             //just comment
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");

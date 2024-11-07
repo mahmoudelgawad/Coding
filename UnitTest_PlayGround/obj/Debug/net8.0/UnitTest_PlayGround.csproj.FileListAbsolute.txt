@@ -1,0 +1,12 @@
+C:\Drive\Coding\UnitTest_PlayGround\bin\Debug\net8.0\UnitTest_PlayGround.deps.json
+C:\Drive\Coding\UnitTest_PlayGround\bin\Debug\net8.0\UnitTest_PlayGround.dll
+C:\Drive\Coding\UnitTest_PlayGround\bin\Debug\net8.0\UnitTest_PlayGround.pdb
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\UnitTest_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\UnitTest_PlayGround.AssemblyInfoInputs.cache
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\UnitTest_PlayGround.AssemblyInfo.cs
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\UnitTest_PlayGround.csproj.CoreCompileInputs.cache
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\UnitTest_PlayGround.sourcelink.json
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\UnitTest_PlayGround.dll
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\refint\UnitTest_PlayGround.dll
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\UnitTest_PlayGround.pdb
+C:\Drive\Coding\UnitTest_PlayGround\obj\Debug\net8.0\ref\UnitTest_PlayGround.dll
