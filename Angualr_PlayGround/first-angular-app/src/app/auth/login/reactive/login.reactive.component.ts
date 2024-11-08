@@ -19,7 +19,7 @@ function EmailMustUnique(control:AbstractControl)
   return of({emailNotUnique:true});
 }
 
-// we can load the saved email from Browser local storage outside the component and also the ngOninit
+//different way we can load the saved email from Browser local storage outside the component and also the ngOninit
 /*let InitialEmailValue = "";
 let savedFormData = window.localStorage.getItem("saved-login-reactive-form");
 if(savedFormData)
