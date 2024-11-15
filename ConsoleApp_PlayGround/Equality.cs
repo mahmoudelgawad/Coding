@@ -8,7 +8,12 @@ namespace ConsoleApp_PlayGround
 {
     internal class Equality
     {
+        //Object.Equals()
+        //public virtual bool Equals(object? obj), in Object Class
 
+        //valuetype
+        //intnum.Equals()
+        //public bool Equals(int obj), in structer System.Int32 Struct
         public void EqualSameReferenceAddress() 
         {
             object o = "Mahmoud Ahmed";
