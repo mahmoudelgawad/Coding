@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace ConsoleApp_PlayGround.Strings
 {
@@ -19,14 +20,20 @@ namespace ConsoleApp_PlayGround.Strings
     {
         public static void Implement() 
         {
+            // alias name System.String like object -> System.Object
+            //System.String class , is  public sealed partial class
             String strClass = new String(['s', 'd']);
-            String.IsNullOrEmpty(strClass);
+            //contain helper static functions
+            bool isNull =  String.IsNullOrEmpty(strClass);
+        
+
+            //builtin variable string
             string str = "";
             //str.IsNullOrEmpty("");//Error
+            var upperCase = str.ToUpper();
 
-
+            //our custom 
             StringClass.IsValid(str);
-
             StringClass stringClassObj = new StringClass();
             //use type name instead to access static member with instance
             //stringClassObj.IsValid(str); //Error

@@ -50,6 +50,7 @@ namespace ConsoleApp_PlayGround
             // TwoSumImplementation.Implement();
 
             ShortCircuitImplementation.Implement();
+            
 
             //just comment
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
