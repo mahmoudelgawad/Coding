@@ -10,6 +10,10 @@ namespace ConsoleApp_PlayGround.Interfaces
     {
         // it just available in C# 11 version
         //abstract static void Implement();
+
+        //int varInt; //ERROR: no instance fileds in interface
+
+        //string Name { get; set; }
         void Implement();
     }
 }
