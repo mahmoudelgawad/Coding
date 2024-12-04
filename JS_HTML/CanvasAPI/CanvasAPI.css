@@ -1,0 +1,12 @@
+#imageContainer
+{
+    /* alternative url */
+    /* background-image:url("../CanvasAPI/CarDiagaram.png"); */
+    display: none;
+}
+
+#canvas{
+    /* background-image:url("CarDiagaram.png"); */
+    border: solid;
+    border-color: red;
+}
