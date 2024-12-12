@@ -1,16 +1,38 @@
-import { Component, computed, inject, input } from '@angular/core';
+import { Component, computed, DestroyRef, inject, input, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-user-tasks',
   standalone: true,
+  imports:[RouterOutlet],
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
 })
-export class UserTasksComponent {
-  userId = input.required<string>();
+export class UserTasksComponent implements OnInit {
   private userService = inject(UsersService);
-  userName=computed(
-    () => this.userService.users.find(u => u.id === this.userId())?.name
-  );
+private destroyRef = inject(DestroyRef);
+
+  //using signal, with auto param mapping, via app providers 'withComponentInputBinding()'
+  // userId = input.required<string>();
+  // userName=computed(
+  //   () => this.userService.users.find(u => u.id === this.userId())?.name
+  // );
+
+  private activatedRouter = inject(ActivatedRoute);
+  userName='';
+
+  ngOnInit(): void {
+    console.log(this.activatedRouter); // to check how many invoked, called 1 time
+    //subscribe on activatedRouter Observers
+   let paramMapSubs =  this.activatedRouter.paramMap.subscribe({
+      next:(param) => {
+        this.userName = this.userService.users.find(u => u.id === param.get('userId'))?.name || '';
+      } ,
+      complete:undefined,
+      error:undefined
+    });
+    this.destroyRef.onDestroy(() => paramMapSubs.unsubscribe());
+  }
+
 }

@@ -10,9 +10,21 @@ export const appRoutes :Routes = [
     },
     {
         /*
-        path:"tasks", //website.com/taks
+        path:"tasks", //website.com/tasks
         component:TasksComponent
         */
-       path:'users/:userId/:taskId',
-       component: UserTasksComponent
+
+        /*
+        path:'users/:userId/:taskId',
+        component: UserTasksComponent
+        */
+
+       path:'users/:userId', // yourdomain.com/users/15
+       component: UserTasksComponent,
+       children:[
+        {
+            path:'tasks', // yourdomain.com/users/<userId>/tasks
+            component: TasksComponent,
+        }
+       ]
     }];
