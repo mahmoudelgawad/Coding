@@ -3,6 +3,8 @@ import { TasksComponent } from "./tasks/tasks.component";
 import { NoTaskComponent } from "./tasks/no-task/no-task.component";
 import { UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { NewTaskComponent } from "./tasks/new-task/new-task.component";
+import {NotFoundPageComponent} from "./not-found/not-found-page.component";
+import { NotFoundError } from "rxjs";
 
 export const appRoutes :Routes = [
     {
@@ -32,4 +34,9 @@ export const appRoutes :Routes = [
             component:NewTaskComponent
         }
        ]
-    }];
+    },
+    {
+        path:'**', //if url not found
+        component:NotFoundPageComponent
+    }
+];

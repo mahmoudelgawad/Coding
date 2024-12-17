@@ -11,3 +11,7 @@ export const appConfig : ApplicationConfig = {
             withRouterConfig({paramsInheritanceStrategy:"always"})),
     ]
 }
+
+
+// command
+//ng g c not-found/no-found.component
