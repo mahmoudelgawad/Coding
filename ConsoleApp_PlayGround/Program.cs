@@ -49,7 +49,9 @@ namespace ConsoleApp_PlayGround
 
             // TwoSumImplementation.Implement();
 
-            ShortCircuitImplementation.Implement();
+            //ShortCircuitImplementation.Implement();
+
+            ParamsClassImplementation.Implement();
             
 
             //just comment

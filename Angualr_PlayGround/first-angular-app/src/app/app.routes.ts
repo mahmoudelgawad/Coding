@@ -4,12 +4,16 @@ import { NoTaskComponent } from "./tasks/no-task/no-task.component";
 import { UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 import {NotFoundPageComponent} from "./not-found/not-found-page.component";
-import { NotFoundError } from "rxjs";
+import {routes as usersRoutes} from './users/users.routes';
 
 export const appRoutes :Routes = [
     {
         path:"", // website.com
         component:NoTaskComponent
+        /*
+        redirectTo:"users/u1", // just for testing if user enter domain url
+        pathMatch:"full" //same result of 'prefix'
+        */
     },
     {
         /*
@@ -24,16 +28,7 @@ export const appRoutes :Routes = [
 
        path:'users/:userId', // yourdomain.com/users/15
        component: UserTasksComponent,
-       children:[
-        {
-            path:'tasks', // yourdomain.com/users/<userId>/tasks
-            component: TasksComponent,
-        },
-        {
-            path:"tasks/new",
-            component:NewTaskComponent
-        }
-       ]
+       children:usersRoutes
     },
     {
         path:'**', //if url not found
