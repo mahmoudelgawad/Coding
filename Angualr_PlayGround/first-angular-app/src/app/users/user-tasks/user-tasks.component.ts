@@ -19,13 +19,20 @@ private destroyRef = inject(DestroyRef);
   //   () => this.userService.users.find(u => u.id === this.userId())?.name
   // );
 
-  private activatedRouter = inject(ActivatedRoute);
+  private activatedRoute = inject(ActivatedRoute);
   userName='';
 
   ngOnInit(): void {
-    console.log(this.activatedRouter); // to check how many invoked, called 1 time
-    //subscribe on activatedRouter Observers
-   let paramMapSubs =  this.activatedRouter.paramMap.subscribe({
+    //ActivatedRoute object provide information about current url params  or page
+    console.log(this.activatedRoute); // here to check how many invoked, called 1 time
+
+    // snapshot provide same data but, when component update or url/page will not get the new values
+    // snapshot properteis not observable, so it easy quick access for values
+    
+    console.log(this.activatedRoute.snapshot);
+    console.log(this.activatedRoute.snapshot.paramMap.get('userId'));
+    //subscribe on activatedRoute Observers
+   let paramMapSubs =  this.activatedRoute.paramMap.subscribe({
       next:(param) => {
         this.userName = this.userService.users.find(u => u.id === param.get('userId'))?.name || '';
       } ,
