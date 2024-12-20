@@ -1,3 +1,8 @@
+<!-- 
+ add query paramter for current url
+ http://localhost:4200/users/u1/tasks?order=asc
+-->
+<a routerLink="./" [queryParams]="{order:'asc'}">Sorting Ascending</a>
 <ul>
   @for (task of userTasks(); track task.id) {
     <li>
