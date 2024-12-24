@@ -1,4 +1,4 @@
-import { Component, computed, DestroyRef, inject, input, OnInit } from '@angular/core';
+import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
 
 import { TaskComponent } from './task/task.component';
 import { Task } from './task/task.model';
@@ -20,16 +20,30 @@ export class TasksComponent  implements OnInit{
 
   //will input from itself via [queryParams], and auto input binding 
   // thanks for  'withComponentInputBinding()' in app.config
-  // order = input<'asc'|'desc'>(); //we can ignore this
-order?:'asc' |'desc';
+  
+// order = input<'asc'|'desc'>(); //we can use order as input
+
+//order?:'asc' |'desc'; //we can use order as variable
+
+order = signal<'asc'|'desc'>('desc');
+
 
   // userTasks: Task[] = [];
-  userTasks = computed(() => this.tasksService.allTasks().filter( t => t.userId === this.userId()));
+  userTasks = computed(() => this.tasksService.allTasks()
+  .filter( t => t.userId === this.userId())
+  .sort((a,b) => {
+    if(this.order() === 'asc')
+      return (a.id > b.id) ? 1 : -1;
+    else
+    return (a.id > b.id) ? -1 : 1; //for desc order
+  }));
+  
+  
   ngOnInit(): void {
   
    let paramsSubs= this.activatedRoute.queryParams.subscribe(
      {
-      next:(params) => this.order = params['order'],
+      next:(params) => this.order.set(params['order']),
       complete:undefined,
       error:undefined
      });
