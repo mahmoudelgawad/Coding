@@ -29,7 +29,7 @@ export const appRoutes :Routes = [
        path:'users/:userId', // yourdomain.com/users/15
        component: UserTasksComponent,
        children:usersRoutes, // you can split nested routes in other file
-       data:{
+       data:{ // contain both params values in path URL and in following object here
         staticMessage:'hello mahmoud' //it can auto binding as input for the component, because of 'withComponentInputBinding' in app config
        },
        resolve:{

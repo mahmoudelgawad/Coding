@@ -3,7 +3,7 @@ import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '
 import { TaskComponent } from './task/task.component';
 import { Task } from './task/task.model';
 import { TasksService } from './tasks.service';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
@@ -16,16 +16,17 @@ export class TasksComponent  implements OnInit{
   private tasksService = inject(TasksService);
   private destroRef=inject(DestroyRef);
   private activatedRoute = inject(ActivatedRoute);
- userId=input.required<string>(); 
+
+  userId=input.required<string>(); 
 
   //will input from itself via [queryParams], and auto input binding 
   // thanks for  'withComponentInputBinding()' in app.config
   
-// order = input<'asc'|'desc'>(); //we can use order as input
+  // order = input<'asc'|'desc'>(); //we can use order as input
 
-//order?:'asc' |'desc'; //we can use order as variable
+  //order?:'asc' |'desc'; //we can use order as variable
 
-order = signal<'asc'|'desc'>('desc');
+  order = signal<'asc'|'desc'>('desc');
 
 
   // userTasks: Task[] = [];
@@ -49,4 +50,12 @@ order = signal<'asc'|'desc'>('desc');
      });
      this.destroRef.onDestroy(()=>{paramsSubs.unsubscribe()});
   }
+}
+
+export const resolvedUserTasksResolver:ResolveFn<Task[]> = (
+  activatedRouteSnapShot:ActivatedRouteSnapshot,
+  routerStateSnapshot:RouterStateSnapshot) => {
+    const order = activatedRouteSnapShot.queryParams['order']; //xxxx?order=desc
+     
+
 }
