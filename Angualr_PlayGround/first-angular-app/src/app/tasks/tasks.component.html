@@ -7,7 +7,7 @@ this anchor for work as switch sorting options
   Sorting {{order()==='asc' ? 'Descending' : 'Ascending'}}
 </a>
 <ul>
-  @for (task of userTasks(); track task.id) {
+  @for (task of resolvedUserTasks(); track task.id) {
     <li>
       <app-task [task]="task" />
     </li>

@@ -1,4 +1,4 @@
-import { Component, computed, DestroyRef, inject, input, OnInit, signal } from '@angular/core';
+import { Component, computed, DestroyRef, Inject, inject, input, OnInit, signal } from '@angular/core';
 
 import { TaskComponent } from './task/task.component';
 import { Task } from './task/task.model';
@@ -38,6 +38,8 @@ export class TasksComponent  implements OnInit{
     else
     return (a.id > b.id) ? -1 : 1; //for desc order
   }));
+
+  resolvedUserTasks = input<Task[]>(); //filled by resolver function
   
   
   ngOnInit(): void {
@@ -56,6 +58,15 @@ export const resolvedUserTasksResolver:ResolveFn<Task[]> = (
   activatedRouteSnapShot:ActivatedRouteSnapshot,
   routerStateSnapshot:RouterStateSnapshot) => {
     const order = activatedRouteSnapShot.queryParams['order']; //xxxx?order=desc
-     
+    const tasksService = inject(TasksService);
+    const tasks = tasksService.allTasks().filter(
+      t => t.userId === activatedRouteSnapShot.paramMap.get('userId')); //xxx/users/userId:/tasks
+    
+      if(order && order === 'asc'){
+        tasks.sort((a,b) => (a > b) ? 1 : -1);
+      }else{
+        tasks.sort((a,b) => (a > b) ? -1 : 1);
+      }
 
+      return tasks.length ? tasks : [];
 }

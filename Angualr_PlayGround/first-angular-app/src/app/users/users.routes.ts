@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { TasksComponent } from "../tasks/tasks.component";
+import { resolvedUserTasksResolver, TasksComponent } from "../tasks/tasks.component";
 import { NewTaskComponent } from "../tasks/new-task/new-task.component";
 
 export const routes : Routes = [
@@ -11,10 +11,10 @@ export const routes : Routes = [
     {
         path:'tasks', // yourdomain.com/users/<userId>/tasks
         component: TasksComponent,
-        //runGuardsAndResolvers:"always", // run resolver with all kind of URL changes
-                                        //Parameters(user/userid:/tasks) (userid = u3) or Query Paramerters (?order=desc)
+        runGuardsAndResolvers:"always", // run resolver with all kind of URL changes that contains params and query params
+                                        //Parameters(user/userid:/tasks) (userid = u3) and Query Paramerters (?order=desc)
         resolve:{
-            // resolvedUserTasks:resolvedUserTasksResolver
+            resolvedUserTasks:resolvedUserTasksResolver //use it as an input
         }
     },
     {
