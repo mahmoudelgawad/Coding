@@ -39,7 +39,7 @@ export class TasksComponent  implements OnInit{
     return (a.id > b.id) ? -1 : 1; //for desc order
   }));
 
-  resolvedUserTasks = input<Task[]>(); //filled by resolver function
+  resolvedUserTasks = input<Task[]>(); //filled by resolver function in below
   
   
   ngOnInit(): void {
@@ -63,9 +63,9 @@ export const resolvedUserTasksResolver:ResolveFn<Task[]> = (
       t => t.userId === activatedRouteSnapShot.paramMap.get('userId')); //xxx/users/userId:/tasks
     
       if(order && order === 'asc'){
-        tasks.sort((a,b) => (a > b) ? 1 : -1);
+        tasks.sort((a,b) => {return (a > b) ? 1 : -1 ;});
       }else{
-        tasks.sort((a,b) => (a > b) ? -1 : 1);
+        tasks.sort((a,b) => {return (a > b) ? -1 : 1 ;});
       }
 
       return tasks.length ? tasks : [];
