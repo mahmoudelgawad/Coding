@@ -63,9 +63,10 @@ export const resolvedUserTasksResolver:ResolveFn<Task[]> = (
       t => t.userId === activatedRouteSnapShot.paramMap.get('userId')); //xxx/users/userId:/tasks
     
       if(order && order === 'asc'){
-        tasks.sort((a,b) => {return (a > b) ? 1 : -1 ;});
+        // tasks.sort((a,b) => {return (a > b) ? 1 : -1 ;});
+        tasks.sort((a,b) => (a > b) ? 1 : -1 );
       }else{
-        tasks.sort((a,b) => {return (a > b) ? -1 : 1 ;});
+        tasks.sort((a,b) => (a > b) ? -1 : 1 );
       }
 
       return tasks.length ? tasks : [];

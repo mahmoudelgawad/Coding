@@ -1,6 +1,7 @@
 import { Component, computed, DestroyRef, inject, input, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
 import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
+import { resolvedUserTasksResolver } from '../../tasks/tasks.component';
 
 @Component({
   selector: 'app-user-tasks',
@@ -69,3 +70,9 @@ export const resolvedUserNameResolver : ResolveFn<string> = (
   let resolvedUserName = userService.users.find(u => u.id === userIdParam)?.name || '';
   return resolvedUserName;
 }
+
+export const titleResolver:ResolveFn<string> =(
+  activatedRouteSnapshot, //you can just define argument wihtout decalre the type
+  routerStateSnapshot) =>{
+    return resolvedUserNameResolver(activatedRouteSnapshot,routerStateSnapshot) + "\'s Tasks";
+  }
