@@ -1,10 +1,20 @@
-import { Routes } from "@angular/router";
+import { CanMatchFn, RedirectCommand, Router, Routes } from "@angular/router";
 import { TasksComponent } from "./tasks/tasks.component";
 import { NoTaskComponent } from "./tasks/no-task/no-task.component";
 import { resolvedUserNameResolver, titleResolver, UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 import {NotFoundPageComponent} from "./not-found/not-found-page.component";
 import {routes as usersRoutes} from './users/users.routes';
+import { inject } from "@angular/core";
+
+const dummyCanMatch:CanMatchFn = (route, segments) =>{
+   const router = inject(Router);
+   const canGetAccess = Math.random(); //return number between 0 and 1
+   if(canGetAccess)
+     return true;
+       
+   return new RedirectCommand(router.parseUrl('/unautorized'));
+}
 
 export const appRoutes :Routes = [
     {
@@ -40,7 +50,8 @@ export const appRoutes :Routes = [
         resolvedUserName: resolvedUserNameResolver 
        },
        runGuardsAndResolvers:undefined,
-       title:titleResolver
+       title:titleResolver,
+       canMatch:[] // to authorize can access the url route or not
     },
     {
         path:'**', //if url not found
