@@ -1,7 +1,15 @@
+<!--
+this anchor for work as switch sorting options 
+ add query paramter for current url like
+ http://localhost:4200/users/u1/tasks?order=asc
+-->
+<a routerLink="./" [queryParams]="{order: order() === 'asc' ? 'desc' : 'asc'}">
+  Sorting {{order()==='asc' ? 'Descending' : 'Ascending'}}
+</a>
 <ul>
-  @for (task of userTasks; track task.id) {
+  @for (task of userTasks(); track task.id) {
     <li>
-      <app-task [task]="task" />
+      <app-task [task]="task" /> 
     </li>
   } @empty {
     <p>There are no tasks yet. Start adding some!</p>

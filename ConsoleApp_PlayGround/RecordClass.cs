@@ -13,7 +13,7 @@ namespace ConsoleApp_PlayGround
     //using with primary constructor, on only record make public properties from primary constructor parameters
     public record PersonPrim(string FirstName, string LastName);
 
-    //PersonRequiredInit = PersonPrim
+    //PersonRequiredInit = PersonPrim  (same structure internally)
     public record PersonRequiredInit
     {
         public required string FirstName { get; init; }

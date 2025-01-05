@@ -249,6 +249,25 @@ dic.delete('c');
 console.log('get deleted c:',dic.get('c')); //undefined
 }
 
+function sortArrayUsers(){
+    //sort affect on source object ' users Array', even if you donot open the object in brwoser console
+    //will affect on the it's values, but open it first before sort run, to see original state values 
+    console.log({fun:'sortArrayUsers',users:users});
+    let order = 'desc';
+    let result = [];
+    setTimeout(()=>{
+        if(order === 'asc')
+            //    result = users.sort((a,b) => {return a.age > b.age ? 1 :-1;});
+               users.sort((a,b) => a.age > b.age ? 1 : -1);
+            else
+               users.sort((a,b) => a.age > b.age ? -1 : 1);
+        
+             console.log({fun:'sortArrayUsers',users:users});
+        console.log("delay...end")
+    },5000);
+    
+}
+
 ////###############  Implementation   ##################
 // call named function
 //funTestOne();
@@ -264,6 +283,5 @@ console.log('get deleted c:',dic.get('c')); //undefined
 //generatorFunctionWithLoop();
 //test();
 //hashTable();
-
-
+sortArrayUsers();
 
