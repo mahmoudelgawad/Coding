@@ -6,7 +6,7 @@
 }
 
 #canvas{
-    /* background-image:url("CarDiagaram.png"); */
+    background-image:url("CarDiagaram.png");
     border: solid;
     border-color: red;
 }
