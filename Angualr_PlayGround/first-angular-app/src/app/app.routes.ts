@@ -7,12 +7,12 @@ import {NotFoundPageComponent} from "./not-found/not-found-page.component";
 import {routes as usersRoutes} from './users/users.routes';
 import { inject } from "@angular/core";
 
-const dummyCanMatch:CanMatchFn = (route, segments) =>{
+const dummyCanMatch:CanMatchFn = (route, URLsegments) =>{
    const router = inject(Router);
    const canGetAccess = Math.random(); //return number between 0 and 1
-   if(canGetAccess)
+   if(canGetAccess < 0.5)
      return true;
-       
+   // go to www.yourdomain.com/unautorized"    
    return new RedirectCommand(router.parseUrl('/unautorized'));
 }
 
@@ -49,9 +49,10 @@ export const appRoutes :Routes = [
         //resolver can be function or can be class based 
         resolvedUserName: resolvedUserNameResolver 
        },
-       runGuardsAndResolvers:undefined,
        title:titleResolver,
-       canMatch:[] // to authorize can access the url route or not
+       canMatch:[dummyCanMatch], // to authorize can access the url route or not
+       canActivate:undefined,
+       canDeactivate:undefined
     },
     {
         path:'**', //if url not found
