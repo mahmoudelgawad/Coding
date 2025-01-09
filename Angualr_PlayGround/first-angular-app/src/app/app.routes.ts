@@ -10,7 +10,8 @@ import { inject } from "@angular/core";
 const dummyCanMatch:CanMatchFn = (route, URLsegments) =>{
    const router = inject(Router);
    const canGetAccess = Math.random(); //return number between 0 and 1
-   if(canGetAccess < 0.5)
+//    if(canGetAccess < 0.5)
+    if(true)//to authorized all the time for testing
      return true;
    // go to www.yourdomain.com/unautorized"    
    return new RedirectCommand(router.parseUrl('/unautorized'));
@@ -50,7 +51,7 @@ export const appRoutes :Routes = [
         resolvedUserName: resolvedUserNameResolver 
        },
        title:titleResolver,
-       canMatch:[dummyCanMatch], // to authorize can access the url route or not
+       canMatch:[dummyCanMatch], // to authorize can access the url route or not, as Guard
        canActivate:undefined,
        canDeactivate:undefined
     },

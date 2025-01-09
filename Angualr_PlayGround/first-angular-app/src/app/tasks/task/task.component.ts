@@ -4,7 +4,7 @@ import { DatePipe } from '@angular/common';
 import { type Task } from './task.model';
 import { CardComponent } from '../../shared/card/card.component';
 import { TasksService } from '../tasks.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-task',
@@ -17,11 +17,17 @@ export class TaskComponent {
   task = input.required<Task>();
   private tasksService = inject(TasksService);
   private router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute);
 
   onComplete() {
     this.tasksService.removeTask(this.task().id);
+    //to fix problem, resolver re load the tasks again with updated removed tasks
     this.router.navigate(['./'],{
-      relativeTo:undefined
+      //to keep on current same url page 
+      relativeTo:this.activatedRoute, 
+      onSameUrlNavigation:'reload',
+      // to keep query parameters values when navigate
+      queryParamsHandling:'preserve'
     });
   }
 }
