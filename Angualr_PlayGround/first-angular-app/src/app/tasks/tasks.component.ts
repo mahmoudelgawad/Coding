@@ -54,20 +54,3 @@ export class TasksComponent  implements OnInit{
   }
 }
 
-export const resolvedUserTasksResolver:ResolveFn<Task[]> = (
-  activatedRouteSnapShot:ActivatedRouteSnapshot,
-  routerStateSnapshot:RouterStateSnapshot) => {
-    const order = activatedRouteSnapShot.queryParams['order']; //xxxx?order=desc
-    const tasksService = inject(TasksService);
-    const tasks = tasksService.allTasks().filter(
-      t => t.userId === activatedRouteSnapShot.paramMap.get('userId')); //xxx/users/userId:/tasks
-    
-      if(order && order === 'asc'){
-        // tasks.sort((a,b) => {return (a > b) ? 1 : -1 ;});
-        tasks.sort((a,b) => (a > b) ? 1 : -1 );
-      }else{
-        tasks.sort((a,b) => (a > b) ? -1 : 1 );
-      }
-
-      return tasks.length ? tasks : [];
-}

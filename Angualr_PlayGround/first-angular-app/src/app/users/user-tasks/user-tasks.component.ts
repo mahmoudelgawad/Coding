@@ -1,7 +1,6 @@
 import { Component, computed, DestroyRef, inject, input, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
 import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterLink, RouterOutlet, RouterStateSnapshot } from '@angular/router';
-import { resolvedUserTasksResolver } from '../../tasks/tasks.component';
 
 @Component({
   selector: 'app-user-tasks',
@@ -12,7 +11,7 @@ import { resolvedUserTasksResolver } from '../../tasks/tasks.component';
 })
 export class UserTasksComponent implements OnInit {
   private userService = inject(UsersService);
-private destroyRef = inject(DestroyRef);
+  private destroyRef = inject(DestroyRef);
 
   //using signal, with auto param mapping, via app providers 'withComponentInputBinding()'
   // userId = input.required<string>();
@@ -76,3 +75,4 @@ export const titleResolver:ResolveFn<string> =(
   routerStateSnapshot) =>{
     return resolvedUserNameResolver(activatedRouteSnapshot,routerStateSnapshot) + "\'s Tasks";
   }
+

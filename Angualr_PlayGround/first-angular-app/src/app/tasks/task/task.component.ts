@@ -4,7 +4,7 @@ import { DatePipe } from '@angular/common';
 import { type Task } from './task.model';
 import { CardComponent } from '../../shared/card/card.component';
 import { TasksService } from '../tasks.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, Router, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-task',
@@ -30,4 +30,22 @@ export class TaskComponent {
       queryParamsHandling:'preserve'
     });
   }
+}
+
+export const userTasksResolver:ResolveFn<Task[]> = (
+  activatedRouteSnapShot:ActivatedRouteSnapshot,
+  routerStateSnapshot:RouterStateSnapshot) => {
+    const order = activatedRouteSnapShot.queryParams['order']; //xxxx?order=desc
+    const tasksService = inject(TasksService);
+    const tasks = tasksService.allTasks().filter(
+      t => t.userId === activatedRouteSnapShot.paramMap.get('userId')); //xxx/users/userId:/tasks
+    
+      if(order && order === 'asc'){
+        // tasks.sort((a,b) => {return (a > b) ? 1 : -1 ;});
+        tasks.sort((a,b) => (a > b) ? 1 : -1 );
+      }else{
+        tasks.sort((a,b) => (a > b) ? -1 : 1 );
+      }
+
+      return tasks.length ? tasks : [];
 }

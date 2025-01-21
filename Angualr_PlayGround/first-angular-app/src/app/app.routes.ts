@@ -4,7 +4,7 @@ import { NoTaskComponent } from "./tasks/no-task/no-task.component";
 import { resolvedUserNameResolver, titleResolver, UserTasksComponent } from "./users/user-tasks/user-tasks.component";
 import { NewTaskComponent } from "./tasks/new-task/new-task.component";
 import {NotFoundPageComponent} from "./not-found/not-found-page.component";
-import {routes as usersRoutes} from './users/users.routes';
+//import {routes as usersRoutes} from './users/users.routes';
 import { inject } from "@angular/core";
 
 const dummyCanMatch:CanMatchFn = (route, URLsegments) =>{
@@ -39,7 +39,13 @@ export const appRoutes :Routes = [
 
        path:'users/:userId', // yourdomain.com/users/15
        component: UserTasksComponent,
-       children:usersRoutes, // you can split nested routes in other file
+
+       // you can split nested routes in other file
+       //children:usersRoutes,
+
+       //will lazy loading for users children
+       loadChildren:() => import('../app/users/users.routes').then(module => module.routes),
+       
        data:{ // contain both params values in path URL and in following object here
         staticMessage:'hello mahmoud' //it can auto binding as input for the component, because of 'withComponentInputBinding' in app config
        },
