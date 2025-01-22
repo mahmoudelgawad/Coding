@@ -5,7 +5,7 @@ import { type NewTaskData } from './task/task.model';
 //normal injected
 // @Injectable({ providedIn: 'root' })
 
-//for inject with lazy loading
+//for inject with lazy loading for nested children routes 'user.routes.ts'
 @Injectable()
 export class TasksService {
   private tasks = signal([

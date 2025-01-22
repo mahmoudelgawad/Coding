@@ -5,20 +5,19 @@ import { userTasksResolver } from "../tasks/task/task.component";
 import { TasksService } from "../tasks/tasks.service";
 
 
-
-
 export const routes : Routes = [
     {
       path:'',
       //load Lazy the 'TasksService' for nested routes or children
+      //so for that reason we put all routes as children array
       providers:[TasksService],
       children:[
         {
           path:'', // path = nothing but just equal parent path 'users/:userId'
           redirectTo:'tasks',
           pathMatch:"prefix" // put parent path 'users/:userId' prefix (first) then redirecTo value 'tasks'
-      },
-      {
+        },
+        {
           path:'tasks', // yourdomain.com/users/<userId>/tasks
           
           //eager loading
@@ -34,13 +33,13 @@ export const routes : Routes = [
           resolve:{
               resolvedUserTasks:userTasksResolver //use it as an input
           }
-      },
-      {
+        },
+        {
           path:"tasks/new",
           component:NewTaskComponent,
           //logic or process when leave the current URL
           canDeactivate:[canLeaveEditPage]
-      }
+        }
       ]
     }
    ];
