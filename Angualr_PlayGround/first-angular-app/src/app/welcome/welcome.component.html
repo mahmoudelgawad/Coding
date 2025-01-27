@@ -41,10 +41,17 @@
   </p>
 </section>
 
-<!-- for lazyloading redner "<app-offer-preview />" component later when scrolldown to this part  -->
-@defer (on viewport) {
+<!-- for lazyloading redner "<app-offer-preview />" component later when scrolldown to this part
+using viewport trigger, and there mutiple types of triggers ("on idle"), ("on hover"), etc 
+("on interaction") like on event, when user press the <p> element
+  https://angular.dev/guide/templates/defer
+  
+-->
+  
+<!-- @defer(on viewport) { -->
+@defer(on interaction) {
   <app-offer-preview />
 }@placeholder {
-  <p>we might have an offer!</p>
+  <p class="fallback">we might have an offer!</p>
 }
 

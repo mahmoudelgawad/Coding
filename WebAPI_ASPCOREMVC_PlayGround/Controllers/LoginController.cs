@@ -45,5 +45,24 @@ namespace WebAPI_ASPCOREMVC_PlayGround.Controllers
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+
+        public string GenrateJSONWebBasedToken() 
+        {
+            //using Microsoft.IdentityModel.Tokens
+            var algo = SecurityAlgorithms.HmacSha256;
+
+            //using System.Security.Claims
+            Claim[] claims = new Claim[]
+            {
+                //using System.IdentityModel.Tokens.Jwt
+             new Claim(JwtRegisteredClaimNames.Sub,"Mahmoud Authenticatetion"),
+             new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
+             new Claim(JwtRegisteredClaimNames.Iat,"1234567")
+            };
+
+            //read
+            //https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-jwt-bearer-authentication?view=aspnetcore-9.0
+            return "";
+        }
     }
 }
