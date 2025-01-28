@@ -49,7 +49,9 @@ using viewport trigger, and there mutiple types of triggers ("on idle"), ("on ho
 -->
   
 <!-- @defer(on viewport) { -->
-@defer(on interaction) {
+ <!-- prefetch mean early load chunks files lazy loading , in background
+  but not render until you click event -->
+@defer(on interaction; prefetch on hover) {
   <app-offer-preview />
 }@placeholder {
   <p class="fallback">we might have an offer!</p>
