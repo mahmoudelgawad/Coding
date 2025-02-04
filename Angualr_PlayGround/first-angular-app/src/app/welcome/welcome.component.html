@@ -42,7 +42,7 @@
 </section>
 
 <!-- for lazyloading redner "<app-offer-preview />" component later when scrolldown to this part
-using viewport trigger, and there mutiple types of triggers ("on idle"), ("on hover"), etc 
+using viewport trigger, and there multiple types of triggers ("on idle"), ("on hover"), etc 
 ("on interaction") like on event, when user press the <p> element
   https://angular.dev/guide/templates/defer
   
@@ -50,10 +50,13 @@ using viewport trigger, and there mutiple types of triggers ("on idle"), ("on ho
   
 <!-- @defer(on viewport) { -->
  <!-- prefetch mean early load chunks files lazy loading , in background
-  but not render until you click event -->
+  but not render until you do click event -->
 @defer(on interaction; prefetch on hover) {
   <app-offer-preview />
 }@placeholder {
   <p class="fallback">we might have an offer!</p>
+}
+@loading(after 100ms){
+  <span>is loading</span>
 }
 
