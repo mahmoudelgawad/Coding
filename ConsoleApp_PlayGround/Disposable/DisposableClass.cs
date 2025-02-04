@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_PlayGround
 {
-    internal class UnmanagementClass:IDisposable
+    public class DisposableClass:IDisposable
     {
-        ~UnmanagementClass()
+        ~DisposableClass()
         {
             //incase forgot to call Dispose()
             Dispose(false);
@@ -34,4 +34,6 @@ namespace ConsoleApp_PlayGround
         }
 
     }
+
+
 }
