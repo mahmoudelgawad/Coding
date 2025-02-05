@@ -92,8 +92,6 @@ namespace ConsoleApp_PlayGround.Compare
             {
              personsNotComparable.Sort(); // ERROR: sort will confused, Invalid operation exception
             }
-            
-
 
 
             var persons = new List<IPerson>
@@ -107,12 +105,9 @@ namespace ConsoleApp_PlayGround.Compare
             };
 
 
-
             DisplayPersons(persons);
             persons.Sort();
             DisplayPersons(persons);
-
-
 
 
         }
