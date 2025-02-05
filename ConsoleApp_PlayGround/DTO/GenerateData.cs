@@ -19,6 +19,22 @@ namespace ConsoleApp_PlayGround.DTO
                 new Employee{ FirstName= "Sonwarson",LastName="goodsfi",Position = "manager",Salary=208.4f },
             };
             return employess;
-        }   
+        }
+
+        public static Dictionary<string, string> CreateVehicleDetails() 
+        {
+            Dictionary<string, string> vehicleDetails = new Dictionary<string, string> 
+            {
+             {"DVLA_Make","VOLKSWAGEN"},
+             {"DVLA_Model","CADDY MAXI C20 STARTLINE"},
+             {"Transmission","MANUAL"},
+             {"Eire_ChassisNumber","WV1ZZZ2KZGX126901"},
+             {"Eire_Vrm",null},
+             {"VRM_Curr","" },
+             {"VRM_MVRIS", "MW16FNE"}
+            };
+
+            return vehicleDetails;
+        }
     }
 }
