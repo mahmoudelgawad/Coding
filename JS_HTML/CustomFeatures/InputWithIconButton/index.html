@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Input with Icon</title>
+    <style>
+        .search-container {
+            display: flex;
+            align-items: center;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            overflow: hidden;
+            width: 250px;
+        }
+
+        .search-input {
+            border: none;
+            padding: 10px;
+            outline: none;
+            flex: 1;
+        }
+
+        .search-button {
+            background: #007bff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .search-button i {
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+function onClickSearchButton(e){
+    alert("You clicked on search button !");
+    console.log({onClickSearchButton:e});
+}
+    </script>
+</head>
+<body>
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button type="button" class="search-button" onclick="onClickSearchButton()">&#128269;</button>
+    </div>
+
+</body>
+</html>
