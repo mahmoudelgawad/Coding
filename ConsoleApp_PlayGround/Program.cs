@@ -51,8 +51,10 @@ namespace ConsoleApp_PlayGround
 
             //ShortCircuitImplementation.Implement();
 
-            ParamsClassImplementation.Implement();
-            
+            // ParamsClassImplementation.Implement();
+
+            SelectFromArrayStringImplementation.Implement();
+
 
             //just comment
             Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
