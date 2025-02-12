@@ -37,3 +37,19 @@ CONS
 -ng deploy
   
 */
+
+/* 
+#for enable SSR (Server Side Rendered) with NodeJs server + Express
+CLI> ng new --ssr   //for new project from scratch
+CLI> ng add @angualr/ssr    //adding ssr library for exist project
+
+#you will find added parts 
+-in file 'angualr.json'
+  "ssr":{
+  "entery":"server.ts"
+  }
+- + "./src/server.ts"  
+- + "./src/main.server.ts" // Nodejs server + express code
+- + "app.config.server.ts" 
+
+*/
