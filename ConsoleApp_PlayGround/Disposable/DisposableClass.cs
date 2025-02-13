@@ -29,8 +29,11 @@ namespace ConsoleApp_PlayGround
             //addition free management code logic
             Dispose(true);
 
-            //ensure the destructor not cllaing and clean the object from first cycle
+            //ensure the destructor not calling/invoke and insure the GC clean the object from first cycle (GEN 0)
             GC.SuppressFinalize(this);
+
+            // forces to run immediate the GC for all generations (GEN 0, 1, 2), but not recommended
+            //GC.Collect();
         }
 
     }
