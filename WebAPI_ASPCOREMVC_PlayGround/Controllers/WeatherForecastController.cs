@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace WebAPI_ASPCOREMVC_PlayGround.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -24,6 +26,7 @@ namespace WebAPI_ASPCOREMVC_PlayGround.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
