@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_PlayGround.Interfaces
 {
-    internal interface Iimplementation
+    internal interface IImplementation
     {
         // it just available in C# 11 version
         //abstract static void Implement();

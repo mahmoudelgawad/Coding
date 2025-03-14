@@ -29,14 +29,14 @@ namespace ConsoleApp_PlayGround
             return I * Do;
         }
    }
-    internal class StructImplementation : Iimplementation
+    internal class StructImplementation : IImplementation
     {
         public static void Implement() 
         {
             CircleValue cicle = new CircleValue { I = 13 };
             cicle.GetDo(3);
         }
-        void Iimplementation.Implement() 
+        void IImplementation.Implement() 
         {
             Implement();
         }

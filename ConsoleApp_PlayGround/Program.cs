@@ -53,11 +53,13 @@ namespace ConsoleApp_PlayGround
 
             // ParamsClassImplementation.Implement();
 
-            SelectFromArrayStringImplementation.Implement();
+            //SelectFromArrayStringImplementation.Implement();
+            NestedClassImplementation.Implement();
+           
 
 
             //just comment
-            Console.WriteLine("ConsoleApp_PlayGround SUCCESS!");
+            Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");
 
 
         }
