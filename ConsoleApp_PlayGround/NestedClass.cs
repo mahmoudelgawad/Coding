@@ -20,7 +20,8 @@ namespace ConsoleApp_PlayGround
         }
     }
 
-    // yes it can allowed inherit from nested class, if it is accessible and not static
+    // yes it can allowed inherit from nested class, if it is accessible(access modifier)
+    // and not static
     internal class OtherOuterClass : OuterClass.NestedClassA 
     {
         public OtherOuterClass() 
