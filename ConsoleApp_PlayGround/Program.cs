@@ -55,7 +55,7 @@ namespace ConsoleApp_PlayGround
 
             //SelectFromArrayStringImplementation.Implement();
             NestedClassImplementation.Implement();
-           
+            InheritanceImplementation.Implement();
 
 
             //just comment
