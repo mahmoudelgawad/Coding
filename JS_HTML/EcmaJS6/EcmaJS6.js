@@ -1,3 +1,8 @@
+//JavaScript ECAM script 6 need server not called as file://
+
+import {Person} from '../EcmaJS6/Person';
+import Teacher,{promote} from '../EcmaJS6/Teacher';
+
 function objectWithThis() {
   const person = {
     name: "mahmoud",
@@ -53,26 +58,6 @@ function destructingObject() {
   };
   const { street: st, building, floor } = address;
   console.log(st, building, floor);
-}
-
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
-
-  walk() {
-    console.log(`person.walk() = ${this.name}`);
-  }
-}
-
-class Teacher extends Person{
-  constructor(name,degree){
-    super(name);
-    this.degree = degree;
-  }
-  teach(){
-    console.log("teach");
-  }
 }
 
 function definePersonClass() {
