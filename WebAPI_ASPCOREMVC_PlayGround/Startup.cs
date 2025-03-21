@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI_ASPCOREMVC_PlayGround.Middleware;
 
 namespace WebAPI_ASPCOREMVC_PlayGround
 {
@@ -43,6 +44,7 @@ namespace WebAPI_ASPCOREMVC_PlayGround
             });
 
             //use custome Middlewear
+            app.UseMiddleware<MyCustomMiddleware>();
             //app.UseMiddleware<CustomeClass>();
 
             if (env.IsDevelopment())
