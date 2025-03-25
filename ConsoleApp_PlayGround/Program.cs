@@ -13,6 +13,7 @@ using System.Linq;
 using ConsoleApp_PlayGround.DTO;
 using ConsoleApp_PlayGround.LINQ;
 using ConsoleApp_PlayGround.Challenges.LeetCode;
+using ConsoleApp_PlayGround.IO;
 
 namespace ConsoleApp_PlayGround
 {
@@ -54,8 +55,11 @@ namespace ConsoleApp_PlayGround
             // ParamsClassImplementation.Implement();
 
             //SelectFromArrayStringImplementation.Implement();
-            NestedClassImplementation.Implement();
-            InheritanceImplementation.Implement();
+            //NestedClassImplementation.Implement();
+            //InheritanceImplementation.Implement();
+
+            await StreamReadWriteImplemntation.Implement();
+            
 
 
             //just comment
