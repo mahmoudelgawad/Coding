@@ -14,6 +14,7 @@ namespace ConsoleApp_PlayGround
         //initalize in constructor or definition only
         private readonly int _readonlyVar; 
         public readonly int readonlyVar2;
+        public readonly List<int> myNumbers = new List<int>{ 1,2,3,4,5 };
 
         // must initalize
         // implicitly static - can call const vairable as static field
@@ -31,6 +32,12 @@ namespace ConsoleApp_PlayGround
             //_readonlyVar = +1; //error, must assing in constructor or when initialize only
             //_constVar = +2; // error
             return _readonlyVar;
+        }
+
+        public void EditMyNumbersReadonlyList() 
+        {
+            //it's not readonly list , you can edit it
+            myNumbers.Add(20);
         }
     }
 
@@ -56,7 +63,10 @@ namespace ConsoleApp_PlayGround
         public static void Implement() 
         {
             ReadonlyClass readonlyClass = new ReadonlyClass(2);
-            Console.WriteLine(readonlyClass.Method1());
+            Console.WriteLine($"Method1: {readonlyClass.Method1()}");
+            readonlyClass.EditMyNumbersReadonlyList();
+            Console.WriteLine($"MyNumbers List count:{readonlyClass.myNumbers.Count()}");
+
 
             readonlyObj.FirstName = "soso";
             readonlyObj.LastName = "Boso";

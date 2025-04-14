@@ -14,6 +14,8 @@ namespace ConsoleApp_PlayGround.Interfaces
         //int varInt; //ERROR: no instance fileds in interface
 
         //string Name { get; set; }
+
+        //public string Name { get; set; } //public access modifier only allowed
         void Implement();
     }
 }

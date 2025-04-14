@@ -22,45 +22,7 @@ namespace ConsoleApp_PlayGround
         static async Task Main(string[] args)
         {
 
-            //VarDynamicClass.Implement();
-            //ReadonlyClassImplementation.Implement();
-            //AbstractClassImplementation.Implement();
-
-            //ComparableBaseClassImplementation.Implement();
-            //ComparableImplementation.Implement(true);
-
-            //ComparerImplementation.Implement();
-
-            //ArrayDoublicateItems.Implement();
-
-            //YiledReturnImplementation.Implement();
-
-            // AttributeClassImplementation.Implement();
-            //DelegateClassImplemntation.Implement();
-            //SubstringClass.Implement();
-
-            //SerializationImeplement.Implement();
-
-            // ParallelThreadClassImplementation.Implement();
-            //OverLoadingClassImplementation.Implement();
-
-            //RecordClassImplementation.Implement();
-
-            //GroupByLinqImplemntation.Implement();
-
-            // TwoSumImplementation.Implement();
-
-            //ShortCircuitImplementation.Implement();
-
-            // ParamsClassImplementation.Implement();
-
-            //SelectFromArrayStringImplementation.Implement();
-            //NestedClassImplementation.Implement();
-            //InheritanceImplementation.Implement();
-
-            await StreamReadWriteImplemntation.Implement();
-            
-
+            ReadonlyClassImplementation.Implement();
 
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");
