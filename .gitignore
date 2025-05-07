@@ -55,5 +55,6 @@ ASPCOREMVC_PlayGround/bin*
 /WebAPI_ASPCOREMVC_PlayGround/obj/Debug/net5.0/WebAPI_ASPCOREMVC_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
 /WebAPI_ASPCOREMVC_PlayGround/obj/Release/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
 /WebAPI_ASPCOREMVC_PlayGround/obj/Release/net5.0/WebAPI_ASPCOREMVC_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
-/Angular_PlayGround/first-angular-app/node_modules*
+node_modules
+node_modules/
 
