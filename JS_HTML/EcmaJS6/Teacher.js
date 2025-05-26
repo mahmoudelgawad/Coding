@@ -1,4 +1,4 @@
-import {Person} from './Person';
+import {Person} from './person';
 export default class Teacher extends Person{
     constructor(name,degree){
       super(name);

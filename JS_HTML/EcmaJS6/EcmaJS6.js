@@ -1,7 +1,7 @@
 //JavaScript ECAM script 6 need server not called as file://
 
-import {Person} from '../EcmaJS6/Person';
-import Teacher,{promote} from '../EcmaJS6/Teacher';
+import {Person} from './person';
+import Teacher,{promote} from './teacher';
 
 function objectWithThis() {
   const person = {

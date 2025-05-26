@@ -28,6 +28,15 @@ namespace WebAPI_ASPCOREMVC_PlayGround
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //enabel session state
+            services.AddSession(options => 
+            {              
+                options.Cookie.Name = "WebAPI_ASPNetCOREMVC_PlayGround";
+                options.Cookie.IsEssential = true;
+                options.Cookie.HttpOnly = true;
+                options.IdleTimeout = TimeSpan.FromSeconds(60);
+            });
+
             //Dependency Injection
             //services.AddScoped();
 
