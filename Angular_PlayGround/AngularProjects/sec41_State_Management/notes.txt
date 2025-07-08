@@ -1,0 +1,26 @@
+//# adding NgRx library
+>ng add @ngrx/store
+
+//#alternative install ngrx
+//# '--save'include the package inside of the dependencies section of your 'package.json'
+>npm install --save @ngrx/store
+
+//# after adding will see changes in both non-standalone and standalone App
+@NgModule({
+  declaration:[components..]
+  imports:[modules.., StoreModule.forRoot({
+    counter:counterReducer
+  },{})]  
+  providers:[],
+  bootstrap:[AppComponent]
+});
+
+//# standalone
+//# in 'main.ts' file
+boostrapApplication(AppComponent,{
+    providers:[provideStore()]
+});
+
+//# installing ngrx effects 
+>npm i @ngrx/effects@16.0.0
+//# then will add in 'main.ts' providers 'provideEffects()'
