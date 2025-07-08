@@ -1,0 +1,13 @@
+javascript
+https://codesandbox.io/p/sandbox/vanilla-js-demo-6049kj?file=%2Findex.js 
+
+react
+https://codesandbox.io/p/sandbox/react-vs-vanilla-demo-uc08fv?file=%2Fsrc%2FApp.js
+
+//#for create new react project using 'vite' or 'create react app' from npm package manager
+>npm create vite@latest react-project
+//#then select 'React' -> 'TypeScript', then the following steps
+
+>cd react-project
+>npm install
+>npm run dev
