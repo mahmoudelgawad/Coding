@@ -29,6 +29,7 @@ const requestHandler = (incomingMessage,serverResponse) =>{
             </body>
             </html>
             `);
+       //# should use 'return' to avoid runtime error if you tried 'res.setHeader' later 
        return serverResponse.end();
     }
 
@@ -48,7 +49,7 @@ const requestHandler = (incomingMessage,serverResponse) =>{
             const parsedBody = Buffer.concat(body).toString();
             console.log({parsedBody:parsedBody});
             const message = parsedBody.split('=')[1];
-            console.log({messageBody:message});
+            console.log({messageBody:message,note:'need parse space'});
 
             // fs.writeFileSync("message.txt",message); //blocking code
             fs.writeFile('message.txt',message,(err)=>{
