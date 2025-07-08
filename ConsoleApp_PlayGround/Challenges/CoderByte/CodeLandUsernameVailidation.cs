@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace ConsoleApp_PlayGround.Challenges.CoderByte
 {
-    public class CodeLandUsernameVailidation
+    public class CodeLandUsernameVailidationClass
     {
 
         public static string CodelandUsernameValidation(string str)
@@ -10,7 +11,7 @@ namespace ConsoleApp_PlayGround.Challenges.CoderByte
 
             //rule 1
             int length = str.Length;
-            if (String.IsNullOrEmpty(str) || (length <= 4 || length >= 25))
+            if (String.IsNullOrEmpty(str) || (length < 4 || length > 25))
                 return "false";
 
             //rule 2
@@ -40,11 +41,25 @@ namespace ConsoleApp_PlayGround.Challenges.CoderByte
             return false;
         }
 
-        // keep this function call here
-        public  static void Main()
+        public static string CodelandUsernameValidation_Final(string str) 
         {
+            if (string.IsNullOrEmpty(str) || (str.Length < 4 || str.Length > 25))
+                return "false";
+            bool isValidRegex = Regex.IsMatch(str, @"^[a-zA-Z]\w+[a-zA-Z0-9]$");
+            if(!isValidRegex)
+                return "false";
 
-            Console.WriteLine(CodelandUsernameValidation(Console.ReadLine()));
+            return "true";
+        }
+
+        public  static void Implement()
+        {
+            while (Console.ReadLine() != "exit") 
+            {
+                Console.WriteLine("Enter username:");
+                Console.WriteLine(CodelandUsernameValidation_Final(Console.ReadLine()));
+            }
+            
 
         }
 

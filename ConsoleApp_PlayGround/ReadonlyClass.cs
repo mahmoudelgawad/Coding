@@ -36,7 +36,9 @@ namespace ConsoleApp_PlayGround
 
         public void EditMyNumbersReadonlyList() 
         {
-            //it's not readonly list , you can edit it
+            //readonly Can't assign new instance
+            // myNumbers = new List<int>(); //ERROR
+            //you can edit or add values only
             myNumbers.Add(20);
         }
     }

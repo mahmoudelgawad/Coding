@@ -69,7 +69,7 @@ function arraySlice(){
 function arraySplice(){
     const dogsNames =["max", "blue", "lio","trex", "dark", "spark"];
     //splice return new array deleted from the source 
-    //third argument to add or replace item depend on deleteCount '0:add' '>0:replace'
+    //third argument to add or replace item depend on deleteCount(2th argument) '0:add' '>0:replace'
     //not affect on source array reference
     //start from 0 index and delete count number 3 items, start index value included
     let spliceResult = dogsNames.splice(0,3);
@@ -80,12 +80,12 @@ function arraySplice(){
     // output:['julia','blue','lio']
 
     // add new item 'yellow' before  index 1 'blue'
-    spliceResult.splice(1,0,'yellow')
+    spliceResult.splice(1,0,'yellow');
     console.log(`spliceResult: add 'yellow'`,spliceResult);
     // output:['julia','yellow','blue','lio']
 
      // replace  index 1 value from 'blue' to 'yellow'
-     spliceResult.splice(1,1,'green')
+     spliceResult.splice(1,1,'green');
      console.log(`spliceResult: 'yellow' to 'green'`,spliceResult);
      // output:['julia','green','blue','lio']
     

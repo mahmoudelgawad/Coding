@@ -24,6 +24,7 @@ namespace ConsoleApp_PlayGround
     {
         public string FirstName { get; init; }
         public string LastName { get; init; }
+        public string Address { get; init; } = "No Where Living!";
     };
 
     public record PersonPrivate
@@ -73,11 +74,14 @@ namespace ConsoleApp_PlayGround
             var personPrim = new PersonPrim("firstname","lastname");
             var personRequiredInit = new PersonRequiredInit { FirstName="Sami",LastName="" };
             var person = new Person();
-            string personFirstName =  person.FirstName + " is First Name";
-            Console.WriteLine($"personFirstName = {personFirstName}");
-            
-            // Error
+
+            // Error , it's required {get;init} assing in initializer only
             //personRequiredInit.FirstName = "sdsds"; 
+
+            //person.FirstName = "sdsdsd"; //ERROR
+            Console.WriteLine($"person.Address = {person.Address}");
+            string personFirstName = person.FirstName + " is First Name";
+            Console.WriteLine($"personFirstName = {personFirstName}");
 
             var pointPrim = new PointPrim();
             //Error
