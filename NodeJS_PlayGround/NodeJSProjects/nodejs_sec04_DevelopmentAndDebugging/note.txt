@@ -1,0 +1,32 @@
+//this project just trying to creating npm "package.json" file
+>npm init
+//then press enter
+
+//when add custom npm script contains '-' like 'start-server' or even 'coco-server'
+//you have to 'npm run coco-server', but normal script as 'npm start'
+
+//will install in the project "nodemon" package, for auto restart project build
+//when code detect changes 'hot reload'
+//to install globally
+>npm install nodemon -g
+
+//to install for current project only
+>npm install nodemod --save-dev
+
+//then will found the package installed and value in 'package.json'
+-'^' mean how package update
+
+//you can run the project with following commands
+>npm start
+
+//this run command will avoid nodemon
+>node app.js
+
+//when folder 'node_modules' not exist , just run 'npm install', will install dependencies
+//including the 'package.json' dependencies
+>npm install
+
+//#NodeJs error types (syntax, runtime, logical) errors
+
+//#for custome Debug settings, add configuration file '.vscode/lunch.json' from 'run->add configuration'
+//#then you can edit {restart:true,runTimeExcutable:'nodemod'} for every

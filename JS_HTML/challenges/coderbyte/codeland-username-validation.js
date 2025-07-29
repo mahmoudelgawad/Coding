@@ -10,7 +10,7 @@ function codelandUsernameValidation(str){
     
     
     //let validRegex = /^[a-zA-Z]/;
-    let validRegex = /^[a-zA-Z]\w+[a-zA-Z0-9]$/;
+    const validRegex = /^[a-zA-Z]\w+[a-zA-Z0-9]$/;
 
     /*
     if(!validRegex.test(str.charAt(0)) || str[str.length-1] === '_')
