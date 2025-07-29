@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 
 namespace ConsoleApp_PlayGround.Challenges.CoderByte
@@ -20,52 +21,32 @@ namespace ConsoleApp_PlayGround.Challenges.CoderByte
         }
         public static string LongestWord_final(string str)
         {
-            int qCounter = 0;
-            char startDigit = 'n';
-            char endDigit = 'n';
-            string result = "false";
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (str[i] == '?' && startDigit != 'n')
-                {
-                    ++qCounter;
-                }
-                if (char.IsDigit(str[i]))
-                {
-                    if (startDigit == 'n')
-                    {
-                        startDigit = str[i];
-                    }
-                    else if (endDigit == 'n')
-                    {
-                        endDigit = str[i];
+            Regex rgx = new Regex(@"[^\w\s]");
+            string[] strArr = rgx.Replace(str, "").Split(" ");
+            return strArr.OrderByDescending(w => w.Length).FirstOrDefault();
 
-                        if ((int)(char.GetNumericValue(startDigit) + (int)char.GetNumericValue(endDigit)) == 10 && qCounter == 3)
-                        {
-                            result = "true";
-                            startDigit = endDigit;
-                            endDigit = 'n';
-                        }
-                        else if ((int)(char.GetNumericValue(startDigit) + (int)char.GetNumericValue(endDigit)) == 10 && qCounter != 3)
-                        {
-                            return "false";
-                        }
-                    }
-                }
-            }
-            return result;
+            //JAVASCRIPT
+            /*var arr = sen.match(/[a-z]+/gi);
+
+            // the array sort function takes a function as a parameter
+            // which is used to compare each element in the array to the
+            // next element in the array
+            var sorted = arr.sort(function(a, b) {
+              return b.length - a.length;*/
         }
 
         // keep this function call here
         public static void Implement()
         {
             string str = "fun&!! time";
-            Console.WriteLine(LongestWord(str));
-
+            Console.WriteLine(LongestWord_final(str));
             str = "I love dogs";
+            Console.WriteLine(LongestWord_final(str));
+
+            /*string str = "fun&!! time";
             Console.WriteLine(LongestWord(str));
-
-
+            str = "I love dogs";
+            Console.WriteLine(LongestWord(str));*/
 
         }
 

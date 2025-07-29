@@ -14,6 +14,7 @@ using ConsoleApp_PlayGround.DTO;
 using ConsoleApp_PlayGround.LINQ;
 using ConsoleApp_PlayGround.Challenges.LeetCode;
 using ConsoleApp_PlayGround.IO;
+using ConsoleApp_PlayGround.Challenges.Other;
 
 namespace ConsoleApp_PlayGround
 {
@@ -21,10 +22,9 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
+            CalculateFloatListClass.Implement();
 
-            LongestWordClass.Implement();
-            
-            
+
 
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");

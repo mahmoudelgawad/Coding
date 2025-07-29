@@ -4,23 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp_PlayGround.Challenges
+namespace ConsoleApp_PlayGround.Challenges.Other
 {
     internal class ArrayDoublicateItems
     {
         //get dublictae items in Array
-        public static void Implement() 
+        //mehtod 1, using list, asking it contains value before add number
+        //method 2, best practis i think using Set 
+        public static void Implement()
         {
             //var ar = new int[9] {5,4,66,4,7,8,6,1,4};
             int[] arr = { 5, 4, 66, 4, 7, 8, 6, 1, 4, 66, 6 };
             List<int> doubleValues = new List<int>();
-            for (int i = 0; i < arr.Length; i++) 
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int ii = 0; ii < arr.Length; ++ii) 
+                for (int ii = 0; ii < arr.Length; ++ii)
                 {
-                    if ((arr[i] == arr[ii]) && (i != ii)) 
+                    if (arr[i] == arr[ii] && i != ii)
                     {
-                        if (doubleValues.Contains(arr[i])) 
+                        if (doubleValues.Contains(arr[i]))
                         {
                             break;
                         }
