@@ -1,0 +1,8 @@
+//the concept CSS animations
+//https://www.w3schools.com/css/css3_animations.asp
+
+//#first need install npm angular animations package
+>npm install --save @angular/animations
+
+//#then add module in @component{imports[BrowserAnimationsModule]} in 'app.component.ts'
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

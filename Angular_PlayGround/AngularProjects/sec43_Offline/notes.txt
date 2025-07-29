@@ -1,0 +1,50 @@
+//#the concept of offline applications '@angular/ServiceWorker',
+//#'service workers' that work on differernt thread for all pages
+
+//# *PWA meaning*
+//#library that provides support for building Progressive Web Applications (PWAs) in Angular projects.
+//#It simplifies the process of adding PWA features like service workers,
+//# manifest files, and caching strategies, allowing developers to create installable,
+//#  offline-capable web applications
+
+
+//#add angular package
+>ng add @angular/pwa
+
+//#concequences or the affects
+//#1- 'ngsw-config.json' added
+//#2- added png icons 'public/icons'
+//#3- UPDATE angular.json 'configurations.production.ServiceWorker'='ngsw-config.json'
+//#4- UPDATE package.json (1090 bytes)
+//#5- UPDATE src/app/app.config.ts 'provideServiceWorker()' in providers[]
+//#6- UPDATE src/index.html <noscript> element enable javascript
+
+//#for (AOT)compilation, minification, bundling
+//# output path 'Angular_PlayGround\first-angular-app\dist\first-angular-app\browser'
+>ng build
+
+
+//#for serve the output dist files, using npm package 'http-server' globally
+//#https://www.npmjs.com/package/http-server
+>npm install -g http-server
+
+//# assign portal number
+>http-server -p 8081
+
+//# will notice if the app is offline will service worker load from caching data,
+//# but it will show white page like the website available online but no data loaded.
+//#so need to change the service worker config 
+//#'ngsw-config.json' assetGroups[{name:"app",installMode="prefetch/lazy",resources:{"files":{},"urls"} }]
+//#we added 'urls' in "assetGroups.app.resources", as "google css" and "http request"
+//#"http://fonts.gstatic.com/**" 2 stars meaning any match after url
+//#'assestsGroups' for static data
+//#'dataGroups' for dynamic data, like API http requests
+//#"cacheConfig":{
+      "maxSize":5, //#max 5 requests
+      "maxAge": "6h",//#max life time age for stored cache data
+      "timeout": "10s",//# 10 seconds timeout for any url requests then get load chache data
+      "strategy": "performance" //#load from the chache data if exist, like user avatar 
+      "strategy": "freshness" //#load from cahche data only if timeout url request  or it's 'offline' 
+    }
+
+

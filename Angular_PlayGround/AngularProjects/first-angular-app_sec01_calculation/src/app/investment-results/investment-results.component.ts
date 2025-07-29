@@ -25,7 +25,12 @@ export class InvestmentResultsComponent {
   // }[] | undefined>(undefined);
 
   //WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
-
+  
+  //# TypeScript properties strictness and optionality as 'difinite assignment assertion'
+  //# '!' meaning for typescript is don't worry will assigned from the parent
+  //# '?' meaning for typescript it is 'string' or 'undefined'
+  
+  
   // @Input() results? : {
   //   year: number;
   //   interest: number;
