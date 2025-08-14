@@ -1,0 +1,27 @@
+//#about angualr CLI (Command Line Interface)
+//#https://angular.dev/tools/cli
+//#first we need to install angular CLI package globally
+>npm install -g @angular/cli@latest
+>ng new
+>ng new --help
+>ng new help
+
+//#create new angular project with name 'first-angular-app'
+>ng new first-angular-app
+
+//#file for apply globally for multiple IDE(Integrated Development Environment) as VSCode or others
+//#for code styling how it's look, indentation or spaces size, quote type (single, double)
+.editorconfig
+
+//#contain third library needed
+//#'dependencies' for the current project also need when build/deploy to production
+//#'devDependencies' for current project but especially locally
+//#both installed in 'node_modules' folder with command 'npm install'
+package.json
+
+//#after npm intsalled generate lock packages versions file without '^', '~'
+//# ^ (caret) allows updates to the latest minor and patch versions within the same (major) version.
+//#     For example, ^1.2.3 would allow updates to 1.3.0, 1.2.4, but not 2.0.0
+//# ~ (tilde) allows updates only to the latest patch version within the same (minor) version.
+//#     For example,~1.2.3 would allow updates to 1.2.4, but not 1.3.0 or 2.0.0
+package-lock.json

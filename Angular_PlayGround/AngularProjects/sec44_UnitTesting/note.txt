@@ -1,0 +1,46 @@
+//#unit test code will be in 'app.component.spec.ts'
+//#unit test help for guard against breaking changes or errors
+//#analyze code behavior (expected and unexpected issues)
+//#and reveal/detect design mistaks
+
+
+//#Jasmine: helps you write your tests.
+//#Karma: helps you run your tests and manage the testing environment.
+
+//#Jasmine is a Behavior-Driven Development (BDD) testing framework.
+//#     It provides the syntax and structure for writing test cases in a clear,
+//#     human-readable manner. You use Jasmine's (describe, it, expect) functions and more
+//#     component suites or isolated individual tests like 'custome @Pipe' 
+
+//#Karma is a test runner
+//#     Provides testing features: 
+        1-Cross-browser testing
+        2-Live/Hot reloading,
+        3-Code coverage reporting,
+        4-Integration with CI/CD tools as automated tests 
+
+//#some important methods
+//#wrap all your testing methods/code
+descript('description text',()=>{//all code here});
+
+//#load dpenedcies if needed first
+//#declarations:[AppComponent]
+beforeEach(()=>{})
+
+//#tests methods
+//#'createComponent' return as 'fixture' like piece of engine 
+/# then you can get component instance from 'debugElement' type
+fixture = TestBed.createComponent(AppComponent);
+app = fixture.debugElement.componentInstance;
+userService = fixture.debugElement.injector.get(UserService);
+
+//# sometimes we need check changes before test equality or exist .. etc
+fixture.detectChanges();
+it("string describtion",() =>{});
+expect(app).toBeTruthly(); //like exist
+expect(app.title).toEqual('app works');
+
+//#to run test from CLI
+>ng test
+
+
