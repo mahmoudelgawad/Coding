@@ -1,0 +1,192 @@
+//#about angualr CLI (Command Line Interface)
+//#https://angular.dev/tools/cli
+//#first we need to install angular CLI package globally
+>npm install -g @angular/cli@latest
+>ng new
+>ng new --help
+>ng new help
+
+//#create new angular project with name 'first-angular-app'
+>ng new first-angular-app
+
+//#file for apply globally for multiple IDE(Integrated Development Environment) as VSCode or others
+//#for code styling how it's look, indentation or spaces size, quote type (single, double)
+.editorconfig
+
+//#contain third library needed
+//#'dependencies' for the current project also need when build/deploy to production
+//#'devDependencies' for current project but especially locally
+//#both installed in 'node_modules' folder with command 'npm install'
+package.json
+
+//#after npm intsalled generate lock packages versions file without '^', '~'
+//# ^ (caret) allows updates to the latest minor and patch versions within the same (major) version.
+//#     For example, ^1.2.3 would allow updates to 1.3.0, 1.2.4, but not 2.0.0
+//# ~ (tilde) allows updates only to the latest patch version within the same (minor) version.
+//#     For example,~1.2.3 would allow updates to 1.2.4, but not 1.3.0 or 2.0.0
+package-lock.json
+
+//#typescript config for current app project
+tsconfig.app.json
+
+//#typescript config for testing current app project
+tsconfig.spec.json
+
+//# for angualr compiler 'angularCompilerOptions' like strict on input or injection parameters
+tsconfig.json
+
+>ng help
+
+//# most --help must run insed angular app path or workspace
+//#Error: This command is not available when running the Angular CLI outside a workspace.
+//# example: use cd 'C:\Drive\Coding\Angular_PlayGround\first-angular-app' path
+
+//build and run the published 'dist' folder content
+//#https://angular.dev/cli/serve
+>ng serve --help
+
+//#allow us to genrate things in ng app (component, class, interface, service, pipe, guard, interceptor)
+>ng genrate --help
+>ng generate component --help
+
+//#to detect what is errors in the app files ('ts','html'),
+>ng lint
+
+//#it may require install npm package, 'package.json'->'devDependencies'->{angular-eslint, eslint, typescript-eslint}
+//# and 'angular.json'-> projects->'projectname'->'architect'->'lint'
+//###
+PS C:\Drive\Coding\Angular_PlayGround\first-angular-app> ng lint
+Cannot find "lint" target for the specified project.     
+You can add a package that implements these capabilities.
+
+For example:
+  ESLint: ng add @angular-eslint/schematics
+
+ Would you like to add ESLint now? yes
+✔ Determining Package Manager
+  › Using package manager: npm
+✔ Searching for compatible package version
+  › Found compatible package version: @angular-eslint/schematics@20.1.1.
+✔ Loading package information from registry
+✔ Confirming installation
+✔ Installing package
+//###
+
+//#for build options, '--prod' deprecated, output in 'dist' folder
+>ng build --help
+
+
+//#'angular.json', contains version number, and seetings for multiple projects.
+//###
+    projects
+      "first-angular-app":{},
+      "first-angular-app-02":{},
+            projectType:"application" or "library"
+            sourceRoot:"src" (folder name)
+            "prefix": "app" (name prefix any component selector name like 'app-my-list')
+            architect
+              build (command)
+                >ng build --aot=false (because the default is true)
+                options
+                  outputPath : "dist/first-angular-app"
+                configuration
+                  >ng build --prod (deprecated) =
+                  >ng build --configuration=production   
+
+      "defaultProject":"first-angular-app",
+
+
+//#angualr cli schematics
+  1- ng generate (component)(building blocks)
+  2- ng update (update projects) (libraries)
+  3- ng update  (update libraries) (update project)
+  4- your custom CLI schematic
+
+//#'ng add' will update main.ts, angular.json, index.html, style.css
+//#for adding angualr material (UI Parts, nav, calendar... etc) plus theme color, animated with current project
+//#https://material.angular.dev/
+>ng add @angular/material
+
+//###
+PS C:\Drive\Coding\Angular_PlayGround\first-angular-app> ng add @angular/material
+✔ Determining Package Manager
+  › Using package manager: npm
+✔ Searching for compatible package version
+  › Found compatible package version: @angular/material@18.2.14.
+✔ Loading package information from registry
+✔ Confirming installation
+✔ Installing package
+? Choose a prebuilt theme name, or "custom" for a custom theme: Azure/Blue         [Preview: https://material.angular.io?theme=azure-blue]     
+? Set up global Angular Material typography styles? yes
+? Include the Angular animations module? Include and enable animations
+UPDATE package.json (1231 bytes)
+✔ Packages installed successfully.
+UPDATE src/app/app.config.ts (430 bytes)
+UPDATE angular.json (3065 bytes)
+UPDATE src/index.html (537 bytes)
+UPDATE src/styles.css (182 bytes)
+//###
+
+//#generate ng material navigate UI 'app/main-nav', selector :<app-main-nav>
+>ng generate @angular/material:nav main-nav
+
+//#to update project pckages like core or cli 
+>ng update @angular/core @angular/cli
+
+//#deploy your project to firebase hosting
+>npm install -g firebase-tools  (intall globaly)
+>firebase login
+>ng add @angular/fire
+  ">select porject" :"firebas project URL/ID"
+[+] firbase.json    (will added to current ng project)
+>ng deploy    (then will return url project hosted, or you can access firebase)
+
+
+//#Differential loading , including in angular built files
+'dist\first-angular-app\browser', contains (polyfills, main) files pieces of codes for modern/old browser
+ -modern browser no nedd for polyfills, smaller bundle required
+ -old browser need polyfills, bigger bundle required
+ -'tsconfig.json' target (es2015, or es2022)
+ -ES5 ->2009, ES6 -> 2015
+
+ //#official doc for ng deploument
+ https://angular.dev/tools/cli/deployment
+
+ //#we can manage multiple projects in one folder, remember 'angular.json' 'projects:{angular-config{},angular-config{}}'
+ 
+ //#to create another nested project name 'backend' in path 'first-angualr/projects/backend'
+ >ng generate application backend
+ >ng serve --project=backend
+
+ //#I was facing an error not genrate nested application, and solved as
+ //Error:
+            Schematic input does not validate against the Schema: {"name":"backend","style":"css","ssr":false,"zoneless":true,"routing":true,"prefix":"app","skipTests":false,"skipPackageJson":false,"minimal":false,"skipInstall":false,"strict":true,"standalone":true}
+            Errors:
+            Data path "" must NOT have additional properties(zoneless).
+
+ //solved with deleted this part in 'angular.json', and I back it again
+                      "cli": {
+                  "schematicCollections": [
+                    "angular-eslint"
+                  ]
+                }
+
+//#create app without component files or codes just folder named 'angular-shop' with configuration files
+//#   gitignore, angular.json, tsconfig.json, etc  
+ >ng new angular-shop --create-application=false
+
+ //#creating custom angular library, like angular material is already library 
+ //https://angular.dev/cli/generate/library
+ >ng genrate library my-button
+
+ //#projects
+      backend
+      my-button
+          src
+          lib
+            my-button.component.ts  (template: <button><ng-content><ng-content><button>)
+          ng-package.json (config package library) 
+
+
+
+   
