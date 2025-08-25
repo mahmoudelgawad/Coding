@@ -24,7 +24,7 @@ OFFSET @nth-1 ROWS -- skip first N row/rows
 FETCH NEXT 1 ROWS ONLY --get first row only
 
 
---(3) correlated subquery best solution
+--(3) correlated subquery worst performance , but parametric, db cross
 -- using two aliases e1,e2, when e1(outer) <= e2 (inner)
 -- @nth = 1 , like 3500 <= (count * inner salaries), which = him self,  
 -- the final result salaries ordered by default ASC
