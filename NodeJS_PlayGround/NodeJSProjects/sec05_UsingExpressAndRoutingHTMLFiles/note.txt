@@ -1,0 +1,20 @@
+//# express package library for NodeJs framework conatins utility helper functions
+//#help us to set clear rules/steps to build App, other package can pluged in into express using middleware
+//#NodeJS middleware 'next' and 'res' = 'app.use' in express
+//#middleware is to handle requests
+//# 'next' needed to going to another requests until 'send' response
+
+//#install express in dependencies
+>npm install --save express
+
+//#instal nodemon in devDependencies, because no need for production
+>npm install --save-dev
+
+//#for auto hot-reload the code changes during running, will script 'nodemon app.js'
+//#will listen on port '3001' as app.listen(3001);
+>npm start
+
+//#for automatically parsing the incoming request body data/content need to  install 'body-parser'
+//#because body data need manual custom parsing in nodejs 
+//#using 'req.on('data',(chunk)=>{})' and 'buffer.concat(bodyArray).toString()'
+>npm install --save body-parser

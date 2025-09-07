@@ -1,0 +1,40 @@
+    body{
+            padding:0;
+            margin: 0;
+            font-family:sans-serif;
+        }
+        main{
+            padding:1rem;
+        }
+        .main-header{
+            width:100%;
+            /* rem for root ems relative unit for page font size 1rem = 16px */
+            height:3.5rem; 
+            background-color: #eeb90acb;
+            /* 0 for top,bottom 1.5rem for left,right */
+            padding: 0 1.5rem;
+        }
+        .main-header__nav{
+            height:100%;
+            display:flex;
+            align-items: center;
+        }
+        .main-header__list{
+            list-style: none;
+            margin:0;
+            padding:0;
+            display:flex;
+        }
+        .main-header__item{
+            margin:0 1rem;
+            padding:0;
+        }
+        .main-header__item a{
+            text-decoration:non;
+            color:white;
+        }
+        .main-header__item a:hover,
+        .main-header__item a:active,
+        .main-header__item a.active{
+            color:blue;
+        }
