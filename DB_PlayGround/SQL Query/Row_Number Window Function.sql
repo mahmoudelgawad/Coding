@@ -10,7 +10,7 @@
  FROM Employee
  
 
- --need search what is OVER clause should use order by ? yes
+ --need search what is OVER clause should use 'ORDER BY' ? yes
  --# partition clause will divide rows into separate groups/windows and then apply calculation on
  --# on that rows set like (ORDER BY)
  SELECT  ROW_NUMBER() OVER (PARTITION BY FirstName ORDER BY FirstName) AS RowNumber_Partition_ID,
@@ -25,7 +25,7 @@
 		FirstName
  FROM Employee
 
- --#but dense_rank() not include gaps in ranking (1,1,2,3,4,4,5,5)
+ --#but dense_rank() not include gaps in ranking result (1,1,2,3,4,4,5,5)
 SELECT DENSE_RANK() OVER (ORDER BY FirstName) as Desnse_Rank_ID,
 		FirstName
  FROM Employee
