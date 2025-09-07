@@ -32,7 +32,9 @@ namespace ConsoleApp_PlayGround
 
         public void UsingObjOut(out User user)
         {
+            //#must initialize out parameter
             user = new User();
+
             user.Name = "Osman";
             user.Age = 15;
         }
@@ -88,7 +90,13 @@ namespace ConsoleApp_PlayGround
     {
         public static void Implement() 
         {
-         
+            PassingByReferenceClass passingByReferenceClass = new PassingByReferenceClass();
+            User userObj = new User { Name = "mahmoud", Age = 16 };
+            User userObjNull;
+
+            //#Error use unassigned variable
+            //passingByReferenceClass.UsingObjRef(ref userObjNull);
+            passingByReferenceClass.UsingObjOut(out userObjNull);
         } 
     }
 }

@@ -13,6 +13,8 @@ namespace ConsoleApp_PlayGround
      Here's how they work: 
      Static Class and Method: Extension methods are defined as static methods within a static class.
      this Keyword: The key element is the this keyword placed before the first parameter of the static method.
+     'this; mean the targeted type or instance value that call him self extend method
+        to defferentiate when in case pass another parameter
      This parameter specifies the type that the extension method will "extend."
      */
     internal class ExtensionMethod
@@ -20,6 +22,7 @@ namespace ConsoleApp_PlayGround
 
     }
 
+    //# extension mehtod must be defined in non-generic static class
     static class StringExtensionsMethods
     {
         //#must be public to apply on any string in the same namespace or project
@@ -28,6 +31,18 @@ namespace ConsoleApp_PlayGround
             if (string.IsNullOrEmpty(inputString)) return inputString;
             //#Substring start from index to the end
             return char.ToUpper(inputString[0]) + inputString.Substring(1);
+        }
+
+        private static string CapitalizeFirstLetter_Private(this string inputString,string prefix)
+        {
+            if (string.IsNullOrEmpty(inputString)) return inputString;
+            //#Substring start from index to the end
+            return prefix + "-" + char.ToUpper(inputString[0]) + inputString.Substring(1);
+        }
+
+        public static string CallPrivateExtensionMehtod(string inputString) 
+        {
+           return inputString.CapitalizeFirstLetter_Private("Private");
         }
     }
 
@@ -39,6 +54,7 @@ namespace ConsoleApp_PlayGround
             //#exist in 'StaticClass.cs' 
             name.ExtensionOnString();
             Console.WriteLine(name.CapitalizeFirstLetter());
+            Console.WriteLine(StringExtensionsMethods.CallPrivateExtensionMehtod(name));
         }
     }
 }

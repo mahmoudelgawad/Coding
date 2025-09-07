@@ -22,7 +22,8 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
-            ValidParenthesesClass.Implement();
+
+            RemoveDuplicatesfromSortedArray.Implement();
 
              
             //just comment
