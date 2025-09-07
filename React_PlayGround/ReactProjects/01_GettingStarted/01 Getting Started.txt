@@ -11,3 +11,15 @@ https://codesandbox.io/p/sandbox/react-vs-vanilla-demo-uc08fv?file=%2Fsrc%2FApp.
 >cd react-project
 >npm install
 >npm run dev
+
+
+//###
+	The vite npm package refers to Vite, 
+	a next-generation frontend build tool designed to significantly improve the frontend development experience.
+	It is available on the npm registry,
+	allowing developers to easily install and integrate it into their projects using the Node Package Manager (npm).
+
+	In essence, installing the vite npm package provides access to this powerful tooling,
+	enabling developers to scaffold new projects, run a fast development server,
+	and build optimized production bundles for their frontend applications.
+//###
