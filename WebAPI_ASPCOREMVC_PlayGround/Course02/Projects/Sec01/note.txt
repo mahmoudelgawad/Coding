@@ -1,0 +1,38 @@
+//#API (Application Programming interface)
+//#HTTP (Hyperterxt Transfer Protocol)
+
+//###
+any http request contains basic 3 parts
+1-verb	{POST}
+2-header	{Content Length:9} (standart or custom)
+3-content	{Mahmoud Ahmed Magic API} like text value for example or json object to create record in DB
+//###
+
+any http response contains basic 3 parts
+1-status code	{200 OK}
+2-header	{Content type: text} (standart or custom)
+3-content	{Mahmoud Ahmed Magic API} like text value for example or json object as the response result
+//###
+
+//# 'header' in request or response contains request/response metadata
+	content-type
+	content-length
+	Authorization
+	Accept
+	Expires	(with response)
+	...and more
+	
+//# 'content'
+	HTML, CSS, XML,JSON
+	Information for the request
+	Blobs etc
+	
+//# Status Codes
+	100-199	Informational
+	200-299	Success
+	300-399	Redirectional
+	400-499	Client Errors
+	500-599	Server Errors
+	
+//# .NET 9 , not include swagger by default in API project template
+	
