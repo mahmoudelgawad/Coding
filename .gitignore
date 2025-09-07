@@ -3,6 +3,9 @@
 ################################################################################
 
 .vs/
+bin/
+obj/
+
 /DB_PlayGround/DB_PlayGround_log.ldf
 /DB_PlayGround/DB_PlayGround.mdf
 ASPCOREMVC_PlayGround/bin*
@@ -57,4 +60,3 @@ ASPCOREMVC_PlayGround/bin*
 /WebAPI_ASPCOREMVC_PlayGround/obj/Release/net5.0/WebAPI_ASPCOREMVC_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
 node_modules
 node_modules/
-
