@@ -1,0 +1,15 @@
+//#TypeScript is Superset of JavaScript or extend the javaScript
+    adding static typing to JavaScript, because js is dynamically typed 
+
+//#To install typescript
+//#First run 'npm init' to generate empty 'package.json' (not empty when node_modules exist)
+>npm init -y
+
+//#Then install typescript
+>npm install typescript
+
+//#Then compile ts files to create js version
+>npx ts with-typescript.ts
+
+//# will generate tsconfig.json, important to compile typescript file "run npx tsc file.ts" 
+>npx tsc --init

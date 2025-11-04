@@ -1,0 +1,35 @@
+//# section 19 and 20 for createing "sample App", "shoping list, Recipe book" and "server List" debugging from browser
+//# will handle the old way of angualr v < 16, incase we work on legacy projects
+//##
+
+>ng new first-angular-app --no-strict --routing false --standalone false
+? Which stylesheet format would you like to use? CSS             [ https://developer.mozilla.org/docs/Web/CSS
+          ]
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? No
+//##
+
+>npm install --save bootstrap@3
+//##
+then in file 'angular.json' set the bootstrap path files 'minified' or unminified
+bor both {build},{test}
+- minified version, small size, reduce load time
+
+    "styles":[
+        "node_modules/boostrap/dist/css/bootstrap.css",
+        "styles.css"
+    ]
+//##
+//#generate different components using ng commands
+>ng g c recipes --skip-tests
+>ng g c recipes/recipe-list --skip-tests
+>ng g c recipes/recipe-detail --skip-tests
+ng g c recipes/recipe-list/recipe-item --skip-tests
+>ng g c shopping-list
+>ng g c shopping-list/shopping-edit --skip-tests
+
+>multiple ways to pinding the imageUrl
+>##
+<img src="{{recipe.imageUrl}}"/>
+<img [src]="recipe.imageUrl"/>
+
+//#Angular in browser debugging use "sourcemap", when put breakpoint in 'main.bundle.js'  will redirect to -> 'app.component.ts'  

@@ -1,0 +1,12 @@
+<p>server-list works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+               <a href="#" class="list-group-item" 
+                  *ngFor="let server of servers; let i = index"
+                  (click)="onRemoveServerItem(index)">
+                    {{server}}
+               </a>
+        </div>
+    </div>
+</div>
