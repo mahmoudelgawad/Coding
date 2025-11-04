@@ -1,11 +1,17 @@
-
-var problemName = function() {
+//https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler
+//#Annotation for javascript google clouser compiler
+/**
+ * @param {number}
+ * @return {void}
+ */
+var problemName = function(value) {
     //code here
 };
+
 /*
-console.time();
 let testCase="({})";
- console.log({value:testCase, result:isValid(testCase)});
- testCase="()";
+console.time();
+console.log({value:testCase, result:isValid(testCase)});
 console.timeEnd();
+testCase="()";
 */
