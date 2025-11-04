@@ -15,6 +15,7 @@ using ConsoleApp_PlayGround.LINQ;
 using ConsoleApp_PlayGround.Challenges.LeetCode;
 using ConsoleApp_PlayGround.IO;
 using ConsoleApp_PlayGround.Challenges.Other;
+using ConsoleApp_PlayGround.DataStructure;
 
 namespace ConsoleApp_PlayGround
 {
@@ -22,10 +23,11 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
+            // LengthOfLastWordClass.Implement();
+            // Console.WriteLine(8 % 2);
 
-            RemoveDuplicatesfromSortedArray.Implement();
+            GetErrorCodesTimestampsClass.Implement();
 
-             
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");
         }
