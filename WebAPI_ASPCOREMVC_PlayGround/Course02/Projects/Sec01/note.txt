@@ -35,4 +35,18 @@ any http response contains basic 3 parts
 	500-599	Server Errors
 	
 //# .NET 9 , not include swagger by default in API project template
-	
+//# to get openapi json 'https://localhost:7003/openapi/v1.json'
+//##
+	-replaced with 'Microsoft.AspNetCore.OpenAPI' instead 'Swashbuckle.AspnetCore' intsalled/found in packaged manager.
+	-and to see the API endpoints documentations as json data file as 'https://localhost:7003/openapi/v1.json'.
+	-as contain only endpoint 'https://localhost:7003/WeatherForecast'
+//##
+
+///## you can add swagger library manually in .net 9, project nude packages, and config in 'program.cs' 
+	> install package 'Swashbuckle.AspNetCore'
+	-builder.add.SwaggerGen()
+	-app.UseSwagger()
+	-app.UseSwaggerUI()
+
+//# you can change default page URL from 'Properties/LaunchSettings.json'
+>>for every server config "IIS Express":{"launchURL":"swagger"}

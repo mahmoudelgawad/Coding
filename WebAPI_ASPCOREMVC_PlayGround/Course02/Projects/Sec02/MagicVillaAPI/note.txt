@@ -1,0 +1,7 @@
+//# ControllerBase is lighter more than 'Controller'
+//# Controller:ControllerBase
+
+//#getvillas
+https://localhost:44326/api/villaapi
+//#getvilla(id)
+https://localhost:44326/api/villaapi/2
