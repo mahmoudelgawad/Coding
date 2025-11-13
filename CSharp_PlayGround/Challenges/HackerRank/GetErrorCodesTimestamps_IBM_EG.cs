@@ -40,14 +40,14 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
         public static void Implement()
         {
             var timestamps = new List<int>{ 100, 101, 102, 105, 110 };
-            var errorCodes = new List<string>{"E1","E2","E1","E1","E2"};//
+            var errorCodes = new List<string>{"E1","E2","E1","E1","E2"};//E2,E1
             int k = 2;
             int t = 10;
             Console.WriteLine(string.Join(',',GetErrorCodesTimestamps(k,t, timestamps, errorCodes)));
 
 
             timestamps = new List<int> { 1, 2, 4, 5, 6, 7, 10};
-            errorCodes = new List<string> { "E1", "E2", "E1", "E1", "E2", "E2", "E2"};//E1,E2
+            errorCodes = new List<string> { "E1", "E2", "E1", "E1", "E2", "E2", "E2"};//E2
             k = 3;
             t = 5;
             Console.WriteLine(string.Join(',', GetErrorCodesTimestamps(k, t, timestamps, errorCodes)));

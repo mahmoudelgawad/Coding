@@ -12,10 +12,12 @@ using System.Threading.Tasks;
 using System.Linq;
 using ConsoleApp_PlayGround.DTO;
 using ConsoleApp_PlayGround.LINQ;
-using ConsoleApp_PlayGround.Challenges.LeetCode;
 using ConsoleApp_PlayGround.IO;
+using ConsoleApp_PlayGround.Challenges.LeetCode;
+using ConsoleApp_PlayGround.Challenges.HackerRank;
 using ConsoleApp_PlayGround.Challenges.Other;
 using ConsoleApp_PlayGround.DataStructure;
+
 
 namespace ConsoleApp_PlayGround
 {
@@ -23,10 +25,9 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
-            // LengthOfLastWordClass.Implement();
-            // Console.WriteLine(8 % 2);
-
-            GetErrorCodesTimestampsClass.Implement();
+            DecodeNumericStringASCIIClass.Implement();
+           
+            
 
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");
