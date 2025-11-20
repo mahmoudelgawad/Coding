@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s="") {
+const isValid = function(s="") {
     let lastClose = [];
     //#foreach work on array,map, sets only, not string variable directly{
     //#any way will not using becasue can not break or 'return false' from function boundry

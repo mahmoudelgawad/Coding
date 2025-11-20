@@ -1,10 +1,11 @@
 //https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler
 //#Annotation for javascript google clouser compiler
+//#apply only on variable function
 /**
- * @param {number}
+ * @param {number} value
  * @return {void}
  */
-var problemName = function(value) {
+const problemName = function(value) {
     //code here
 };
 

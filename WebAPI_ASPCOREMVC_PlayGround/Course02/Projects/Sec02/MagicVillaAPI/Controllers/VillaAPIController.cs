@@ -57,9 +57,18 @@ namespace MagicVillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<VillaDTO> CreateVilla([FromBody]VillaDTO villaDTO) 
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            //#validations
+            //#apply data annotation validation
+            if (!ModelState.IsValid) return BadRequest(ModelState); //400 code
             if (villaDTO == null) return BadRequest(villaDTO);
             if (villaDTO.ID > 0) return StatusCode(StatusCodes.Status500InternalServerError);
+            //#cusomt validation allready exist villa name
+            if (VillaStore.villas.FirstOrDefault(v => v.Name.ToLower() == villaDTO.Name.ToLower()) != null) 
+            {
+                ModelState.AddModelError("CustomValidation","Villa Name Already Exist");
+                return BadRequest(ModelState);
+            }
+            
             villaDTO.ID = VillaStore.villas.OrderByDescending(v => v.ID).FirstOrDefault().ID + 1;
             VillaStore.villas.Add(villaDTO);
 
@@ -77,6 +86,19 @@ namespace MagicVillaAPI.Controllers
             */
             return CreatedAtRoute("GetVilla",new{ id = villaDTO.ID},villaDTO);
 
+        }
+
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpDelete("{id:int}",Name ="DeleteVilla")]
+        public ActionResult DeleteVilla(int id) 
+        {
+            if (id == 0) return BadRequest();
+            var villa = VillaStore.villas.FirstOrDefault(v => v.ID == id);
+            if (villa == null) return NotFound();
+            VillaStore.villas.Remove(villa);
+            return NoContent();
         }
     }
 }

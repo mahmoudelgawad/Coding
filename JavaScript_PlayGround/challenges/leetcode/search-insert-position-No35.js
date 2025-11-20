@@ -3,7 +3,7 @@
  * @param {number} target
  * @return {number}
  */
-var searchInsert = function(nums, target) {
+const searchInsert = function(nums, target) {
     let mid = Math.floor(nums.length / 2);
     mid = target < mid ? 0 : mid;
     for(let i = mid; i < nums.length; i++){

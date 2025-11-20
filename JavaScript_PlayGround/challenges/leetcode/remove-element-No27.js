@@ -3,7 +3,7 @@
  * @param {number} val
  * @return {number}
  */
-var removeElement = function(nums, val) {
+const removeElement = function(nums, val) {
     if(nums.length === 0) return 0;
     //#Array.map() like c# '[].Select()' will change/transform each element
     //let numsFiltered = nums.map(e => e !== val);
@@ -12,7 +12,7 @@ var removeElement = function(nums, val) {
     return nums.length  - numsFiltered.length;
 };
 
-var removeElement_Final = function(nums, val) {
+const removeElement_Final = function(nums, val) {
     if(nums.length === 0) return 0;
     let index= 0;
     for(let i = 0; i < nums.length; i++){

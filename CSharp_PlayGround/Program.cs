@@ -25,9 +25,7 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
-            DecodeNumericStringASCIIClass.Implement();
-           
-            
+            DiagonalDifferenceClass.Implement();       
 
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");
