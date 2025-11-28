@@ -1,0 +1,11 @@
+/* 
+//#copy from  'app.component.css' to afftect on <P> in server.element component 
+*/
+
+p {
+  color: blue;
+}
+
+label{
+  color:red;
+}

@@ -1,0 +1,51 @@
+//# generate non standalone project
+>ng new first-angular-app --no-strict --routing false --standalone false
+
+//# generate components skip 'spec' test files
+>ng g c cockpit --spec false (not valid anymore)
+>ng g c cockpit --skip-tests
+
+//# install  latest boostrap in dpendencies "bootstrap": "^5.3.8",
+>npm install --save bootstrap 
+
+//#then should handle adding boostrap.cs file path in 'angular.json' 'SEE SECTION CODE 19,20'
+//#it was already exist folder 'node_modules/bootstrap' for @v3, after that it look all updated 
+
+//##
+html elements: contains native properties and events
+directives: custom properties and events
+components:custom properties and events
+//##
+
+//# '@Input() server' or '@Input('serverElement') server' apply on html element <p [serverElement]="server"></p>
+//# '@Output() onAddServer' if want event or 'eventEmitter<T>' tobe listener outside
+
+//#angualr make custom behavior (not default behavior of the browser), each component affected with own CSS only
+//#parent component CSS not affect on child components
+
+//#React use normal default behavior 
+Angular's Approach (for comparison):
+View Encapsulation: Angular components, by default, use "View Encapsulation"
+ (often Shadow DOM emulation) to encapsulate their styles.
+  This means that styles defined within a component's CSS file are generally scoped 
+  to that component and do not "leak" out to affect other components,
+   including its children,
+    unless explicitly overridden (e.g., using ::ng-deep, which is deprecated).
+
+//##about @ViewChild and @ContentChild
+Angular 8+:
+    //# if need access in 'ngOnInit()', but any where else '{static:false}'
+    >@ViewChild('serverContentInput',{static:true}) serverContentInput: ElementRef;
+
+Angualr 9+:
+    //second argument '{static:true}' only if needed in 'ngOnInit()'
+//## 
+
+//#add three compoennt as assignment
+>ng g c game-control --skip-tests false
+>ng g c even --skip-tests
+>ng g c odd --skip-tests
+
+//# shortcut html with class
+.row>.col-xs-12
+button.btn.btn-primary

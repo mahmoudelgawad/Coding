@@ -1,0 +1,21 @@
+<!-- 'mb-3' class mean 'margin-bottm' and 3='1rem' or '16px' -->
+<div class="card mb-3">
+  <div class="border border-danger">{{localViewTitle}}</div>
+  <!-- using local reference '#header' for test access from ngOnInit and  ngAfterViewInit-->
+  <div class="card-header" #header>{{ element.name }}</div>
+  <div class="card-header">{{ servName}}</div>
+  <div class="card-body">
+    <!-- #we can inject <p> content from out side using <ng-content>, from 'app.component'  -->
+    <!--  
+    <p>
+      <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+      <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+    </p>
+    -->
+    
+    <!-- the contect injected from outside, from 'app.component' -->
+    <ng-content></ng-content>
+
+    <label>Label Test</label>
+  </div>
+</div>

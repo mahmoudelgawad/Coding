@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-cockpit 
+      (serverCreated)="onAddServer($event)"
+      (bpCreated)="onAddBlueprint($event)">
+      </app-cockpit>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirstServerName()">Change First Server Name</button>
+      <button class="btn btn-danger" (click)="onDeleteFirstServer()">Delete First Server</button>
+      <!-- #passing object to component using @Input() -->
+      <app-server-element *ngFor="let server of serverElements" [serverElement]="server" [servName]="server.name">
+        <!-- any code here will lost if no '<ng-content>' with the component  -->
+        <p #ngcontentparagraph>
+           <strong *ngIf="server.type === 'server'" style="color: red">{{ server.content }}</strong>
+           <em *ngIf="server.type === 'blueprint'">{{ server.content }}</em>
+        </p>
+
+      </app-server-element>
+    </div>
+  </div>
+  <!-- for assignment even / odd numbers -->
+  <hr>
+  <div class="row">
+    <div class="col-sx-12"></div>
+    <app-game-control (numberEventEmitter)="onNumberChange($event)"></app-game-control>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let oddnum of oddNumbers" [num] = "oddnum"></app-odd>
+      <app-even *ngFor="let evennum of evenNumbers" [num] = "evennum"></app-even>
+    </div>
+  </div>
+</div>

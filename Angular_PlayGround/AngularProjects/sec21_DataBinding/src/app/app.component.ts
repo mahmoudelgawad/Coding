@@ -1,0 +1,48 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'first-angular-app';
+  serverElements = [
+    {type:'server', name:'Testserver', content:'Just a test!'},
+  ];
+
+  evenNumbers:number[]=[];
+  oddNumbers:number[]=[];
+
+      onAddServer(serverData:{serverName: string,serverContent: string}) {
+      this.serverElements.push({
+        type: 'server',
+        name: serverData.serverName,
+        content: serverData.serverContent
+      });
+    }
+  
+    onAddBlueprint(blueprintData:{serverName: string,serverContent: string}) {
+      this.serverElements.push({
+        type: 'blueprint',
+        name: blueprintData.serverName,
+        content: blueprintData.serverContent
+      });
+    }
+
+    onChangeFirstServerName(){
+      this.serverElements[0].name='Changed!';
+    }
+
+    onDeleteFirstServer(){
+      this.serverElements.splice(0,1);
+    }
+
+    onNumberChange(n:number){
+      console.log({n: n});
+      if(n % 2 === 0)
+        this.evenNumbers.push(n);
+      else
+        this.oddNumbers.push(n);
+    }
+}
