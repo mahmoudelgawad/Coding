@@ -1,6 +1,10 @@
 package diagonaldifference
 
-func Diagonaldifference(arr [3][3]int) int {
+import (
+	"fmt"
+)
+
+func diagonaldifference(arr [3][3]int) int {
 	var totalL int = 0
 	var totalR int = 0
 	var r int = 0
@@ -16,4 +20,15 @@ func Diagonaldifference(arr [3][3]int) int {
 		return diff
 	}
 
+}
+
+func Implement() {
+	var x [3][3]int = [3][3]int{
+		{1, 2, 3},
+		{4, 5, 6},
+		{9, 8, 9},
+	}
+	res := diagonaldifference(x)
+	fmt.Println(res)
+	fmt.Println("END OF diagonaldifference")
 }

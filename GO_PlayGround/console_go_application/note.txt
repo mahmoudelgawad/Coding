@@ -1,0 +1,12 @@
+//# 'console-go-applicationn' not folder , but package name
+>go mod init console-go-application
+
+//#you can change package name from 'go.mod' files direct 
+
+//# then invoke package depend on folders as following syntax 
+import (
+	diagonaldifference "console-go-application/challenges/hackerrank/digonaldifference"
+	staircase "console-go-application/challenges/hackerrank/staircase"
+	"fmt"
+)
+

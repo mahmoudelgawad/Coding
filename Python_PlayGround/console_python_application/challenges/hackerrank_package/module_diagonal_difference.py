@@ -11,11 +11,13 @@ def dimentional_difference(arr):
     diff = total_l - total_r
     return diff * -1 if diff <0 else diff
 
-# testing code
-test_case = [
-    [1,2,3],
-    [4,5,6],
-    [9,8,9]
-]
+#//testing code
+def implement():
+    test_case = [
+        [1,2,3],
+        [4,5,6],
+        [9,8,9]
+    ]
+    print(dimentional_difference(test_case))
 
-print(dimentional_difference(test_case))
+implement()
