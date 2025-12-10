@@ -1,32 +1,36 @@
-//this project just trying to creating npm "package.json" file
->npm init
-//then press enter
+//# add dynamic HTML Templating
 
-//when add custom npm script contains '-' like 'start-server' or even 'coco-server'
-//you have to 'npm run coco-server', but normal script as 'npm start'
-
-//will install in the project "nodemon" package, for auto restart project build
-//when code detect changes 'hot reload'
-//to install globally
->npm install nodemon -g
-
-//to install for current project only
->npm install nodemod --save-dev
-
-//then will found the package installed and value in 'package.json'
--'^' mean how package update
-
-//you can run the project with following commands
+//#for auto hot-reload the code changes during running, will script 'nodemon app.js'
+//#will listen on port '3001' as app.listen(3001);
 >npm start
 
-//this run command will avoid nodemon
->node app.js
+//#will install 3 free HTML templating (ejs), (pug), (express-handlebars)
+//#'--save' for  added the packages in 'package.json' -> 'dependencies' part
+>npm install --save ejs pug express-handlebars
 
-//when folder 'node_modules' not exist , just run 'npm install', will install dependencies
-//including the 'package.json' dependencies
->npm install
+//#BUG template 'shop.pug' page, just auto complete 'html:5' , will genrate auto pug template including head and body
+//# bug is like shortcut html elements without start or end angle brackets, just element name
+//# css class name dot(.) 'button.btn-primary'
+//# attibutes values in parentheses 'button.btn-primary(value="", att2="")'   
+//# support dynamic binding data '#{pageTitle}'
+//# support 'block' binding 'styles' or 'content' 
 
-//#NodeJs error types (syntax, runtime, logical) errors
 
-//#for custome Debug settings, add configuration file '.vscode/lunch.json' from 'run->add configuration'
-//#then you can edit {restart:true,runTimeExcutable:'nodemod'} for every
+//#to use 'Handlebars' view engine, we did installed before above steps
+>npm install --save express-handlebars
+>npm i express-handlebars
+//#support normal HTML brackets elements
+//#handlebars template support double brackets binding {{pageTitle}}
+//##
+    {{#if products.length > 0}} //  NOT SUPPORTED, you need use nodejs backend bool variables instead
+    {{else}}
+        <h1>else part<h1>
+    {{/if}}
+//##
+//#no 'block' binding just use {{#if boolean}}YOUR CODE HERE{{/if}}
+
+//#'ejs' view template not need required library
+//##
+    <title><%= pageTitle%></title>
+//##
+
