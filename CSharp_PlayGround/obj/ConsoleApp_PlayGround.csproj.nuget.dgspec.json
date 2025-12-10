@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Drive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj": {}
+    "C:\\Adrive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj": {}
   },
   "projects": {
-    "C:\\Drive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj": {
+    "C:\\Adrive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Drive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj",
+        "projectUniqueName": "C:\\Adrive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj",
         "projectName": "ConsoleApp_PlayGround",
-        "projectPath": "C:\\Drive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj",
+        "projectPath": "C:\\Adrive\\Coding\\CSharp_PlayGround\\ConsoleApp_PlayGround.csproj",
         "packagesPath": "C:\\Users\\Mahmoud\\.nuget\\packages\\",
-        "outputPath": "C:\\Drive\\Coding\\CSharp_PlayGround\\obj\\",
+        "outputPath": "C:\\Adrive\\Coding\\CSharp_PlayGround\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,9 +44,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -66,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

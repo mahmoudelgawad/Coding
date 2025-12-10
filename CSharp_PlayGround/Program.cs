@@ -25,7 +25,9 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
-            DiagonalDifferenceClass.Implement();       
+
+            //DiagonalDifferenceClass.Implement();
+            BitArrayClassExamble.Implement();
 
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");
