@@ -1,8 +1,16 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers()
-                .AddNewtonsoftJson(); //apply json serialization
+builder.Services.AddControllers(options =>
+{
+    //#by default false , return only what available format with no HTTP 406 error 'not acceptable'
+    //#return HTTP 406 error  if no other format available like "accept:application/XML, HTML ..etc"
+    options.ReturnHttpNotAcceptable = true;
+})
+                //#Enable API return  json serialization
+                .AddNewtonsoftJson()
+                //#reurn JSON data as XML formate "accept:application/XML"
+                .AddXmlDataContractSerializerFormatters(); 
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
