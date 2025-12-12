@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -27,24 +28,17 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
             {
                 strBN2.Append(l2.val);
                 if (l2.next == null) break;
-                l1 = l2.next;
+                l2 = l2.next;
             }
 
-           int n1;
-           int n2;
-           int.TryParse(string.Join("",strBN1.ToString().Reverse()),out n1);
-           int.TryParse(string.Join("",strBN2.ToString().Reverse()),out n2);
+           long n1;
+           long n2;
+           long.TryParse(string.Join("",strBN1.ToString().Reverse()),out n1);
+           long.TryParse(string.Join("",strBN2.ToString().Reverse()),out n2);
            
-           int result = n1 + n2;
-            ListNode resultListNode = null;
-            ListNode firstNode = null;
-            foreach (char ch in result.ToString().Reverse())
-            {
-              resultListNode = new ListNode(val: Convert.ToInt32(ch));
-              if (firstNode == null) firstNode = resultListNode;
-              resultListNode = resultListNode.next;                      
-            } 
-            return firstNode;
+            long result = n1 + n2;
+            return  CreateTheList(result.ToString().Reverse()
+                      .Select(c => Convert.ToInt32($"{c}")).ToArray());
         }
 
 
@@ -55,22 +49,49 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
             return true;
         }
 
+        private static ListNode CreateTheList(int[] values)
+        {
+            ListNode ln = null;
+            ListNode first = null;
+            values.ToList().ForEach(v => {
+                if (ln == null)
+                    ln = new ListNode(val: v);
+                else if (ln.next == null)
+                {
+                    ln.next = new ListNode(val: v);
+                    ln = ln.next;
+                }
+
+                if (first == null) first = ln;
+
+            });
+           return first;
+        }
+
+        private static void ShowTheList(ListNode ln) 
+        {
+            if (ln == null) return; 
+            Console.Write(ln.val);
+            ln = ln.next;
+            ShowTheList(ln);
+        }
+
         public static void Implement()
         {
-            /* 
-             string s = "({})";
-             Console.WriteLine(AddTwoNumbers(s));
+            ListNode l1 = CreateTheList(new int[] { 2, 4, 3 });
+            ListNode l2 = CreateTheList(new int[] { 5, 6, 4 });
+            
+            var result = AddTwoNumbers(l1, l2);   
+            ShowTheList(result);
+            Console.WriteLine("");
 
-             s = "()";
-             Console.WriteLine(AddTwoNumbers(s));
-            */
+            l1 = CreateTheList(new int[] { 9 });
+            l2 = CreateTheList(new int[] { 1,9,9,9,9,9,9,9,9,9});
 
+            result = AddTwoNumbers(l1, l2);
+            ShowTheList(result);
+            Console.WriteLine("");
 
-            /*
-              int start = DateTime.Now.Millisecond;
-              Console.WriteLine(AddTwoNumbers_Final(haystack,needle));
-              Console.WriteLine(DateTime.Now.Millisecond - start);  
-             */
         }
 
     }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Features} from '../app/shared/constants';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  readonly features = Features;
+  selectedFeature = Features.Recipes;
+  onSelectedFeature(feature){
+    this.selectedFeature = feature;
+  }
 }

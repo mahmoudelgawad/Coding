@@ -5,3 +5,19 @@
 https://localhost:44326/api/villaapi
 //#getvilla(id)
 https://localhost:44326/api/villaapi/2
+
+
+//## add 'microsoft.aspcore.jsonpatch' nuget package to apply generic API
+ for partial patch updates depend on 'path' or property needed
+ https://learn.microsoft.com/en-us/aspnet/core/web-api/jsonpatch?view=aspnetcore-10.0
+//##
+
+//## add 'microsoft.aspcore.mvc.newtonsoftjson' nuget package to apply serialization
+ and deserialization for DTO objects
+//##
+
+//#patch update , but must send 'name'
+{"id":"2","name":"update patch villa","Occupancy":"60"}
+
+//#jsonpatch apply for only partial update 'occupancy' (with in array format []!!)
+[{ "op": "replace", "path": "/Occupancy", "value": "65" }]

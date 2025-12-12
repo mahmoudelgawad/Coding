@@ -63,6 +63,8 @@ namespace ConsoleApp_PlayGround.ParallelThread
             ParallelThreadClass parallelThreadClass = new ParallelThreadClass();
             parallelThreadClass.CreateThreads();
             parallelThreadClass.CreateTasks();
+            //TODO: want to implement Task PPP (pooling thread, parallel process,
+            //  plus: return result, cancel, chain, async await) 
         }
     }
 }

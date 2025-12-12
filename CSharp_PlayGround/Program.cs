@@ -13,8 +13,8 @@ using System.Linq;
 using ConsoleApp_PlayGround.DTO;
 using ConsoleApp_PlayGround.LINQ;
 using ConsoleApp_PlayGround.IO;
-using ConsoleApp_PlayGround.Challenges.LeetCode;
-using ConsoleApp_PlayGround.Challenges.HackerRank;
+using LettCode = ConsoleApp_PlayGround.Challenges.LeetCode;
+using HackerRank = ConsoleApp_PlayGround.Challenges.HackerRank;
 using ConsoleApp_PlayGround.Challenges.Other;
 using ConsoleApp_PlayGround.DataStructure;
 
@@ -26,8 +26,7 @@ namespace ConsoleApp_PlayGround
         static async Task Main(string[] args)
         {
 
-            //DiagonalDifferenceClass.Implement();
-            BitArrayClassExamble.Implement();
+            LettCode.AddTwoNumbersClass.Implement();
 
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");

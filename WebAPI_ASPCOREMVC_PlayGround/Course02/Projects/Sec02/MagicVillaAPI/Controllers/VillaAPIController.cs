@@ -1,6 +1,7 @@
 ﻿using MagicVillaAPI.Data;
 using MagicVillaAPI.Models;
 using MagicVillaAPI.Models.DTO;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
 
@@ -33,7 +34,7 @@ namespace MagicVillaAPI.Controllers
             return Ok(VillaStore.villas);
         }
 
-        [HttpGet("{id:int}",Name ="GetVilla")]
+        [HttpGet("{id:int}", Name = "GetVilla")]
         //# attribute for swagger documentation
         //[ProducesResponseType(200,Type = typeof(VillaDTO))]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -44,7 +45,7 @@ namespace MagicVillaAPI.Controllers
             //#validation
             if (id == 0) return BadRequest();
 
-            var villa =  VillaStore.villas.FirstOrDefault(v => v.ID == id);
+            var villa = VillaStore.villas.FirstOrDefault(v => v.ID == id);
 
             if (villa == null) return NotFound();
 
@@ -55,7 +56,7 @@ namespace MagicVillaAPI.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<VillaDTO> CreateVilla([FromBody]VillaDTO villaDTO) 
+        public ActionResult<VillaDTO> CreateVilla([FromBody] VillaDTO villaDTO)
         {
             //#validations
             //#apply data annotation validation
@@ -63,12 +64,12 @@ namespace MagicVillaAPI.Controllers
             if (villaDTO == null) return BadRequest(villaDTO);
             if (villaDTO.ID > 0) return StatusCode(StatusCodes.Status500InternalServerError);
             //#cusomt validation allready exist villa name
-            if (VillaStore.villas.FirstOrDefault(v => v.Name.ToLower() == villaDTO.Name.ToLower()) != null) 
+            if (VillaStore.villas.FirstOrDefault(v => v.Name.ToLower() == villaDTO.Name.ToLower()) != null)
             {
-                ModelState.AddModelError("CustomValidation","Villa Name Already Exist");
+                ModelState.AddModelError("CustomValidation", "Villa Name Already Exist");
                 return BadRequest(ModelState);
             }
-            
+
             villaDTO.ID = VillaStore.villas.OrderByDescending(v => v.ID).FirstOrDefault().ID + 1;
             VillaStore.villas.Add(villaDTO);
 
@@ -84,20 +85,49 @@ namespace MagicVillaAPI.Controllers
              x-powered-by: ASP.NET
              date: Fri, 31 Oct 2025 17:31:47 GMT
             */
-            return CreatedAtRoute("GetVilla",new{ id = villaDTO.ID},villaDTO);
+            return CreatedAtRoute("GetVilla", new { id = villaDTO.ID }, villaDTO);
 
         }
 
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [HttpDelete("{id:int}",Name ="DeleteVilla")]
-        public ActionResult DeleteVilla(int id) 
+        [HttpDelete("{id:int}", Name = "DeleteVilla")]
+        public ActionResult DeleteVilla(int id)
         {
             if (id == 0) return BadRequest();
             var villa = VillaStore.villas.FirstOrDefault(v => v.ID == id);
             if (villa == null) return NotFound();
             VillaStore.villas.Remove(villa);
+            return NoContent();
+        }
+
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpPut("{id:int}",Name ="UpdateVilla")]
+        public ActionResult UpdateVilla(int id, [FromBody] VillaDTO villaDto) 
+        {
+            if (villaDto == null || id != villaDto.ID) return BadRequest();
+            var villa = VillaStore.villas.FirstOrDefault(v => v.ID == id);
+            if (villa == null) return NotFound();
+            villa.Occupancy = villaDto.Occupancy;
+            villa.AreaSqft = villaDto.AreaSqft;
+            return NoContent();
+        }
+
+
+        [ProducesResponseType(StatusCodes.Status204NoContent)] 
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpPatch("{id:int}", Name = "UpdatePartialVilla")]
+        public ActionResult UpdatePartialVilla(int id,[FromBody]JsonPatchDocument<VillaDTO> patchVillaDto)
+        {
+            if (patchVillaDto == null || id == 0) return BadRequest();
+            var villa = VillaStore.villas.FirstOrDefault(v => v.ID == id);
+            if (villa == null) return BadRequest();
+            
+            patchVillaDto.ApplyTo(villa,ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
             return NoContent();
         }
     }
