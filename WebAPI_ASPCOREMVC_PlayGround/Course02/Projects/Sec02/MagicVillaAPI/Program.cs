@@ -1,4 +1,14 @@
+using Serilog;
+
 var builder = WebApplication.CreateBuilder(args);
+
+//#config SeriLog instead the default
+Log.Logger = new LoggerConfiguration().MinimumLevel.Debug()
+    .WriteTo.File("log/VillaAPILogs.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+//#apply serilog to the middleware
+builder.Host.UseSerilog();
+
 
 // Add services to the container.
 builder.Services.AddControllers(options =>

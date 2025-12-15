@@ -12,8 +12,7 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
     class AddTwoNumbersClass
     {
 
-        //Runtime 0ms Beats 0%
-        //Memory 0MB Beats 0%
+        //Not working with big digits numbers
         public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
             StringBuilder strBN1 = new StringBuilder();
@@ -37,60 +36,46 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
            long.TryParse(string.Join("",strBN2.ToString().Reverse()),out n2);
            
             long result = n1 + n2;
-            return  CreateTheList(result.ToString().Reverse()
+            return  ListNodeUtility.CreateTheList(result.ToString().Reverse()
                       .Select(c => Convert.ToInt32($"{c}")).ToArray());
         }
 
 
-        //Runtime 0ms Beats 0%
-        //Memory 0 MB Beats 0%
-        public static bool AddTwoNumbers_Final(string s)
+        //using recursion method with carry&total (/10, %10) divisions 
+        public static ListNode AddTwoNumbers_Final(ListNode l1, ListNode l2)
         {
-            return true;
+            return AddTwoNumbersRec(l1,l2);
         }
 
-        private static ListNode CreateTheList(int[] values)
+        private static ListNode AddTwoNumbersRec(ListNode l1, ListNode l2, int carry = 0) 
         {
-            ListNode ln = null;
-            ListNode first = null;
-            values.ToList().ForEach(v => {
-                if (ln == null)
-                    ln = new ListNode(val: v);
-                else if (ln.next == null)
-                {
-                    ln.next = new ListNode(val: v);
-                    ln = ln.next;
-                }
-
-                if (first == null) first = ln;
-
-            });
-           return first;
+            //First Line is hardest to imagine when to quit :)
+            if (l1 == null && l2 == null && carry == 0) return null;
+            int total = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + carry;
+            carry = total / 10;
+            //'?' null conditional operator
+            return new ListNode(total % 10, AddTwoNumbersRec(l1?.next, l2?.next, carry));
         }
 
-        private static void ShowTheList(ListNode ln) 
-        {
-            if (ln == null) return; 
-            Console.Write(ln.val);
-            ln = ln.next;
-            ShowTheList(ln);
-        }
 
         public static void Implement()
         {
-            ListNode l1 = CreateTheList(new int[] { 2, 4, 3 });
-            ListNode l2 = CreateTheList(new int[] { 5, 6, 4 });
+
             
-            var result = AddTwoNumbers(l1, l2);   
-            ShowTheList(result);
+            ListNode l1 = ListNodeUtility.CreateTheList(new int[] { 2, 4, 3 });
+            ListNode l2 = ListNodeUtility.CreateTheList(new int[] { 5, 6, 4 });
+            
+            var result = AddTwoNumbers_Final(l1, l2);   
+            ListNodeUtility.ShowTheList(result);
             Console.WriteLine("");
 
-            l1 = CreateTheList(new int[] { 9 });
-            l2 = CreateTheList(new int[] { 1,9,9,9,9,9,9,9,9,9});
+            l1 = ListNodeUtility.CreateTheList(new int[] { 9 });
+            l2 = ListNodeUtility.CreateTheList(new int[] { 1,9,9,9,9,9,9,9,9,9});
 
-            result = AddTwoNumbers(l1, l2);
-            ShowTheList(result);
+            result = AddTwoNumbers_Final(l1, l2);
+            ListNodeUtility.ShowTheList(result);
             Console.WriteLine("");
+            
 
         }
 

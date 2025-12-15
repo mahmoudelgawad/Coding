@@ -17,6 +17,7 @@ using LettCode = ConsoleApp_PlayGround.Challenges.LeetCode;
 using HackerRank = ConsoleApp_PlayGround.Challenges.HackerRank;
 using ConsoleApp_PlayGround.Challenges.Other;
 using ConsoleApp_PlayGround.DataStructure;
+using ConsoleApp_PlayGround.Nullable;
 
 
 namespace ConsoleApp_PlayGround
@@ -25,8 +26,11 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
+            //LettCode.AddTwoNumbersClass.Implement();
+            NullableClass.Implement();
 
-            LettCode.AddTwoNumbersClass.Implement();
+            //TODO: upgrade to .net 10 & VS 2026
+            //https://dotnet.microsoft.com/en-us/download/visual-studio-sdks
 
             //just comment
             Console.WriteLine("\r\nConsoleApp_PlayGround SUCCESS!\r\n");

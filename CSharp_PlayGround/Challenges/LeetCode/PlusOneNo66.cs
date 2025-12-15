@@ -8,7 +8,7 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
     //https://leetcode.com/problems/plus-one/description/
 
     //# if you want to cut any digit number to small pieces/numbers divid by 10
-    //# 199/10 = 19.9, so use (%) division remainder (modulo operator)
+    //# 199/10 = 19.9, so use (19.9 % 10) division remainder (modulo operator)
     //# to get [9]
     class PlusOneClass
     {

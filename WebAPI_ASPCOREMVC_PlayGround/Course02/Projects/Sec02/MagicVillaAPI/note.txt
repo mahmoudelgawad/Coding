@@ -21,3 +21,8 @@ https://localhost:44326/api/villaapi/2
 
 //#jsonpatch apply for only partial update 'occupancy' (with in array format []!!)
 [{ "op": "replace", "path": "/Occupancy", "value": "65" }]
+
+//#to configured MS default logging with another library
++Serilog.AspNetCore
++Serilog.Sinks.File
+//#then configure from 'program.cs' before adding controllers
