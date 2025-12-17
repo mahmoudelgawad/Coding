@@ -1,4 +1,4 @@
-class Staircase:
+class StaircaseClass:
     #def __init__()
     #internaly using "__new__" def fun for new instance
     

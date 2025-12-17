@@ -4,6 +4,7 @@ using MagicVillaAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MagicVillaAPI.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20251217175837_seed-data-villas")]
+    partial class seeddatavillas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +74,7 @@ namespace MagicVillaAPI.Migrations
                             ID = 1,
                             Amenity = "",
                             AreaSqft = 1000,
-                            CreatedDate = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Details = "A Royal Villa description highlights ultimate luxury, blending opulent decor (crystal chandeliers, silk carpets, marble floors) with exclusive amenities like private pools/Jacuzzis, sea views, multiple en-suite bedrooms, maid's quarters, fine dining areas, and high-tech features, all designed for prestige and relaxation, echoing palace grandeur in a private sanctuary.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Royal_villa_of_Durres_01.jpg/960px-Royal_villa_of_Durres_01.jpg?20191004113828",
                             Name = "Rolyal Villa",
@@ -84,7 +87,7 @@ namespace MagicVillaAPI.Migrations
                             ID = 2,
                             Amenity = "",
                             AreaSqft = 600,
-                            CreatedDate = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Details = "Luxury Pool Villa description highlights ultimate luxury, blending opulent decor (crystal chandeliers, silk carpets, marble floors) with exclusive amenities like private pools/Jacuzzis, sea views, multiple en-suite bedrooms, maid's quarters, fine dining areas, and high-tech features, all designed for prestige and relaxation, echoing palace grandeur in a private sanctuary.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Pool_villa.jpg/960px-Pool_villa.jpg?20111226054028",
                             Name = "Luxury Pool Villa",
@@ -97,7 +100,7 @@ namespace MagicVillaAPI.Migrations
                             ID = 3,
                             Amenity = "",
                             AreaSqft = 450,
-                            CreatedDate = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Details = "Pool Villa description highlights ultimate luxury, blending opulent decor (crystal chandeliers, silk carpets, marble floors) with exclusive amenities like private pools/Jacuzzis, sea views, multiple en-suite bedrooms, maid's quarters, fine dining areas, and high-tech features, all designed for prestige and relaxation, echoing palace grandeur in a private sanctuary.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Backyardpool.jpg/960px-Backyardpool.jpg",
                             Name = "Pool Villa",
@@ -110,7 +113,7 @@ namespace MagicVillaAPI.Migrations
                             ID = 4,
                             Amenity = "",
                             AreaSqft = 590,
-                            CreatedDate = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Details = "Sea View Villa description highlights ultimate luxury, blending opulent decor (crystal chandeliers, silk carpets, marble floors) with exclusive amenities like private pools/Jacuzzis, sea views, multiple en-suite bedrooms, maid's quarters, fine dining areas, and high-tech features, all designed for prestige and relaxation, echoing palace grandeur in a private sanctuary.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Coronado_beach_house.jpg/960px-Coronado_beach_house.jpg",
                             Name = "Sea View Villa",
@@ -123,7 +126,7 @@ namespace MagicVillaAPI.Migrations
                             ID = 5,
                             Amenity = "",
                             AreaSqft = 400,
-                            CreatedDate = new DateTime(2025, 12, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Details = "Leak View Villa description highlights ultimate luxury, blending opulent decor (crystal chandeliers, silk carpets, marble floors) with exclusive amenities like private pools/Jacuzzis, sea views, multiple en-suite bedrooms, maid's quarters, fine dining areas, and high-tech features, all designed for prestige and relaxation, echoing palace grandeur in a private sanctuary.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/9/9e/06VillaBalbianello.jpg",
                             Name = "Leak View Villa",

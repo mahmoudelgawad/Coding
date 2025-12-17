@@ -12,7 +12,7 @@ namespace MagicVillaAPI.Models.DTO
         public string Name { get; set; }
         public double Rate { get; set; }
         public string Details { get; set; }
-        public float AreaSqft { get; set;}
+        public int AreaSqft { get; set;}
         public int Occupancy { get; set; }
         public string ImageUrl { get; set; }
         public string Amenity { get; set; }

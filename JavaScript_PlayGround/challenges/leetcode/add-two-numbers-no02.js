@@ -22,7 +22,7 @@ const addTwoNumbers = function(l1, l2) {
 const addTwoNumbersRec = function(l1, l2, carry = 0) {
     if(!l1 && !l2 && carry === 0) return null;
     let total = (!l1 ? 0 : l1.val) + (!l2 ? 0 : l2.val) + carry;
-    carry = total / 10;
+    carry = Math.trunc(total / 10);
     return new ListNode(total%10, addTwoNumbersRec(l1?.next,l2?.next,carry));
 };
 
