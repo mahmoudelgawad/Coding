@@ -1,0 +1,6 @@
+//# after installing Python locally you can host local html with module Js scripts 
+>cd project/path
+>python -m http.server 3005
+
+//#or using npm 'http-server' package
+>http-server -p 3005

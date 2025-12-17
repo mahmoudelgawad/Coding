@@ -1,0 +1,21 @@
+2025-12-16 18:20:27.905 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-12-16 18:20:28.185 +02:00 [DBG] Hosting starting
+2025-12-16 18:20:28.260 +02:00 [DBG] Middleware loaded
+2025-12-16 18:20:28.278 +02:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16511 B).
+2025-12-16 18:20:28.281 +02:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2025-12-16 18:20:28.585 +02:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-12-16 18:20:28.595 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-12-16 18:20:28.626 +02:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2025-12-16 18:20:28.918 +02:00 [INF] Now listening on: https://localhost:7206
+2025-12-16 18:20:28.922 +02:00 [INF] Now listening on: http://localhost:5008
+2025-12-16 18:20:28.923 +02:00 [DBG] Loaded hosting startup assembly MagicVillaAPI
+2025-12-16 18:20:28.923 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2025-12-16 18:20:28.923 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2025-12-16 18:20:28.923 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2025-12-16 18:20:28.954 +02:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-16 18:20:28.956 +02:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-12-16 18:20:29.054 +02:00 [DBG] Executing API description provider 'JsonPatchOperationsArrayProvider' from assembly Microsoft.AspNetCore.Mvc.NewtonsoftJson v9.0.11.0.
+2025-12-16 18:20:29.454 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-16 18:20:29.454 +02:00 [INF] Hosting environment: Development
+2025-12-16 18:20:29.454 +02:00 [INF] Content root path: C:\Drive\Coding\WebAPI_ASPCOREMVC_PlayGround\Course02\Projects\Sec02\MagicVillaAPI
+2025-12-16 18:20:29.455 +02:00 [DBG] Hosting started

@@ -26,3 +26,23 @@ https://localhost:44326/api/villaapi/2
 +Serilog.AspNetCore
 +Serilog.Sinks.File
 //#then configure from 'program.cs' before adding controllers
+
+//# install nuget PM 'Microsoft.EntityFrameworkCore.SqlServer'
+//# install nuget PM 'Microsoft.EntityFrameworkCore.Tools'
+(Add-Migration
+Bundle-Migration
+Drop-Database
+Get-DbContext
+Get-Migration
+Optimize-DbContext
+Remove-Migration
+Scaffold-DbContext
+Script-Migration
+Update-Database)
+
+//# first migration from 'package manager console view'
+PM> add-migration Add_Table_Villas
+
+//#then apply the new created migration files
+>update-database
+

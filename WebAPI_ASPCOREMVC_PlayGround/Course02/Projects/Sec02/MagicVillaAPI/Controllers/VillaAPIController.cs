@@ -1,4 +1,5 @@
-﻿using MagicVillaAPI.Data;
+﻿using MagicVillaAPI.CustomLogging;
+using MagicVillaAPI.Data;
 using MagicVillaAPI.Models;
 using MagicVillaAPI.Models.DTO;
 using Microsoft.AspNetCore.JsonPatch;
@@ -13,8 +14,11 @@ namespace MagicVillaAPI.Controllers
     [ApiController]
     public class VillaAPIController : ControllerBase
     {
-        readonly private ILogger<VillaAPIController> _logger;
-        public VillaAPIController(ILogger<VillaAPIController> logger) 
+        //readonly private ILogger<VillaAPIController> _logger;
+        readonly private ILogging _logger;
+        //public VillaAPIController(ILogger<VillaAPIController> logger) 
+        //public VillaAPIController(ILogger logger) 
+        public VillaAPIController(ILogging logger) 
         {
             _logger = logger;
         }
@@ -52,7 +56,7 @@ namespace MagicVillaAPI.Controllers
             //#validation
             if (id == 0) 
             {
-                _logger.LogError("Wrong Villa ID = {0}",id);
+                _logger.LogError($"Wrong Villa ID = {id}");
                 return BadRequest();
             }
 
