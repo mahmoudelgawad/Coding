@@ -1,0 +1,14 @@
+//#use the same path to genrate new project, same old folder 'first-angular-app'
+>cd C:\Drive\Coding\Angular_PlayGround
+
+//# generate non standalone project
+>ng new first-angular-app --no-strict --routing false --standalone false
+
+//# install  latest boostrap in 'package.json' section'dpendencies' "bootstrap": "^5.3.8",
+>npm install --save bootstrap 
+
+//# then handle/add boostrap.css file path as "node_modules/bootstrap/dist/css/bootstrap.css"
+//# in both build and test sections in ("styles":[]) 'angular.json' 
+
+//# handle boostrap.js file path as "bundle"!! "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+//#in build and test sections in ("scripts":[])

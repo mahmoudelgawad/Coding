@@ -1,16 +1,13 @@
 import { Component } from '@angular/core';
-import {Features} from '../app/shared/constants';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  readonly features = Features;
-  selectedFeature = Features.Recipes;
-  onSelectedFeature(feature){
-    this.selectedFeature = feature;
-  }
+  numbers = [1, 2, 3, 4, 5];
+  evenNumbers = [2, 4];
+  oddNumbers = [1,3,5];
+  onlyOdd = false;
 }

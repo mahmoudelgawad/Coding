@@ -1,5 +1,6 @@
 using MagicVillaAPI.CustomLogging;
 using MagicVillaAPI.Data;
+using MagicVillaAPI.Mapping;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -20,6 +21,9 @@ builder.Host.UseSerilog();
 builder.Services.AddDbContext<ApplicationDBContext>(option => {
     option.UseSqlServer(builder.Configuration.GetConnectionString("VillaAPIDB"));
 });
+
+//add auto mapper config
+builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
 // Add services to the container.
 builder.Services.AddControllers(options =>

@@ -46,3 +46,7 @@ PM> add-migration Add_Table_Villas
 //#then apply the new created migration files
 >update-database
 
+//#install auto mapper
+>AutoMapper
+>AutoMapper.Extensions.Microsoft.DependencyInjection
+

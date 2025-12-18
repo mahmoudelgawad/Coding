@@ -1,9 +1,10 @@
+from module_list_node import ListNode
+
 class AddTwoNumbersClass:
 
-    def addTwoNumbers(l1:int,l2:int):
-        print("hello")
+    def addTwoNumbers(self, l1: ListNode | None, l2: ListNode | None) -> ListNode | None:
     
-    def addTwoNumbersRec():
+    def addTwoNumbersRec(l1:ListNode,l2:ListNode):
         print("hello")
 
     @staticmethod

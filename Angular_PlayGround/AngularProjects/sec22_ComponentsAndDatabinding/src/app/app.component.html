@@ -1,0 +1,9 @@
+<app-header (selectedFeatureEmitter) = "onSelectedFeature($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="selectedFeature === features.Recipes"></app-recipes>
+      <app-shopping-list *ngIf="selectedFeature === features.ShoppingList"></app-shopping-list>
+    </div>
+  </div>
+</div>
