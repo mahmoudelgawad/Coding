@@ -1,6 +1,8 @@
 using MagicVillaAPI.CustomLogging;
 using MagicVillaAPI.Data;
 using MagicVillaAPI.Mapping;
+using MagicVillaAPI.Models;
+using MagicVillaAPI.Repository;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -42,6 +44,7 @@ builder.Services.AddOpenApi();
 
 //#config dependency injection for custom logging
 builder.Services.AddSingleton<ILogging, Logging>();
+builder.Services.AddScoped<IVillaRepository<Villa>, VillaRepository>();
 
 //############################################################
 

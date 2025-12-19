@@ -8,3 +8,5 @@
 
 //#genrate directive then copy the files into folder
 >ng g d better-highlight
+
+//#use angular 'renderer' better when need DOM manipulation or changes

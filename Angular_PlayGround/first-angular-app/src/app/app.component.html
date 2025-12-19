@@ -27,7 +27,9 @@
           {{num}}
         </li> -->
       </ul>
-      <p appBasicHighlightDirective>hello I am using the basic highlighted directive</p>
+      <p appBasicHighlightDirective>hello I am using the basic highlighted directive !</p>
+      <p appBetterHighlight>hello I am using the #BETTER highlighted directive !</p>
+      <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'pink'">hello I am using the #BETTER highlighted directive using INPUT !</p>
       <ng-template [ngIf]="onlyOdd">
         <p>Only odd</p>
       </ng-template>
