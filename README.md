@@ -16,7 +16,7 @@ Python.\
 JAVA.\
 GO.\
 Game Development: Unity.\
-And More.. 🌊\
+And More.. 🌊
 
 ### Also, I am preparing other repositories for complete sample projects 🏗️ including Front-End and Back-End implementation.
 
