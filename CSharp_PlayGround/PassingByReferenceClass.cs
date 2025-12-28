@@ -53,10 +53,10 @@ namespace ConsoleApp_PlayGround
             user.Age = 15;
         }
 
-        //other usage for 'ref' keyword
+        //Return by Reference usage for 'ref' keyword
         //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref
 
-        //using ref in method signature, value return by reference 'ref return'
+        //using ref in method signature, value return by reference 'return ref'
         public ref int ReturnReferenceValue_RefMax(ref int left, ref int right)
         {
             if (left > right)
@@ -72,13 +72,20 @@ namespace ConsoleApp_PlayGround
         //using ref in local variable declaration, reference variable
         public void DeclareLocalReferenceVariable(int variable) 
         {
+            //ref bool localBooleanVariable =  true; //ERROR
+            //ref bool localBooleanVariable = ref true; //ERROR
             ref int localVariable = ref variable;
         }
 
         //conditional reference expression,or reference assignment
-        public ref int ReturnReferenceValue_RefMax_ByCondition(ref int left, ref int right)
+        public ref int ReturnReferenceValue_RefMax_ByConditionlOperator(ref int left, ref int right)
         {
+            //ref int testValue =  (left > right) ? ref left : ref right;//ERROR
+            //ref int testValue =  ref ((left > right) ?  left :  right);//ERROR
             //ref int testValue2 =   ((ref left > ref right) ? ref left : ref right);//ERROR
+
+            ref var testValue = ref ((left > right) ? ref left : ref right);
+            ref var testValue2 = ref (left > right ? ref left : ref right);
             ref int maxValue =ref left > right ? ref left : ref right;
             return ref maxValue;
         }
