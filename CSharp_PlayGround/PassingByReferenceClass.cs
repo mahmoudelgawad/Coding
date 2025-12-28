@@ -78,6 +78,7 @@ namespace ConsoleApp_PlayGround
         //conditional reference expression,or reference assignment
         public ref int ReturnReferenceValue_RefMax_ByCondition(ref int left, ref int right)
         {
+            //ref int testValue2 =   ((ref left > ref right) ? ref left : ref right);//ERROR
             ref int maxValue =ref left > right ? ref left : ref right;
             return ref maxValue;
         }
