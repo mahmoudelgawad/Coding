@@ -1,6 +1,6 @@
 
 class ListNode:
-    def __init_(self,val = 0, next= None):
+    def __init__ (self,val : int = 0, next : 'ListNode' = None):
         #'None' = 'null'
         self.val = val
-        self.nex = next
+        self.next = next
