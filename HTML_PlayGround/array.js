@@ -56,8 +56,11 @@ function arrayFilter(){
 }
 
 function arraySlice(){
+    //array of primitve string values
     const dogsNames =["max", "blue", "lio","trex", "dark", "spark"];
-    //slice return new array , not affect on source array reference
+    //slice return 'Shallow Copy' new array ,
+    //  affect on source array reference but not affected on source array if that array of primitives
+            //(string, boolean , number, ...etc)
     //get from start 0 to end 2 index, 2 index value not included
     let sliceResult = dogsNames.slice(0,2);
     // output:['max','blue']
