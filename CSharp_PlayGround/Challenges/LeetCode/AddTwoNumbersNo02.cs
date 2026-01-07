@@ -60,7 +60,6 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
 
         public static void Implement()
         {
-
             
             ListNode l1 = ListNodeUtility.CreateTheList(new int[] { 2, 4, 3 });
             ListNode l2 = ListNodeUtility.CreateTheList(new int[] { 5, 6, 4 });

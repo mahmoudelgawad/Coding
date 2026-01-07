@@ -30,3 +30,11 @@ C:\Drive\Coding\ConsoleApp_PlayGround\bin\Debug\net5.0\ConsoleApp_PlayGround.pdb
 C:\Drive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\refint\ConsoleApp_PlayGround.dll
 C:\Drive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.genruntimeconfig.cache
 C:\Drive\Coding\ConsoleApp_PlayGround\obj\Debug\net5.0\ref\ConsoleApp_PlayGround.dll
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.AssemblyInfoInputs.cache
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.AssemblyInfo.cs
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.csproj.CoreCompileInputs.cache
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.sourcelink.json
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.dll
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\refint\ConsoleApp_PlayGround.dll
+C:\Drive\Coding\CSharp_PlayGround\obj\Debug\net5.0\ConsoleApp_PlayGround.pdb

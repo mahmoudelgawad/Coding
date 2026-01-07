@@ -39,7 +39,7 @@ builder.Services.AddControllers(options =>
                 //#reurn JSON data as XML formate "accept:application/XML"
                 .AddXmlDataContractSerializerFormatters(); 
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+//#(like swagger) Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 //#config dependency injection for custom logging

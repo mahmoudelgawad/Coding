@@ -33,6 +33,18 @@
       <ng-template [ngIf]="onlyOdd">
         <p>Only odd</p>
       </ng-template>
+      <div [ngSwitch]="switchValue">
+        <p *ngSwitchCase="5">5 value selected old [ngSwitch]</p>
+        <p *ngSwitchCase="6">6 value selected old [ngSwitch]</p>
+        <p *ngSwitchCase="7">7 value selected old [ngSwitch]</p>
+        <p *ngSwitchCase="10">10 value selected old [ngSwitch]</p>
+      </div>
+      @switch(switchValue){
+        @case(5){<b><p>5 value selected modern-switch</p></b>}
+        @case(6){<b><p>6 value selected modern-switch</p></b>}
+        @case(7){<b><p>7 value selected modern-switch</p></b>}
+        @case(10){<b><p>10 value selected modern-switch</p></b>}
+      }
     </div>
   </div>
 </div>
