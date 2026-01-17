@@ -18,6 +18,8 @@ using HackerRank = ConsoleApp_PlayGround.Challenges.HackerRank;
 using ConsoleApp_PlayGround.Challenges.Other;
 using ConsoleApp_PlayGround.DataStructure;
 using ConsoleApp_PlayGround.Nullable;
+using ConsoleApp_PlayGround.OOP.CovarianceAndContravariance;
+using ConsoleApp_PlayGround.Challenges.LeetCode;
 
 
 namespace ConsoleApp_PlayGround
@@ -26,8 +28,7 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
-            LettCode.MergeStringAlternatelyClass.Implement();
-                    
+            LongestSubstringClass.Implement();       
 
             //TODO: upgrade to .net 10 & VS 2026
             //https://dotnet.microsoft.com/en-us/download/visual-studio-sdks

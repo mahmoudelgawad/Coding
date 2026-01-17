@@ -14,15 +14,26 @@ namespace ConsoleApp_PlayGround
     class PassingByReferenceClass
     {
         int value = 0;
-        public void UsingIntRef(ref int value)
+
+        public void PassingByIntValueType(int value)
         {
             value += 10;
-            Console.WriteLine("UsingIntRef, will not change it.");
+            Console.WriteLine("PassingByIntValueType, will not pass changed value");
+        }
+        public void PassingByIntRef(ref int value)
+        {
+            value += 15;
+            Console.WriteLine("PassingByIntRef, will pass changed value");
         }
 
-        public void UsingObjRef(ref User user) 
+        public void PassingByReferenceType(User user)
         {
-            user.Name = "Osman";
+            user.Name = "Osman -ReferenceType";
+            user.Age = 10;
+        }
+        public void PassingByObjRef(ref User user) 
+        {
+            user.Name = "Osman - ref User";
             user.Age = 15;
         }
         public void UsingIntOut(out int value)
@@ -100,7 +111,19 @@ namespace ConsoleApp_PlayGround
         {
             PassingByReferenceClass passingByReferenceClass = new PassingByReferenceClass();
             User userObj = new User { Name = "mahmoud", Age = 16 };
-            User userObjNull;
+            User userObjNull=null;
+
+            int intValue = 0;
+            passingByReferenceClass.PassingByIntValueType(intValue);
+            Console.WriteLine($"intValue = {intValue}");
+            passingByReferenceClass.PassingByIntRef(ref intValue);
+            Console.WriteLine($"intValue = {intValue}");
+
+            //Compie Time Error unsigned local variable
+            //passingByReferenceClass.PassingByReferenceType(userObjNull);
+            Console.WriteLine($"Name={userObj.Name}, Age={userObj.Age}");
+            passingByReferenceClass.PassingByObjRef(ref userObjNull);
+
 
             //#Error use unassigned variable
             //passingByReferenceClass.UsingObjRef(ref userObjNull);
