@@ -1,0 +1,22 @@
+
+//# project with typescript, to implement official react.dev learn
+
+added 176 packages, and audited 177 packages in 37s
+
+45 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+|
+o  Starting dev server...
+
+> react-project@0.0.0 dev
+> vite
+
+You are using Node.js 20.13.1. Vite requires Node.js version 20.19+ or 22.12+. Please upgrade your Node.js version.
+
+  VITE v7.3.1  ready in 427 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
