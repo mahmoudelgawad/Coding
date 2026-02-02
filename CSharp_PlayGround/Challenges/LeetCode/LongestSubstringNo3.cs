@@ -16,27 +16,41 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
         public static int LongestSubstring(string s)
         {
             HashSet<char> set = new HashSet<char>(s);
-            
+            //but need to check after removed duplicates characters is match subsstring in original string
+            //!!!
 
             return set.Count;
         }
 
 
-        //Runtime 0ms Beats 0%
-        //Memory 0 MB Beats 0%
-        public static bool LongestSubstring_Final(string s)
+        //optimum solution using algorithm "sliding window" using dictionary
+        public static int LongestSubstring_Final(string s)
         {
-            return true;
+            Dictionary<char, int> charIndex = new Dictionary<char, int>();
+            int maxLength = 0;
+            int left = 0;
+            for (int right = 0; right < s.Length; right++) 
+            {
+                char currentChar = s[right];
+                
+                if(charIndex.ContainsKey(currentChar))
+                    left = Math.Max(left, charIndex[currentChar] + 1);
+                
+                charIndex[currentChar] = right;
+
+                maxLength = Math.Max(maxLength, right - left + 1);
+            }
+            return maxLength;
         }
 
         public static void Implement()
         {
              
-             string s = "wwkewp";
-             Console.WriteLine(LongestSubstring(s));
+             string s = "pwwkew";
+             Console.WriteLine(LongestSubstring_Final(s));
 
-             s = "bbbbb";
-            Console.WriteLine(LongestSubstring(s));
+            // s = "bbbbb";
+            //Console.WriteLine(LongestSubstring_Final(s));
 
 
 

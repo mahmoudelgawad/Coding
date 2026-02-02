@@ -1,0 +1,14 @@
+//#Components using (JSX, props, state), natively use combine of (html, js , css)
+//  #most use component or small blocks as resuable blocks like 'button' or header
+//  #each component represent different concepts
+
+//#to start your app run development server
+>npm run dev
+
+//#component function name must be PascalCase "Header' or "MyHeader"
+//#use 'format document' to handle the complex jsx with html source code for current page 
+
+//# in css 'rem' unit The core difference is that px (pixels) is an absolute, fixed unit, while rem (root em) is a relative, scalable unit based on the root HTML font size
+
+//# in react even if you split css for specific component will affect on all pages not scoped for current component only
+    so you need advanced solution for scoped css affect.
