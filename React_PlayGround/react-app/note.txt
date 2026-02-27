@@ -1,5 +1,6 @@
 
 //# project with typescript, to implement official react.dev learn
+//# so I will use mix TS + also default js/jsx
 
 added 176 packages, and audited 177 packages in 37s
 
@@ -20,3 +21,8 @@ You are using Node.js 20.13.1. Vite requires Node.js version 20.19+ or 22.12+. P
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
   ➜  press h + enter to show help
+
+
+//#last learning document
+https://react.dev/learn/state-a-components-memory
+/#
