@@ -5,37 +5,42 @@ using System.Reflection;
 namespace ConsoleApp_PlayGround.Challenges.LeetCode
 {
     //URL
+    //https://leetcode.com/problems/can-place-flowers/
 
-    
-    class DefaulTemplateLeetCodeClass
+    class CanPlaceFlowersClass
     {
-
         //Runtime 0ms Beats 0%
         //Memory 0MB Beats 0%
-        private static bool DefaulTemplateLeetCode(string s)
+        private static bool CanPlaceFlowers(int[] flowerbed, int n)
         {
-            return true;
+            
+            if(n < 0 || flowerbed.Length == 0) return false;
+			int av=0;
+			for(int i = 0; i < flowerbed.Length; i++)
+			if(i%2 ==0 && flowerbed[i] == 0)
+			   if(i == 0 && flowerbed[i+1] !=1 || i == flowerbed.Length-1 && flowerbed[i-1] != 1)		
+				if( (i>0 && flowerbed[i-1] != 1) && (i<flowerbed.Length-1 && flowerbed[i+1] !=1))
+					++av;
+			return av >= n;
         }
 
 
         //Runtime 0ms Beats 0%
         //Memory 0 MB Beats 0%
-        private static bool DefaulTemplateLeetCode_Final(string s)
+        private static bool CanPlaceFlowers_Final(string s)
         {
             return true;
         }
 
         public static void Implement()
         {
-
             throw new NotImplementedException($"{MethodBase.GetCurrentMethod().DeclaringType.Name} Not Solved Yet");
-            
             /* 
              string s = "({})";
-             Console.WriteLine(DefaulTemplateLeetCode(s));
+             Console.WriteLine(CanPlaceFlowers(s));
 
              s = "()";
-             Console.WriteLine(DefaulTemplateLeetCode(s));
+             Console.WriteLine(CanPlaceFlowers(s));
             */
 
             /*
@@ -60,7 +65,7 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
 
             /*
               int start = DateTime.Now.Millisecond;
-              Console.WriteLine(DefaulTemplateLeetCode_Final(haystack,needle));
+              Console.WriteLine(CanPlaceFlowers_Final(haystack,needle));
               Console.WriteLine(DateTime.Now.Millisecond - start);  
              */
         }

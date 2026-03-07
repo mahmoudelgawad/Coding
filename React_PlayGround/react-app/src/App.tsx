@@ -13,6 +13,8 @@ function App() {
       <Avatar/>
       <hr/>
       <ProfileProps/>
+      <hr/>
+      
     </>
   );
 }
