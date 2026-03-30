@@ -13,7 +13,6 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
         //Memory 0MB Beats 0%
         private static bool CanPlaceFlowers(int[] flowerbed, int n)
         {
-            
             if(n < 0 || flowerbed.Length == 0) return false;
 			int av=0;
 			for(int i = 0; i < flowerbed.Length; i++)
@@ -27,21 +26,50 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
 
         //Runtime 0ms Beats 0%
         //Memory 0 MB Beats 0%
-        private static bool CanPlaceFlowers_Final(string s)
+        private static bool CanPlaceFlowers_Final(int[] flowerbed, int n)
         {
-            return true;
+            if (n < 0 || flowerbed.Length == 0) return false;
+            int av = 0;
+            for (int i = 0; i < flowerbed.Length; i++)
+                if (flowerbed[i] == 0 &&
+                    (
+                     (i == 0 && i == flowerbed.Length-1) || //only one
+                     (i == 0 && flowerbed[i + 1] == 0) || //left
+                     (i == flowerbed.Length - 1 && flowerbed[i - 1] == 0) || //rigth
+                     (i!= 0 && i!=flowerbed.Length-1 && flowerbed[i + 1] == 0 && flowerbed[i - 1] == 0) //middle
+                    )
+                   )
+                {
+                    ++av;
+                    flowerbed[i] = 1;
+                }
+            return av >= n;
         }
 
         public static void Implement()
         {
-            throw new NotImplementedException($"{MethodBase.GetCurrentMethod().DeclaringType.Name} Not Solved Yet");
-            /* 
-             string s = "({})";
-             Console.WriteLine(CanPlaceFlowers(s));
 
-             s = "()";
-             Console.WriteLine(CanPlaceFlowers(s));
-            */
+            int[] flowerbed = [1,0,0,0,0,1];
+            bool correctOutput = false;
+            bool result = CanPlaceFlowers_Final(flowerbed,2);
+            Console.WriteLine($"{result} , ({(correctOutput == result ? "\u221A" : "X")})");
+
+
+            flowerbed = [0];
+            result = CanPlaceFlowers_Final(flowerbed, 1);
+            correctOutput = true;
+            Console.WriteLine($"{result} , ({(correctOutput == result ? "\u221A" : "X")})");
+
+            flowerbed = [1];
+            result = CanPlaceFlowers_Final(flowerbed, 0);
+            correctOutput = true;
+            Console.WriteLine($"{result} , ({(correctOutput == result ? "\u221A" : "X")})");
+
+            flowerbed = [0,1,0];
+            result = CanPlaceFlowers_Final(flowerbed, 1);
+            correctOutput = false;
+            Console.WriteLine($"{result} , ({(correctOutput == result ? "\u221A" : "X")})");
+
 
             /*
             string word1 = "abc";

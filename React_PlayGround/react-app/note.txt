@@ -24,5 +24,6 @@ You are using Node.js 20.13.1. Vite requires Node.js version 20.19+ or 22.12+. P
 
 
 //#last learning document
-https://react.dev/learn/state-as-a-snapshot
-/#Unlike a photograph or a movie frame, the UI “snapshot”
+https://react.dev/learn/escape-hatches
+//#
+You Might Not Need An Effect
