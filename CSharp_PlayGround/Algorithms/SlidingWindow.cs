@@ -8,6 +8,7 @@ namespace ConsoleApp_PlayGround.Algorithms
     internal class SlidingWindow
     {
         //# first sliding window type is fixed size , and moving to right -> , (-) the old left elemnt and (+) the new right
+        //# 2 separated for loop
         public static int MaxSumSubarray(int[] arr, int k)
         {
             int n = arr.Length;
@@ -30,27 +31,8 @@ namespace ConsoleApp_PlayGround.Algorithms
         //# second sliding window type is fixed size then shrinking , and moving to right -> , (-) the old left elemnt and (+) the new right,
         //# then shrink to the remaining items
         //# need left variable
-        public static int MinLengthSumSubarray(int[] arr, int s)
-        {
-            int len = arr.Length;
-            int left = 0, windowSum = 0, maxSum = 0, minLength = 0;
-            
-
-            for(int i = 0; windowSum < s; i++)
-            {
-                windowSum += arr[i];
-                minLength = i;
-            }
-
-            for (int right = minLength + 1; right < len; i++) 
-            {
-              
-            }
-            
-            return errortodo;
-        }
-
-        public static int MinSubArrayLen(int target, int[] nums)
+        //# for nested while loop
+        public static int MinSumSubArrayLength(int target, int[] nums)
         {
             int n = nums.Length;
             int minLength = int.MaxValue;
@@ -62,7 +44,7 @@ namespace ConsoleApp_PlayGround.Algorithms
                 // Expand window by adding elements from the right
                 currentSum += nums[right];
 
-                // Shrink window from the left while the condition is met
+                // Shrink window from the left while the condition is true
                 while (currentSum >= target)
                 {
                     minLength = Math.Min(minLength, right - left + 1);
@@ -74,6 +56,8 @@ namespace ConsoleApp_PlayGround.Algorithms
             // Return 0 if no valid subarray was found
             return minLength == int.MaxValue ? 0 : minLength;
         }
+
+
 
         public static void Implement() 
         {
