@@ -36,5 +36,28 @@ namespace ConsoleApp_PlayGround
             ArrayList arList = new ArrayList();
             arList.TrimToSize();
         }
+        private record AnyClass(string Name,byte  Age);
+        public void Iset_Implement() 
+        {
+
+            HashSet<AnyClass> lstHashSet = new HashSet<AnyClass> {
+                new AnyClass("A", 10),
+                //# this one will be ignored without error
+                new AnyClass("A", 10),
+                new AnyClass("C", 12)};
+
+            //# must count = 2
+            Console.WriteLine($"lstHashSet count = {lstHashSet.Count}");
+        }
+    }
+
+    public class CollectionEnumrableClassImplementation 
+    {
+        public static void Implement() 
+        {
+            CollectionEnumrableClass collectionEC = new CollectionEnumrableClass();
+            
+            collectionEC.Iset_Implement();
+        }
     }
 }
