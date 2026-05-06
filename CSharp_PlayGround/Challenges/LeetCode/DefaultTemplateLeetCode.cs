@@ -29,7 +29,30 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
         {
 
             throw new NotImplementedException($"{MethodBase.GetCurrentMethod().DeclaringType.Name} Not Solved Yet");
-            
+
+
+             //#Using ANSI Escape Sequences (Modern Terminals)
+             //#Modern terminals (like Windows Terminal, PowerShell Core, and macOS/Linux terminals) support ANSI escape codes which allow you to embed color information directly within a string.
+
+            /*
+             int[] nums = [1,12,-5,-6,50,3];
+             int k = 4;
+
+            double result = MaximumAverageSubarray(nums, k);
+            string greenTrue = "\u001b[32mTRUE\u001b[0m", redFalse = "\u001b[31mFALSE\u001b[0m";
+            StringBuilder mark = new StringBuilder(result == 12.75d ?  greenTrue: redFalse);
+            Console.WriteLine($"result 1: {result}, {mark}");
+
+            nums = [5];
+            k = 1;
+            result = MaximumAverageSubarray(nums, k);
+            mark.Clear();
+            mark.AppendLine(result == 5.0d ? greenTrue : redFalse);
+            Console.WriteLine($"result 2: {result}, {mark}");
+             */
+
+
+
             /* 
              string s = "({})";
              Console.WriteLine(DefaulTemplateLeetCode(s));
