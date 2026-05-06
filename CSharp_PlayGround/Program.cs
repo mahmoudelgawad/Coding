@@ -28,7 +28,9 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
-            CanPlaceFlowersClass.Implement();
+            //CanPlaceFlowersClass.Implement();
+            CollectionEnumrableClassImplementation.Implement();
+
 
             //TODO: upgrade to .net 10 & VS 2026
             //https://dotnet.microsoft.com/en-us/download/visual-studio-sdks

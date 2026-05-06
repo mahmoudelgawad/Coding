@@ -21,7 +21,7 @@ namespace ConsoleApp_PlayGround.DTO
             return employess;
         }
 
-        public static Dictionary<string, string> CreateVehicleDetails() 
+        public static Dictionary<string, string> CreateDictionaryVehicleDetails() 
         {
             Dictionary<string, string> vehicleDetails = new Dictionary<string, string> 
             {
