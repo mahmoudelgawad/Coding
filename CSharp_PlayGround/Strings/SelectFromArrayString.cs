@@ -12,7 +12,8 @@ namespace ConsoleApp_PlayGround
         public string GetCarRegisteration() 
         {
             var data = GenerateData.CreateDictionaryVehicleDetails();
-            string registeration = (new string[] { data["Eire_Vrm"], data["VRM_Curr"], data["VRM_MVRIS"] }).Where(v => string.IsNullOrEmpty(v) == false).FirstOrDefault();
+            string registeration = (new string[] { data["Eire_Vrm"], data["VRM_Curr"], data["VRM_MVRIS"] })
+                                    .Where(v => string.IsNullOrEmpty(v) == false).FirstOrDefault();
             return registeration;
         }
     }
