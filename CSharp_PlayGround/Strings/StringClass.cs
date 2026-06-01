@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 
 namespace ConsoleApp_PlayGround.Strings
 {
@@ -23,10 +24,12 @@ namespace ConsoleApp_PlayGround.Strings
             Console.WriteLine(string.Join("", str.Reverse()));
 
             //# 2) for loop
-            for (int i = str.Length - 1; i >= 0; i--) Console.Write(str[i]);
-            Console.WriteLine();
+            StringBuilder strb = new StringBuilder();
+            for (int i = str.Length - 1; i >= 0; i--) strb.Append(str[i]);
+            Console.WriteLine(strb.ToString());
 
-            //# 3) Array.Reverse
+            //## THE BEST $
+            //# 3) Array.Reverse return void 
             var arrstr = str.ToArray();
             Array.Reverse(arrstr);
             Console.WriteLine(string.Join("", arrstr));

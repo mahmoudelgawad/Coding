@@ -20,6 +20,7 @@ using ConsoleApp_PlayGround.DataStructure;
 using ConsoleApp_PlayGround.Nullable;
 using ConsoleApp_PlayGround.OOP.CovarianceAndContravariance;
 using ConsoleApp_PlayGround.Challenges.LeetCode;
+using System.Text;
 
 
 namespace ConsoleApp_PlayGround
@@ -28,8 +29,9 @@ namespace ConsoleApp_PlayGround
     {
         static async Task Main(string[] args)
         {
-            //CanPlaceFlowersClass.Implement();
-            CollectionEnumrableClassImplementation.Implement();
+           
+
+            ArrayChallengesImplementation.Implement();
 
 
             //TODO: upgrade to .net 10 & VS 2026
