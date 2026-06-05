@@ -31,7 +31,7 @@ namespace ConsoleApp_PlayGround.Algorithms
         //# second sliding window type is fixed size then shrinking , and moving to right -> , (-) the old left elemnt and (+) the new right,
         //# then shrink to the remaining items
         //# need left variable
-        //# for nested while loop
+        //# for loop nested while loop
         public static int MinSumSubArrayLength(int target, int[] nums)
         {
             int n = nums.Length;
