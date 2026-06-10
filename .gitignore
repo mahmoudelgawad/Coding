@@ -10,9 +10,9 @@ obj/
 /DB_PlayGround/DB_PlayGround.mdf
 ASPCOREMVC_PlayGround/bin*
 
-/ConsoleApp_PlayGround/.vs*
-/ConsoleApp_PlayGround/bin*
-/ConsoleApp_PlayGround/obj*
+/CSharp_PlayGround/.vs*
+/CSharp_PlayGround/bin*
+/CSharp_PlayGround/obj*
 
 /.vs/slnx.sqlite
 
@@ -28,10 +28,10 @@ ASPCOREMVC_PlayGround/bin*
 /ASPCOREMVC_PlayGround/obj/Release/net5.0/ASPCOREMVC_PlayGround.AssemblyInfoInputs.cache
 /ASPCOREMVC_PlayGround/obj/Release/net5.0/ASPCOREMVC_PlayGround.assets.cache
 /ASPCOREMVC_PlayGround/obj/Release/net5.0/ASPCOREMVC_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
-/ConsoleApp_PlayGround/obj/ConsoleApp_PlayGround.csproj.nuget.dgspec.json
-/ConsoleApp_PlayGround/obj/project.assets.json
-/ConsoleApp_PlayGround/obj/ConsoleApp_PlayGround.csproj.nuget.g.props
-/ConsoleApp_PlayGround/obj/project.nuget.cache
+/CSharp_PlayGround/obj/CSharp_PlayGround.csproj.nuget.dgspec.json
+/CSharp_PlayGround/obj/project.assets.json
+/CSharp_PlayGround/obj/CSharp_PlayGround.csproj.nuget.g.props
+/CSharp_PlayGround/obj/project.nuget.cache
 /UnitTest_PlayGround/obj/Debug/net8.0/UnitTest_PlayGround.AssemblyInfo.cs
 /UnitTest_PlayGround/obj/Debug/net8.0/UnitTest_PlayGround.AssemblyInfoInputs.cache
 /UnitTest_PlayGround/obj/Debug/net8.0/UnitTest_PlayGround.assets.cache
@@ -45,10 +45,10 @@ ASPCOREMVC_PlayGround/bin*
 /UnitTest_PlayGround/UnitTest_PlayGround.UnitTest/obj/Debug/net8.0/UnitTest_PlayGround.UnitTest.assets.cache
 /UnitTest_PlayGround/UnitTest_PlayGround.UnitTest/obj/Debug/net8.0/UnitTest_PlayGround.UnitTest.csproj.AssemblyReference.cache
 /UnitTest_PlayGround/UnitTest_PlayGround.UnitTest/obj/Debug/net8.0/UnitTest_PlayGround.UnitTest.GeneratedMSBuildEditorConfig.editorconfig
-/ConsoleApp_PlayGround/obj/Debug/net8.0/ConsoleApp_PlayGround.assets.cache
-/ConsoleApp_PlayGround/obj/Debug/net8.0/ConsoleApp_PlayGround.csproj.FileListAbsolute.txt
-/ConsoleApp_PlayGround/obj/Debug/net8.0/ConsoleApp_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
-/ConsoleApp_PlayGround/obj/Debug/net8.0/ConsoleApp_PlayGround.genruntimeconfig.cache
+/CSharp_PlayGround/obj/Debug/net8.0/CSharp_PlayGround.assets.cache
+/CSharp_PlayGround/obj/Debug/net8.0/CSharp_PlayGround.csproj.FileListAbsolute.txt
+/CSharp_PlayGround/obj/Debug/net8.0/CSharp_PlayGround.GeneratedMSBuildEditorConfig.editorconfig
+/CSharp_PlayGround/obj/Debug/net8.0/CSharp_PlayGround.genruntimeconfig.cache
 /UnitTest_PlayGround/UnitTest_PlayGround.UnitTest/obj/Release/net8.0/UnitTest_PlayGround.UnitTest.AssemblyInfo.cs
 /UnitTest_PlayGround/UnitTest_PlayGround.UnitTest/obj/Release/net8.0/UnitTest_PlayGround.UnitTest.AssemblyInfoInputs.cache
 /UnitTest_PlayGround/UnitTest_PlayGround.UnitTest/obj/Release/net8.0/UnitTest_PlayGround.UnitTest.assets.cache
