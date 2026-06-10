@@ -48,7 +48,7 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
                 else if (zerosCount > 0)
                 {
                     int tempNonZero = nums[i];
-                    nums[i - zerosCount] = tempNonZero;
+                    nums[Math.Abs(i - zerosCount)] = tempNonZero;
                     nums[i] = 0;
                 }
             }

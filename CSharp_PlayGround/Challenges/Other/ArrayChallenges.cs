@@ -8,10 +8,10 @@ namespace ConsoleApp_PlayGround.Challenges.Other
 {
     internal class ArrayChallenges
     {
-        //get dublictae items in Array
+        //get duplicate numbers in Array
         //mehtod 1, using list, asking it contains value before add number
         //method 2, best practis i think using Set 
-        public static void GetDoublicateItems()
+        public static void GetDouplicateNumbers()
         {
             //var ar = new int[9] {5,4,66,4,7,8,6,1,4};
             int[] arr = { 5, 4, 66, 4, 7, 8, 6, 1, 4, 66, 6 };
