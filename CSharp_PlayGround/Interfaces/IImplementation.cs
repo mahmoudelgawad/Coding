@@ -8,14 +8,20 @@ namespace ConsoleApp_PlayGround.Interfaces
 {
     internal interface IImplementation
     {
-        // it just available in C# 11 version
-        //abstract static void Implement();
+        //################ FILEDS ##################
+        //# ERROR: no instance fileds in interface
+        //int varInt; 
+        
+        //################ PROPERTIERS ##################
+        string Name { get; set; }
+        //# Yes public access modifier only allowed (default is public)
+        public string Color { get; set; } 
 
-        //int varInt; //ERROR: no instance fileds in interface
+        
 
-        //string Name { get; set; }
-
-        //public string Name { get; set; } //public access modifier only allowed
+        //################ FUNCTIONS ##################
         void Implement();
+        //#it just available in C# 11 version, [abstract / partial] + static
+        abstract static void ImplementFun01();
     }
 }
