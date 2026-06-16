@@ -20,8 +20,8 @@ namespace ConsoleApp_PlayGround.Interfaces
         
 
         //################ FUNCTIONS ##################
-        void Implement();
+        void ImplementVoidFun();
         //#it just available in C# 11 version, [abstract / partial] + static
-        abstract static void ImplementFun01();
+        abstract static void ImplementAbstractStaticVoidFun();
     }
 }

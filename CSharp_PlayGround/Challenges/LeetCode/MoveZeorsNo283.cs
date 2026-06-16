@@ -36,7 +36,7 @@ namespace ConsoleApp_PlayGround.Challenges.LeetCode
         }
 
         //# using waterflall algorithm (increment number) during O(n) length.
-        //# then (watterfall - currentIndex) to shift/move non-zeros
+        //# then (watterfall - currentIndex) to shift or move non-zeros
         public static void MoveZeors(int[] nums)
         {
             if (nums.Length <= 1) return;

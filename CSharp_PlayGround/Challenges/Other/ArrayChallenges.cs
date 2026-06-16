@@ -59,6 +59,7 @@ namespace ConsoleApp_PlayGround.Challenges.Other
         {
             ArrayChallenges arrclass = new ArrayChallenges();
             var res = arrclass.FindNumbersIndexOfTotalSum(new int[] {45,2,12,60,10,5},12);
+
         }
     }
 }
