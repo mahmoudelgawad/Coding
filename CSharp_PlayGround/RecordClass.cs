@@ -85,7 +85,7 @@ namespace ConsoleApp_PlayGround
             //#Error , it's required {get;init} assing in initializer only
             //personRequiredInit.FirstName = "sdsds"; 
 
-            //#ERROR,it is 'init-only' property, used initializer only
+            //#ERROR compile time,it is 'init-only' property, used initializer only
             //person.FirstName = "sdsdsd"; 
 
             Console.WriteLine($"person.Address = {person.Address}");
