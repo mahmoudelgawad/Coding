@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,18 @@ namespace ConsoleApp_PlayGround.Challenges.Other
     {
         //get duplicate numbers in Array
         //mehtod 1, using list, asking it contains value before add number
-        //method 2, best practis i think using Set 
-        public static void GetDouplicateNumbers()
+        //method 2, using HashSet,avoid duplicate by default
+
+        public void GetDouplicateNumbers__Hashset_ISet(int[] arr) 
         {
+            HashSet<int> setlist = new HashSet<int>(arr);
+            //# now how to get duplicates numbers :) !!
+            //# from unique setList values :)
+        }
+
+        public void GetDouplicateNumbers_BadCode01()
+        {
+            //# bad code 01, it's using nested 'For Loop', O(N^2)
             //var ar = new int[9] {5,4,66,4,7,8,6,1,4};
             int[] arr = { 5, 4, 66, 4, 7, 8, 6, 1, 4, 66, 6 };
             List<int> doubleValues = new List<int>();
@@ -33,6 +43,7 @@ namespace ConsoleApp_PlayGround.Challenges.Other
 
             Console.WriteLine(string.Join(',', doubleValues.ToArray()));
         }
+
 
         //#return two numbers index position in the array that equal total sum value 'n1+n2=total'
         public int[] FindNumbersIndexOfTotalSum(int[] arr, int total) 

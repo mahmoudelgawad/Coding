@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,12 @@ namespace ConsoleApp_PlayGround
 
     //Reference
     //https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#positional-syntax-for-property-definition
+    
+    //# A record class (commonly declared just as a record) in C# is a specialized reference type
+    //# introduced in C# 9 designed primarily for storing data rather than defining complex behaviors.
+    //# While a traditional class focuses on object identity and mutable states,
+    //# a record class is optimized for immutability and value-based equality out of the box.
+
 
     //using with primary constructor, on only record make public properties from primary constructor parameters
     public record PersonPrim(string FirstName, string LastName);
@@ -75,10 +82,12 @@ namespace ConsoleApp_PlayGround
             var personRequiredInit = new PersonRequiredInit { FirstName="Sami",LastName="" };
             var person = new Person();
 
-            // Error , it's required {get;init} assing in initializer only
+            //#Error , it's required {get;init} assing in initializer only
             //personRequiredInit.FirstName = "sdsds"; 
 
-            //person.FirstName = "sdsdsd"; //ERROR
+            //#ERROR,it is 'init-only' property, used initializer only
+            //person.FirstName = "sdsdsd"; 
+
             Console.WriteLine($"person.Address = {person.Address}");
             string personFirstName = person.FirstName + " is First Name";
             Console.WriteLine($"personFirstName = {personFirstName}");

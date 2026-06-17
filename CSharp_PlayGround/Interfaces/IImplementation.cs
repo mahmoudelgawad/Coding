@@ -8,7 +8,7 @@ namespace ConsoleApp_PlayGround.Interfaces
 {
     internal interface IImplementation
     {
-        //################ FILEDS ##################
+        //################ NO FILEDS ##################
         //# ERROR: no instance fileds in interface
         //int varInt; 
         
