@@ -2,22 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ConsoleApp_PlayGround.Challenges.Other
 {
     internal class ArrayChallenges
     {
-        //get duplicate numbers in Array
-        //mehtod 1, using list, asking it contains value before add number
-        //method 2, using HashSet,avoid duplicate by default
+        //#get duplicate numbers in Array
 
-        public void GetDouplicateNumbers__Hashset_ISet(int[] arr) 
+
+        //using list with for loop O(n), asking it contains value before add number
+        
+
+        //# using HashSet,avoid duplicate by default, but just best in get total count douplicated numbers
+        public void GetDouplicateNumbers_Hashset_ISet_Linq_NOTCOMPLETED(int[] arr) 
         {
-            HashSet<int> setlist = new HashSet<int>(arr);
-            //# now how to get duplicates numbers :) !!
-            //# from unique setList values :)
+            //#not complete solution you need use loop O(n) also  
+            HashSet<int> uniqueNums = new HashSet<int>(arr);
+            var doubleNums = arr.Where(n => !uniqueNums.Contains(n)).ToList();
+            Console.WriteLine(string.Join(',',doubleNums));
         }
 
         public void GetDouplicateNumbers_BadCode01()
@@ -70,6 +76,11 @@ namespace ConsoleApp_PlayGround.Challenges.Other
         {
             ArrayChallenges arrclass = new ArrayChallenges();
             var res = arrclass.FindNumbersIndexOfTotalSum(new int[] {45,2,12,60,10,5},12);
+
+            //#doublicate numbers
+            //# 1, 49, 5
+            arrclass.GetDouplicateNumbers_Hashset_ISet_Linq([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
+
 
         }
     }
