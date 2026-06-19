@@ -15,20 +15,37 @@ namespace ConsoleApp_PlayGround.Challenges.Other
 
 
         //using list with for loop O(n), asking it contains value before add number
-        
-
-        //# using HashSet,avoid duplicate by default, but just best in get total count douplicated numbers
-        public void GetDouplicateNumbers_Hashset_ISet_Linq_NOTCOMPLETED(int[] arr) 
+        public void GetDuplicateNumbers_Sort_InPlace(int[] arr) 
         {
-            //#not complete solution you need use loop O(n) also  
+            //#O(nlogn)
+            List<int> duplicates = new List<int>();
+            //#modify the original array !!
+            Array.Sort(arr);
+            for (int i=0; i<arr.Length -1; i++) 
+            {
+                if (arr[i] == arr[i + 1] && !duplicates.Contains(arr[i])) 
+                {
+                    duplicates.Add(arr[i]);
+                }
+            }
+            Console.Write(string.Join(',',duplicates));
+        }
+
+
+
+        public void GetDuplicateNumbers_Hashset_ISet_Linq_NOTCOMPLETED(int[] arr) 
+        {
+            //# using HashSet,avoid duplicate by default, but just best in get total count Duplicated numbers
+            //#not complete solution you need use loop O(n) also
             HashSet<int> uniqueNums = new HashSet<int>(arr);
             var doubleNums = arr.Where(n => !uniqueNums.Contains(n)).ToList();
             Console.WriteLine(string.Join(',',doubleNums));
         }
 
-        public void GetDouplicateNumbers_BadCode01()
+        public void GetDuplicateNumbers_BadCode01()
         {
             //# bad code 01, it's using nested 'For Loop', O(N^2)
+
             //var ar = new int[9] {5,4,66,4,7,8,6,1,4};
             int[] arr = { 5, 4, 66, 4, 7, 8, 6, 1, 4, 66, 6 };
             List<int> doubleValues = new List<int>();
@@ -79,7 +96,7 @@ namespace ConsoleApp_PlayGround.Challenges.Other
 
             //#doublicate numbers
             //# 1, 49, 5
-            arrclass.GetDouplicateNumbers_Hashset_ISet_Linq([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
+            arrclass.GetDuplicateNumbers_Sort_InPlace([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
 
 
         }
