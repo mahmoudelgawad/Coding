@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -13,8 +14,27 @@ namespace ConsoleApp_PlayGround.Challenges.Other
     {
         //#get duplicate numbers in Array
 
+        public void GetDuplicates_Negative_FlibSign_Inplace_NotForALLCasesSolution(int[] arr) 
+        {
+            List<int> duplicated = new List<int>();
+            for (int i = 0; i < arr.Length; i++) 
+            {
+                int index = Math.Abs(arr[i]) - 1;
+                if (index > arr.Length - 1) continue;
+                if (arr[index] < 0)
+                {
+                    duplicated.Add(Math.Abs(arr[i]));
+                    //duplicated.Add(index +1);
+                }
+                else 
+                {
+                    arr[index] = -arr[index];
+                }
+            }
+            Console.WriteLine(string.Join(',',duplicated));
+        }
 
-        //using list with for loop O(n), asking it contains value before add number
+        //using sort list/array (modify) with for loop , O(N*LogN)
         public void GetDuplicateNumbers_Sort_InPlace(int[] arr) 
         {
             //#O(nlogn)
@@ -28,15 +48,14 @@ namespace ConsoleApp_PlayGround.Challenges.Other
                     duplicates.Add(arr[i]);
                 }
             }
-            Console.Write(string.Join(',',duplicates));
+            Console.WriteLine(string.Join(',',duplicates));
         }
-
 
 
         public void GetDuplicateNumbers_Hashset_ISet_Linq_NOTCOMPLETED(int[] arr) 
         {
             //# using HashSet,avoid duplicate by default, but just best in get total count Duplicated numbers
-            //#not complete solution you need use loop O(n) also
+            //#not complete solution you still need use loop O(n) also after
             HashSet<int> uniqueNums = new HashSet<int>(arr);
             var doubleNums = arr.Where(n => !uniqueNums.Contains(n)).ToList();
             Console.WriteLine(string.Join(',',doubleNums));
@@ -68,7 +87,8 @@ namespace ConsoleApp_PlayGround.Challenges.Other
         }
 
 
-        //#return two numbers index position in the array that equal total sum value 'n1+n2=total'
+        //#return two indexes position in the array that equal total sum value 'n1+n2=total'
+        //#using complement substraction equation and dictionary<value, index>
         public int[] FindNumbersIndexOfTotalSum(int[] arr, int total) 
         {
             //#using dictionary instead go multiple nested loop for each item in array
@@ -97,6 +117,13 @@ namespace ConsoleApp_PlayGround.Challenges.Other
             //#doublicate numbers
             //# 1, 49, 5
             arrclass.GetDuplicateNumbers_Sort_InPlace([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
+
+            //#doublicate numbers
+            //# result = 5
+            arrclass.GetDuplicates_Negative_FlibSign_Inplace([5,3,2,5,9]);
+            //# result = [1, 49, 5]
+            arrclass.GetDuplicates_Negative_FlibSign_Inplace([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
+
 
 
         }

@@ -35,6 +35,7 @@ namespace ConsoleApp_PlayGround
 
 
 
+
             //TODO: upgrade to .net 10 & VS 2026
             //https://dotnet.microsoft.com/en-us/download/visual-studio-sdks
 
