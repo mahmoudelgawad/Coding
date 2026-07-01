@@ -16,6 +16,9 @@ namespace ConsoleApp_PlayGround.Challenges.Other
 
         public void GetDuplicates_Negative_FlibSign_Inplace_NotForALLCasesSolution(int[] arr) 
         {
+            //#O(n)
+            //#Not For ALL Cases Solution
+            //#Special case — values in range [1, N], O(1)
             List<int> duplicated = new List<int>();
             for (int i = 0; i < arr.Length; i++) 
             {
@@ -52,16 +55,18 @@ namespace ConsoleApp_PlayGround.Challenges.Other
         }
 
 
-        public void GetDuplicateNumbers_Hashset_ISet_Linq_NOTCOMPLETED(int[] arr) 
+        public void GetDuplicateNumbers_Hashset_ISet_NOTCOMPLETED(int[] arr) 
         {
-            //# using HashSet,avoid duplicate by default, but just best in get total count Duplicated numbers
+            //# using HashSet,avoid duplicate by default, best quick in get total count Duplicated numbers
             //#not complete solution you still need use loop O(n) also after
-            HashSet<int> uniqueNums = new HashSet<int>(arr);
-            var doubleNums = arr.Where(n => !uniqueNums.Contains(n)).ToList();
-            Console.WriteLine(string.Join(',',doubleNums));
+            HashSet<int> seenNums = new HashSet<int>(arr);
+            List<int> douplicates =new List<int>();
+          
+            //Console.WriteLine(string.Join(',',douplicates));
         }
 
-        public void GetDuplicateNumbers_BadCode01()
+
+        public void GetDuplicateNumbers_BadTimeSolution()
         {
             //# bad code 01, it's using nested 'For Loop', O(N^2)
 
@@ -120,11 +125,9 @@ namespace ConsoleApp_PlayGround.Challenges.Other
 
             //#doublicate numbers
             //# result = 5
-            arrclass.GetDuplicates_Negative_FlibSign_Inplace([5,3,2,5,9]);
+            arrclass.GetDuplicates_Negative_FlibSign_Inplace_NotForALLCasesSolution([5,3,2,5,9]);
             //# result = [1, 49, 5]
-            arrclass.GetDuplicates_Negative_FlibSign_Inplace([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
-
-
+            arrclass.GetDuplicates_Negative_FlibSign_Inplace_NotForALLCasesSolution([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
 
         }
     }

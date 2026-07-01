@@ -14,7 +14,7 @@ namespace ConsoleApp_PlayGround
      Static Class and Method: Extension methods are defined as static methods within a static class.
      this Keyword: The key element is the this keyword placed before the first parameter of the static method.
      'this; mean the targeted type or instance value that call him self extend method
-        to defferentiate when in case pass another parameter
+        to differentiate when in case pass another parameter
      This parameter specifies the type that the extension method will "extend."
      */
     internal class ExtensionMethod
