@@ -5,10 +5,13 @@ using System.Text;
 
 namespace ConsoleApp_PlayGround.Algorithms
 {
+
+    //# concept: searching inside array , without use two nested loop and consume time complexity "O(N^2)" to fast time 'O(N)'
     internal class SlidingWindow
     {
         //# first sliding window type is fixed size , and moving to right -> , (-) the old left elemnt and (+) the new right
-        //# 2 separated for loop
+        //# two separated "for" loop
+        //# k= "window width size"
         public static int MaxSumSubarray(int[] arr, int k)
         {
             int n = arr.Length;
@@ -21,7 +24,8 @@ namespace ConsoleApp_PlayGround.Algorithms
             // 2. Slide the window
             for (int i = k; i < n; i++)
             {
-                // Subtract the element that is left behind, add the new element
+                //#Subtract the element that is left behind, add the new element
+                //# windowSum =  (windowsSum - arr[i-k]) + arr[i]
                 windowSum += arr[i] - arr[i - k];
                 maxSum = Math.Max(maxSum, windowSum);
             }
