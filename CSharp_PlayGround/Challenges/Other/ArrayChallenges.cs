@@ -110,6 +110,23 @@ namespace ConsoleApp_PlayGround.Challenges.Other
             }
             return new int[] { };
         }
+
+        public void CompareTwoArrays() 
+        {
+            int[] arr1 = [0, 1, 0, 2, 0, 3];
+            int[] arr2 = [0, 1, 0, 2, 0, 3];
+
+            int[] arr3 = [0, 1, 0, 5, 0, 3];
+
+            //arr1 = arr2; //False Too
+
+            //# compare values
+            bool isEqual = arr1.SequenceEqual(arr2); //True
+            Console.WriteLine($"arr1 == arr2    {isEqual}");
+
+            isEqual = arr1.SequenceEqual(arr3); //False
+            Console.WriteLine($"arr1 == arr3    {isEqual}");
+        }
     }
 
     public static class ArrayChallengesImplementation
@@ -129,6 +146,7 @@ namespace ConsoleApp_PlayGround.Challenges.Other
             //# result = [1, 49, 5]
             arrclass.GetDuplicates_Negative_FlibSign_Inplace_NotForALLCasesSolution([1, 49, 5, 6, 7, 49, 5, 16, 18, 1]);
 
+            arrclass.CompareTwoArrays();
         }
     }
 }
