@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ConsoleApp_PlayGround.Algorithms
 {
@@ -61,7 +58,32 @@ namespace ConsoleApp_PlayGround.Algorithms
             return minLength == int.MaxValue ? 0 : minLength;
         }
 
+        public static int SlidingWindow_Fixed_SubstringAnagrams(string str, string subs) 
+        {
+            //#return count of subs exist even not in the same order ("aab" = "aba"), depend on letters exist
+            int ws = subs.Length;
+            int count = 0;
+            int subsAsciiValue = 0;
 
+            foreach (char ch in subs)
+                subsAsciiValue += (int)ch;
+
+            int windowCounter = 0;
+            for (int i = 0; i < ws; i++) 
+                windowCounter += (int)str[i];
+            if (windowCounter == subsAsciiValue)
+                ++count;
+
+            for (int i = ws; i < str.Length; i++) 
+            {
+                windowCounter += ((int)str[i]) - ((int)str[i - ws]);
+                if (windowCounter == subsAsciiValue)
+                    ++count;
+            }
+                
+
+            return count;
+        }
 
         public static void Implement() 
         {
@@ -76,6 +98,9 @@ namespace ConsoleApp_PlayGround.Algorithms
             int s = 7;
             Console.WriteLine(MinSubArrayLen(s, arr)); // Output: 2
             */
+
+            int count1 = SlidingWindow_Fixed_SubstringAnagrams("caabab", "aba");
+            Console.WriteLine($"caabab of aba = {count1}");
         }
     }
 }

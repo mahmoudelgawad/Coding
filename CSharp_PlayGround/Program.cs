@@ -21,6 +21,7 @@ using ConsoleApp_PlayGround.Nullable;
 using ConsoleApp_PlayGround.OOP.CovarianceAndContravariance;
 using ConsoleApp_PlayGround.Challenges.LeetCode;
 using System.Text;
+using ConsoleApp_PlayGround.Algorithms;
 
 
 namespace ConsoleApp_PlayGround
@@ -32,6 +33,12 @@ namespace ConsoleApp_PlayGround
 
             //LettCode.MoveZeorsClass.Implement();
             ArrayChallengesImplementation.Implement();
+            //SlidingWindow.Implement();
+
+           /* 
+            int asci = (int)'a';
+            Console.WriteLine($"asci = {asci}, is asci = {Char.}");
+           */
 
 
 
