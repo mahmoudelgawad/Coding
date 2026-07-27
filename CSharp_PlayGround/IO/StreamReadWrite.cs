@@ -32,6 +32,12 @@ namespace ConsoleApp_PlayGround.IO
             await streamReadWrite.CreateWriteFileAsync("StreamReadWrite.txt");
             Console.WriteLine("StreamReadWrite.txt file called");
             return 1;
-        } 
+        }
+
+        public static void Implement() 
+        {
+            //abstract class
+            Stream streamAbstract;
+        }
     }
 }
