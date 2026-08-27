@@ -6,7 +6,8 @@ import { AuthService } from './auth.service';
   selector: '[appAuth]',
   standalone: true
 })
-export class AuthDirective { //  custome stractural  directive
+export class AuthDirective { //  custom stractural  directive
+  //#input with alias/different name
   userType = input.required<Permission>({alias:'appAuth'});
   private authService = inject(AuthService);
 

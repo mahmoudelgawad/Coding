@@ -12,7 +12,8 @@ namespace ConsoleApp_PlayGround.Algorithms
         public static int MaxSumSubarray(int[] arr, int k)
         {
             int n = arr.Length;
-            int maxSum = 0, windowSum = 0;
+            int maxSum = 0;
+            int windowSum = 0;
 
             // 1. Initial window sum
             for (int i = 0; i < k; i++) windowSum += arr[i];
@@ -60,7 +61,7 @@ namespace ConsoleApp_PlayGround.Algorithms
 
         public static int SlidingWindow_Fixed_SubstringAnagrams(string str, string subs) 
         {
-            //#return count of subs exist even not in the same order ("aab" = "aba"), depend on letters exist
+            //#return count of subs exist even not in the same order ("aab" = "aba") (2a 1b), depend on letters exist
             int ws = subs.Length;
             int count = 0;
             int subsAsciiValue = 0;
@@ -69,11 +70,12 @@ namespace ConsoleApp_PlayGround.Algorithms
                 subsAsciiValue += (int)ch;
 
             int windowCounter = 0;
+            //# initial window
             for (int i = 0; i < ws; i++) 
                 windowCounter += (int)str[i];
             if (windowCounter == subsAsciiValue)
                 ++count;
-
+            //# continue 
             for (int i = ws; i < str.Length; i++) 
             {
                 windowCounter += ((int)str[i]) - ((int)str[i - ws]);
